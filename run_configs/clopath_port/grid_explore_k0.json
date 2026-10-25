@@ -1,0 +1,30 @@
+{
+  "rule": "exploratory addendum 1 (PREREG Section 9): no inhibition, the grid's g values",
+  "cells": [
+    {
+      "id": "e1",
+      "g": 0.2,
+      "k_inh": 0.0,
+      "calib_rate_hz": 2.9421002864837646,
+      "calib_active_fraction": 0.2538275122642517
+    },
+    {
+      "id": "e2",
+      "g": 0.275,
+      "k_inh": 0.0,
+      "calib_rate_hz": 13.189957618713379,
+      "calib_active_fraction": 0.6184225082397461
+    },
+    {
+      "id": "e3",
+      "g": 0.5,
+      "k_inh": 0.0,
+      "calib_rate_hz": 58.71080780029297,
+      "calib_active_fraction": 0.9639849662780762
+    }
+  ],
+  "amplitudes": [
+    "10x",
+    "1x"
+  ]
+}

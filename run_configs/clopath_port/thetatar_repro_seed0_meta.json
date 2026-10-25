@@ -1,0 +1,176 @@
+{
+  "seed": 0,
+  "n_train": 10000,
+  "n_test": 10000,
+  "specs": [
+    {
+      "cell": "c11",
+      "g": 0.2,
+      "k_inh": 0.1,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c12",
+      "g": 0.2,
+      "k_inh": 0.3,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c13",
+      "g": 0.2,
+      "k_inh": 100.0,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c21",
+      "g": 0.275,
+      "k_inh": 0.1,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c22",
+      "g": 0.275,
+      "k_inh": 0.3,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c23",
+      "g": 0.275,
+      "k_inh": 100.0,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c31",
+      "g": 0.5,
+      "k_inh": 0.1,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c32",
+      "g": 0.5,
+      "k_inh": 0.3,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c33",
+      "g": 0.5,
+      "k_inh": 100.0,
+      "amp": "10x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c11",
+      "g": 0.2,
+      "k_inh": 0.1,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c12",
+      "g": 0.2,
+      "k_inh": 0.3,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c13",
+      "g": 0.2,
+      "k_inh": 100.0,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c21",
+      "g": 0.275,
+      "k_inh": 0.1,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c22",
+      "g": 0.275,
+      "k_inh": 0.3,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c23",
+      "g": 0.275,
+      "k_inh": 100.0,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c31",
+      "g": 0.5,
+      "k_inh": 0.1,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c32",
+      "g": 0.5,
+      "k_inh": 0.3,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    },
+    {
+      "cell": "c33",
+      "g": 0.5,
+      "k_inh": 100.0,
+      "amp": "1x",
+      "kind": "trained",
+      "theta_tar": 60.0
+    }
+  ],
+  "grid_file": "results/clopath_port_calibration/grid.json",
+  "grid_sha256": "bcda279a8ef88e1aab8846d62cef25b352516069344db592ffc1a6c97fb4159e",
+  "prereg_file": "results/voltage_clopath_port_thetatar_PREREG.md",
+  "prereg_sha256": "7dd1c61571c2dc21d87adad156ea518e26275f9b45d8681502b42e0845f83ded",
+  "theta_tar": [
+    60.0
+  ],
+  "no_random": true,
+  "code_sha256": {
+    "models/clopath_port.py": "58596c7f8a9e3250a7d9f0abc9e5bb94316a712b6c00a070749a5b8413905316",
+    "scripts/clopath_port_mnist.py": "20370fe8f1475db55de0dea7e8e7e69345d8bce06388bdc59a0477f2e8f0aa43"
+  },
+  "git_head": "fac604cf20cd7046e1a7bc1929e347a7448253e1",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "dtype": "float64",
+  "fused_update": true,
+  "cuda_graph": true,
+  "u_floor": -100.0,
+  "started": "2026-10-13 21:54:23",
+  "resumed_at": 0,
+  "finished": "2026-10-13 22:46:45",
+  "train_minutes": 34.46263699531555,
+  "test_minutes": 17.8709956963857,
+  "max_count": 58
+}

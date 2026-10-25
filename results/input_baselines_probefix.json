@@ -1,0 +1,315 @@
+{
+ "mnist": {
+  "dim": 784,
+  "n_test": 10000,
+  "seeds": {
+   "0": {
+    "encoded": 85.7,
+    "raw": 90.64999999999999,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 86.53,
+    "raw": 91.05,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 85.84,
+    "raw": 90.8,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 86.53,
+    "raw": 91.01,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 85.75,
+    "raw": 90.8,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   86.07000000000001,
+   0.4229066090758095
+  ],
+  "raw": [
+   90.862,
+   0.1657407614318252
+  ]
+ },
+ "nmnist": {
+  "dim": 2312,
+  "n_test": 10000,
+  "seeds": {
+   "0": {
+    "encoded": 82.94,
+    "raw": 88.92999999999999,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 82.84,
+    "raw": 88.73,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 82.87,
+    "raw": 88.36,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 83.04,
+    "raw": 88.53999999999999,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 83.02000000000001,
+    "raw": 88.39,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   82.94200000000001,
+   0.08843076387773868
+  ],
+  "raw": [
+   88.58999999999999,
+   0.24010414407085778
+  ]
+ },
+ "emnist_letters": {
+  "dim": 784,
+  "n_test": 20800,
+  "seeds": {
+   "0": {
+    "encoded": 51.63942307692307,
+    "raw": 66.22596153846155,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 51.26923076923077,
+    "raw": 65.79326923076924,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 50.47115384615385,
+    "raw": 65.63942307692308,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 50.67307692307692,
+    "raw": 66.02403846153845,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 50.5,
+    "raw": 66.07692307692308,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   50.91057692307692,
+   0.5191150155873767
+  ],
+  "raw": [
+   65.95192307692308,
+   0.23385358667337092
+  ]
+ },
+ "fmnist": {
+  "dim": 784,
+  "n_test": 10000,
+  "seeds": {
+   "0": {
+    "encoded": 74.41,
+    "raw": 82.44,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 73.33,
+    "raw": 82.48,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 74.22,
+    "raw": 82.32000000000001,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 73.08,
+    "raw": 82.24000000000001,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 73.71,
+    "raw": 82.06,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   73.75,
+   0.5664362276549759
+  ],
+  "raw": [
+   82.308,
+   0.16828547174369998
+  ]
+ },
+ "organamnist": {
+  "dim": 784,
+  "n_test": 17778,
+  "seeds": {
+   "0": {
+    "encoded": 50.14062324220947,
+    "raw": 58.14489818877264,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 49.943750703116216,
+    "raw": 57.79615254809315,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 48.84126448419395,
+    "raw": 58.12802339970751,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 51.175610304871185,
+    "raw": 58.57239284508944,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 49.73000337495782,
+    "raw": 57.67240409494882,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   49.96625042186973,
+   0.8388786371659148
+  ],
+  "raw": [
+   58.062774215322314,
+   0.351492850283048
+  ]
+ },
+ "bloodmnist": {
+  "dim": 784,
+  "n_test": 3421,
+  "seeds": {
+   "0": {
+    "encoded": 55.451622332651276,
+    "raw": 68.66413329435838,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 55.56854720841859,
+    "raw": 68.69336451330021,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 55.451622332651276,
+    "raw": 68.3133586670564,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 56.065477930429694,
+    "raw": 68.63490207541655,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 55.977784273604215,
+    "raw": 68.60567085647472,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   55.70301081555101,
+   0.29637630764423206
+  ],
+  "raw": [
+   68.58228588132125,
+   0.15384621300136014
+  ]
+ },
+ "tissuemnist": {
+  "dim": 784,
+  "n_test": 47280,
+  "seeds": {
+   "0": {
+    "encoded": 37.43866328257191,
+    "raw": 46.59475465313029,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 37.71150592216582,
+    "raw": 46.131556683587135,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 37.67766497461929,
+    "raw": 46.5080372250423,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 37.38578680203046,
+    "raw": 46.77876480541455,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 37.14678510998308,
+    "raw": 46.44881556683587,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   37.47208121827411,
+   0.23128440958987434
+  ],
+  "raw": [
+   46.49238578680203,
+   0.23708294983431366
+  ]
+ },
+ "pathmnist": {
+  "dim": 784,
+  "n_test": 7180,
+  "seeds": {
+   "0": {
+    "encoded": 30.0,
+    "raw": 40.18105849582172,
+    "n_train": 10000
+   },
+   "1": {
+    "encoded": 29.7075208913649,
+    "raw": 39.76323119777159,
+    "n_train": 10000
+   },
+   "2": {
+    "encoded": 29.944289693593312,
+    "raw": 40.139275766016716,
+    "n_train": 10000
+   },
+   "3": {
+    "encoded": 30.557103064066855,
+    "raw": 39.34540389972145,
+    "n_train": 10000
+   },
+   "4": {
+    "encoded": 30.766016713091922,
+    "raw": 39.87465181058496,
+    "n_train": 10000
+   }
+  },
+  "encoded": [
+   30.194986072423397,
+   0.44600875937621065
+  ],
+  "raw": [
+   39.860724233983284,
+   0.3374384802113017
+  ]
+ },
+ "_protocol": "Input-level baselines for the rebuilt Table 2, under the paper's single linear probe (CPU only).\n\nSame protocol as scripts/score/probefix_aggregate.py, applied to the network's INPUT instead of its output:\n  * training images: the first 10,000 of run_single.py's presentation order (randperm, seed + 1000),\n    i.e. the images the probe-fix networks of that seed were trained on;\n  * test images: the FULL test set;\n  * probe: logistic regression, L2, C = 1, raw values, max_iter=100000; seeds 0-4.\nTwo inputs per image:\n  * encoded spike input: the spike counts of the input layer, drawn exactly as\n    models/fc_stdp_layer.py run_sample draws them (per 1-ms step, Bernoulli with probability\n    clamp(pixel * 63.75 / 1000, 0, 1), over the 350 steps with input) -> Binomial(350, p);\n    full input dimension (784, or 2,312 for N-MNIST);\n  * raw pixels: the same image vectors, unencoded (kept in the JSON; not planned for Table 2).\nReplaces scripts/input_baselines_trainfit.py, which capped the test set at 10,000 images,\ntruncated N-MNIST to 784 inputs, used one seed and max_iter 2000."
+}

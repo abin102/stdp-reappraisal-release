@@ -1,0 +1,360 @@
+{
+  "date": "2026-10-13 13:58",
+  "nep": 1000,
+  "seed": 1,
+  "torch": "2.7.0+cu126",
+  "numpy": "1.26.4",
+  "numpy_ref_seconds": 2.2278027534484863,
+  "octave": {
+    "binary": "/tmp/claude-1000/-home-user-abin-ref-papers-snn-uncertainity-stdp-experiments-stdp-variants/6ca7aa5c-f89b-4ca3-973c-f6e7436eedb3/scratchpad/mamba/octave_env/bin/octave-cli",
+    "version": "GNU Octave, version 10.3.0"
+  },
+  "rfdevelop_comparisons": [
+    {
+      "label": "numpy reference vs torch CPU float64",
+      "n_spikes_a": 831,
+      "n_spikes_b": 831,
+      "identical_spike_times": true,
+      "first_spike_time_difference_ms": null,
+      "max_abs_du_mV": 6.220801651579677e-11,
+      "max_abs_du_before_first_difference_mV": 6.220801651579677e-11,
+      "max_abs_dw_wsave": 2.081113059659856e-13,
+      "max_abs_dtheta": 8.753886504564434e-12,
+      "bitwise_identical_u": false,
+      "bitwise_identical_w": false
+    },
+    {
+      "label": "numpy reference vs torch GPU float64",
+      "n_spikes_a": 831,
+      "n_spikes_b": 831,
+      "identical_spike_times": true,
+      "first_spike_time_difference_ms": null,
+      "max_abs_du_mV": 2.2829989987371846e-07,
+      "max_abs_du_before_first_difference_mV": 2.2829989987371846e-07,
+      "max_abs_dw_wsave": 7.488685227485803e-10,
+      "max_abs_dtheta": 3.341449428262422e-08,
+      "bitwise_identical_u": false,
+      "bitwise_identical_w": false
+    },
+    {
+      "label": "numpy reference vs torch GPU float64, fused weight update (MNIST production path)",
+      "n_spikes_a": 831,
+      "n_spikes_b": 831,
+      "identical_spike_times": true,
+      "first_spike_time_difference_ms": null,
+      "max_abs_du_mV": 2.3071724442047525e-07,
+      "max_abs_du_before_first_difference_mV": 2.3071724442047525e-07,
+      "max_abs_dw_wsave": 7.568002891034098e-10,
+      "max_abs_dtheta": 3.3767832974263e-08,
+      "bitwise_identical_u": false,
+      "bitwise_identical_w": false
+    },
+    {
+      "label": "numpy reference vs torch GPU float32 (information)",
+      "n_spikes_a": 831,
+      "n_spikes_b": 829,
+      "identical_spike_times": false,
+      "first_spike_time_difference_ms": 23367,
+      "max_abs_du_mV": 84.43152917538342,
+      "max_abs_du_before_first_difference_mV": 6.092807197385543,
+      "max_abs_dw_wsave": 0.553913970806688,
+      "max_abs_dtheta": 36.65468272132455,
+      "bitwise_identical_u": false,
+      "bitwise_identical_w": false
+    },
+    {
+      "label": "Octave (original aEIF.m + RFdevelop.m, inputs fixed) vs numpy reference",
+      "n_spikes_a": 831,
+      "n_spikes_b": 831,
+      "identical_spike_times": true,
+      "first_spike_time_difference_ms": null,
+      "max_abs_du_mV": 0.0,
+      "max_abs_du_before_first_difference_mV": 0.0,
+      "max_abs_dw_wsave": 0.0,
+      "max_abs_dtheta": 0.0,
+      "bitwise_identical_u": true,
+      "bitwise_identical_w": true
+    },
+    {
+      "label": "Octave vs torch GPU float64",
+      "n_spikes_a": 831,
+      "n_spikes_b": 831,
+      "identical_spike_times": true,
+      "first_spike_time_difference_ms": null,
+      "max_abs_du_mV": 2.2829989987371846e-07,
+      "max_abs_du_before_first_difference_mV": 2.2829989987371846e-07,
+      "max_abs_dw_wsave": 7.488685227485803e-10,
+      "max_abs_dtheta": 3.341449428262422e-08,
+      "bitwise_identical_u": false,
+      "bitwise_identical_w": false
+    }
+  ],
+  "rfdevelop_n_spikes": 831,
+  "network_comparisons": [
+    {
+      "cell": {
+        "g": 0.4,
+        "k": 0.0,
+        "A3p": 0.0008,
+        "A2d": 0.0013999999999999998,
+        "plastic": true
+      },
+      "fused_update": false,
+      "n_spikes": 182,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 3.4414892269296615e-08,
+      "max_abs_dW": 3.560289840720543e-10,
+      "min_u_mV": -72.00066413417214,
+      "floor_reached": false,
+      "W_changed": 2.4983716302451313
+    },
+    {
+      "cell": {
+        "g": 0.4,
+        "k": 8.0,
+        "A3p": 0.0008,
+        "A2d": 0.0013999999999999998,
+        "plastic": true
+      },
+      "fused_update": false,
+      "n_spikes": 59,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 3.781153168347373e-11,
+      "max_abs_dW": 2.686739719592879e-13,
+      "min_u_mV": -83.80797771898924,
+      "floor_reached": false,
+      "W_changed": 2.4920316184084492
+    },
+    {
+      "cell": {
+        "g": 0.8,
+        "k": 20.0,
+        "A3p": 8e-05,
+        "A2d": 0.00014,
+        "plastic": true
+      },
+      "fused_update": false,
+      "n_spikes": 176,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 5.593179253082781e-10,
+      "max_abs_dW": 7.123190925995004e-13,
+      "min_u_mV": -100.0,
+      "floor_reached": true,
+      "W_changed": 0.9567697270514444
+    },
+    {
+      "cell": {
+        "g": 1.2,
+        "k": 60.0,
+        "A3p": 0.0008,
+        "A2d": 0.0013999999999999998,
+        "plastic": true
+      },
+      "fused_update": false,
+      "n_spikes": 158,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 7.815970093361102e-14,
+      "max_abs_dW": 8.881784197001252e-16,
+      "min_u_mV": -100.0,
+      "floor_reached": true,
+      "W_changed": 2.4859210222604013
+    },
+    {
+      "cell": {
+        "g": 0.4,
+        "k": 0.0,
+        "A3p": 0.0008,
+        "A2d": 0.0013999999999999998,
+        "plastic": true
+      },
+      "fused_update": true,
+      "n_spikes": 182,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 3.4414892269296615e-08,
+      "max_abs_dW": 3.5602942816126415e-10,
+      "min_u_mV": -72.00066413417214,
+      "floor_reached": false,
+      "W_changed": 2.4983716302451313
+    },
+    {
+      "cell": {
+        "g": 0.4,
+        "k": 8.0,
+        "A3p": 0.0008,
+        "A2d": 0.0013999999999999998,
+        "plastic": true
+      },
+      "fused_update": true,
+      "n_spikes": 59,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 3.781153168347373e-11,
+      "max_abs_dW": 2.69562150378988e-13,
+      "min_u_mV": -83.80797771898924,
+      "floor_reached": false,
+      "W_changed": 2.4920316184084492
+    },
+    {
+      "cell": {
+        "g": 0.8,
+        "k": 20.0,
+        "A3p": 8e-05,
+        "A2d": 0.00014,
+        "plastic": true
+      },
+      "fused_update": true,
+      "n_spikes": 176,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 5.593179253082781e-10,
+      "max_abs_dW": 7.118750033896504e-13,
+      "min_u_mV": -100.0,
+      "floor_reached": true,
+      "W_changed": 0.9567697270514444
+    },
+    {
+      "cell": {
+        "g": 1.2,
+        "k": 60.0,
+        "A3p": 0.0008,
+        "A2d": 0.0013999999999999998,
+        "plastic": true
+      },
+      "fused_update": true,
+      "n_spikes": 158,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 7.815970093361102e-14,
+      "max_abs_dW": 1.3322676295501878e-15,
+      "min_u_mV": -100.0,
+      "floor_reached": true,
+      "W_changed": 2.4859210222604013
+    },
+    {
+      "cell": {
+        "g": 0.8,
+        "k": 20.0,
+        "A3p": 0.0008,
+        "A2d": 0.0013999999999999998,
+        "plastic": false
+      },
+      "fused_update": false,
+      "n_spikes": 202,
+      "identical_spike_trains": true,
+      "max_abs_du_mV": 1.7504220295450068e-11,
+      "max_abs_dW": 0.0,
+      "min_u_mV": -100.0,
+      "floor_reached": true,
+      "W_changed": 0.0
+    }
+  ],
+  "votri_numpy": {
+    "0.1|10": 0.5000010253248656,
+    "0.1|-10": 0.3584295456866586,
+    "1|10": 0.5000003066928822,
+    "1|-10": 0.3025195021977408,
+    "5|10": 0.5000003066928822,
+    "5|-10": 0.3032114403492761,
+    "10|10": 0.5145169131346606,
+    "10|-10": 0.2980880775388822,
+    "20|10": 0.5785321888565067,
+    "20|-10": 0.30255459853267885,
+    "40|10": 0.7313255793239102,
+    "40|-10": 0.5888818833532738,
+    "50|10": 0.8250073071063487,
+    "50|-10": 0.867785888080795
+  },
+  "votri_octave_R": [
+    [
+      0.5000010253248656,
+      0.3584295456866586
+    ],
+    [
+      0.5000003066928822,
+      0.3025195021977408
+    ],
+    [
+      0.5000003066928822,
+      0.3032114403492761
+    ],
+    [
+      0.5145169131346606,
+      0.2980880775388822
+    ],
+    [
+      0.5785321888565067,
+      0.30255459853267885
+    ],
+    [
+      0.7313255793239102,
+      0.5888818833532738
+    ],
+    [
+      0.8250073071063487,
+      0.867785888080795
+    ]
+  ],
+  "votri_octave_window": {
+    "rw": [
+      10.0,
+      20.0
+    ],
+    "dtw": [
+      -40.0,
+      -35.0,
+      -30.0,
+      -25.0,
+      -20.0,
+      -15.0,
+      -10.0,
+      -5.0,
+      0.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0
+    ],
+    "RW": [
+      [
+        0.4080671171746859,
+        0.3931681015216666,
+        0.3762741053913636,
+        0.35733774072058666,
+        0.33674714204238265,
+        0.31586124541002386,
+        0.2980880775388822,
+        0.2910070441469138,
+        0.5180528259371774,
+        0.5299992920720688,
+        0.5145169131346606,
+        0.5024303273395235,
+        0.4925852728790505,
+        0.4841397683834736,
+        0.4764686855937942,
+        0.46909521204101756,
+        0.46164121416786147
+      ],
+      [
+        0.5940000866859603,
+        0.5243362553572402,
+        0.46805372015894464,
+        0.4202111697210751,
+        0.3774626015121982,
+        0.3380797351731792,
+        0.30255459853267885,
+        0.2752008324705479,
+        0.599151936996683,
+        0.6526371592473783,
+        0.5785321888565067,
+        0.5212507457528878,
+        0.47510456566991965,
+        0.43603528379199996,
+        0.40130657445891654,
+        0.36951684168984794,
+        0.3410810518020587
+      ]
+    ]
+  },
+  "votri_max_abs_diff_numpy_vs_octave": 0.0
+}

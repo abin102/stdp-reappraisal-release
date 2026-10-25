@@ -1,0 +1,98 @@
+# STDP Scaffolding Ablation — base defaults
+# --------------------------------------------------------------------
+# Shared across all 12 (rule × scaffold) cells of the main matrix.
+# Rule and scaffold override files are layered on top via
+# experiments/scripts/config.py:resolve().
+#
+# Anything below that is NOT mentioned in a rule/scaffold override is
+# used verbatim from here. Override files must touch only the keys
+# they intend to change.
+
+experiment:
+  name: "base"                       # overridden by run_single.py to "{rule}_{scaffold}_N{N}_seed{seed}"
+  project: "stdp_scaffolding_ablation"
+  save_dir: "./experiments/runs"
+  device: "cuda:1"                   # gpu1 per Abin 2026-04-20; cuda:0 will be tried when free
+  use_wandb: false                   # overridden at launch if WANDB credentials exist
+  seed: 0                            # overridden per run
+
+data:
+  dataset: "mnist"
+  data_dir: "./data"
+  encoding: "poisson"                # spec §3.3
+  sim_time: 350                      # ms of image presentation
+  quiet_time: 150                    # ms of zero input between images (spec §3.3)
+  dt: 1.0                            # 1 ms time step
+  intensity: 63.75                   # Hz max firing rate (D&C 2015 standard; spec §3.3)
+  flatten: true                      # 28x28 -> 784 (FC arch per Q1)
+
+model:
+  arch: "fc"                         # FC 784 -> N for all rules (Q1)
+  n_input: 784
+  n_neurons: 400                     # main matrix size (Q10 adds 1600 scaling for pair_exp cells)
+
+neuron:
+  # LIF (pair/triplet) or AdEx (voltage) — rule override picks the model
+  v_rest: -65.0
+  v_reset: -65.0
+  v_thresh: -52.0
+  tau_v: 100.0                       # ms, membrane time constant
+  refrac_time: 5                     # ts (≈ 5 ms); Q3: pair uses this too, NOT single-fire
+
+scaffold:
+  # Defaults are ON (matches S_full). Scaffold overrides flip these.
+  lateral_inhibition: true
+  adaptive_threshold: true
+  # When lateral_inhibition=false → inh_weight is zeroed by the merger.
+  # When adaptive_threshold=false → theta_plus is zeroed and decay_theta
+  # forced to 1.0 (theta frozen at theta_init).
+  inh_weight: 17.5                   # D&C-FC value; ignored if lateral_inhibition=false
+  theta_plus: 0.05                   # per-spike theta increment; zeroed if adaptive_threshold=false
+  tc_theta_decay: 1.0e7              # ms; very slow decay keeps theta near spike-integrated value
+  theta_init: 0.0
+
+weight_norm:
+  # Q5: treated as rule infrastructure (always ON for main matrix).
+  # Supplementary experiments toggle this OFF at 1-2 cells.
+  enabled: true
+  norm: 78.4                         # L1 column-norm target; 784 x 0.1 (D&C 2015 used 78.0)
+  w_min: 0.0
+  w_max: 1.0
+
+weight_init:
+  # Q12: D&C uniform(0, 0.3) + L1 col-norm for all three rules.
+  # (Clopath 2010 Nature Neuro does not specify a particular init
+  #  for unsupervised digit learning; using D&C init eliminates a
+  #  confound across rules.)
+  distribution: "uniform"
+  low: 0.0
+  high: 0.3
+
+training:
+  n_train: 60000                     # one MNIST epoch
+  n_test: 10000
+  n_epochs: 1
+  log_interval: 500                  # samples between stdout log lines
+  checkpoint_interval: 10000         # samples; final weights also always saved
+  assignment_fraction: 1.0           # fraction of training data used for post-hoc labelling
+
+evaluation:
+  # Q4: post-hoc neuron labelling only
+  method: "posthoc_labelling"
+  # Primary metrics (spec §4.1)
+  compute_selectivity: true
+  compute_cosine_similarity: true
+  compute_class_coverage: true
+  # Secondary metrics (spec §4.2)
+  compute_weight_histogram: true
+  histogram_bins: 100
+  compute_firing_rate_cv: true
+  compute_nmi: true                  # Q4 caveat — unsupervised-defense metric
+  # Qualitative outputs (spec §4.3)
+  save_rf_grid_png: true
+  rf_grid_rows: 10
+  rf_grid_cols: 10
+
+smoke:
+  # used by scripts/run_single.py --smoke
+  n_train_override: 5000             # Week 1 smoke test (spec §6 Week 1 Day 6)

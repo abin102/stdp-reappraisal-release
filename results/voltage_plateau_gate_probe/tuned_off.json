@@ -1,0 +1,15 @@
+{
+  "potentiation_total": 84.26264190673828,
+  "depression_total": 285830.125,
+  "potentiation_over_depression": 0.00029479972381056156,
+  "spikes_per_image": 87.291,
+  "config_file": "experiments/runs/voltage_S_full_N400_seed0_plateau_T_ap0.001/config.yaml",
+  "seed": 0,
+  "n_train": 1000,
+  "spike_plateau": false,
+  "gate_cap_mv": null,
+  "A_plus": 0.001,
+  "A_minus": 0.003,
+  "theta_ltd": -70.6,
+  "v_rest": -65.0
+}

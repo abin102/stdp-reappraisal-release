@@ -1,0 +1,111 @@
+experiment:
+  name: "conv2l_voltage_clopath_faithful_mnist"
+  seed: 42
+  use_wandb: True
+  project: "conv-voltage-stdp"
+  save_dir: "./checkpoints"
+  device: "cuda:1"           # GPU to use (cuda:0, cuda:1, or cpu)
+
+data:
+  dataset: "mnist"
+  encoding: "poisson"
+  sim_time: 300              # Longer simulation for voltage recovery/traces
+  intensity: 64.0            # Lower input drive without lateral WTA
+  prop: 1.0
+
+model:
+  layer1:
+    n_filters: 32
+    kernel_size: 5
+    norm: 10.0               # Per-filter L1 renormalization (prevents saturation)
+    v_rest: -65.0
+    v_reset: -65.0
+    v_thresh: -52.0
+    tau_v: 100.0
+    theta_plus: 0.05         # Slower per-neuron adaptation for diversity
+    tc_theta_decay: 1.0e+4   # Theta actually decays within a run (was 1e6 = frozen)
+    inh_weight: 5.0          # Soft lateral inhibition for filter competition
+    refrac_time: 5
+    theta_init: 0.0          # Start at zero; let theta grow naturally
+
+  layer2:
+    n_filters: 64
+    kernel_size: 5
+    # L2 inputs are 32-channel × 5×5 = 800 synapses/neuron vs L1's 25,
+    # so norm=10 (same as L1) dilutes L2's mean weight 32× to 0.0125.
+    # Doubled to norm=20 to roughly double per-spike excitation.
+    norm: 20.0
+    v_rest: -65.0
+    v_reset: -65.0
+    v_thresh: -52.0
+    tau_v: 100.0
+    theta_plus: 0.05
+    tc_theta_decay: 1.0e+4
+    # Weaker L2 lateral inhibition: with 64 filters competing at each
+    # spatial position and thin L1 drive, inh=5 suppressed subsequent
+    # firing too aggressively; lowering to 2 keeps competition while
+    # letting more neurons reach threshold.
+    inh_weight: 2.0
+    refrac_time: 5
+    theta_init: 0.0
+    # Per-layer LTP amplitude override: boosted 3x vs voltage.A_plus
+    # (0.001 -> 0.003) because L2 post-spikes are ~14x rarer than L1's,
+    # so each post-spike must carry more LTP weight to balance LTD.
+    A_plus: 0.003
+
+# Clopath et al. (2010) voltage-based STDP with soft lateral inhibition.
+# Competition from BOTH adaptive thresholds AND soft WTA (keeps non-winner
+# voltage traces alive for voltage-gated LTD).
+# Weight bounds [0, w_max] plus per-filter L1 renormalization (norm=10).
+voltage:
+  rule: "clopath"
+  A_plus: 0.001              # Reduced from 0.008 — was dominating LTD 45:1
+  A_minus: 0.003
+  ltd_mode: "voltage"        # Original pre-spike-triggered voltage LTD
+  use_weight_norm: true      # Renormalize per-filter L1 to `norm` after each update
+  tau_pre: 16.8
+  tau_plus: 7.0
+  tau_minus: 10.0
+  theta_ltp: null
+  theta_ltd: null
+  w_max: 1.0
+
+  adex:
+    delta_T: 2.0
+    v_T_offset: -2.0
+    a_adapt: 0.0
+    b_adapt: 0.1
+    tau_w_adapt: 144.0
+    I_sp: 0.2
+    tau_z: 40.0
+
+readout:
+  hidden_size: 1024
+  n_steps: 50                # Baseline — DO NOT raise without retuning readout_lr
+  tau: 10.0
+  # --- Baseline (reverted 2026-04-17 after stacked-improvements regression) ---
+  # Previous attempt (AdamW + WD=1e-4 + cosine LR + label_smoothing=0.1 +
+  # n_steps=100 + 100 epochs, all stacked) regressed 96.6% -> 86.2%.
+  # See results/conv2l_voltage_clopath_faithful_mnist.md "Failed Improvement
+  # Attempt #1". Re-introduce changes ONE AT A TIME in future runs.
+  optimizer: "adam"
+  weight_decay: 0.0
+  lr_schedule: "none"
+  label_smoothing: 0.0
+  normalize_features: false
+
+training:
+  # L1 converges to bimodal fixed point by ~sample 7500 under current rule;
+  # 1 epoch (60000 samples) is comfortably past that.
+  # L2 also plateaued at bimodal fixed point (std≈0.15, near0=97%, near1=2%)
+  # by sample ~46k of ep1; eps 2-3 drift std by <0.002 so they are wasteful.
+  # Truncate to 1 epoch for L2 and advance to Phase B/C.
+  epochs_stdp: [1, 1]
+  readout_epochs: 75         # Ablation #1: 50 -> 75 (all else at baseline)
+  readout_lr: 0.001
+  readout_batch_size: 128
+  feat_batch_size: 32
+  n_train: 60000
+  n_test: 10000
+  log_interval: 500
+  checkpoint_interval: 10000

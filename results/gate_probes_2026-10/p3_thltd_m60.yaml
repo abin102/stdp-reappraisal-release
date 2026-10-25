@@ -1,0 +1,82 @@
+data:
+  data_dir: ./data
+  dataset: mnist
+  dt: 1.0
+  encoding: poisson
+  flatten: true
+  intensity: 63.75
+  quiet_time: 150
+  sim_time: 350
+evaluation:
+  compute_class_coverage: true
+  compute_cosine_similarity: true
+  compute_firing_rate_cv: true
+  compute_nmi: true
+  compute_selectivity: true
+  compute_weight_histogram: true
+  histogram_bins: 100
+  method: posthoc_labelling
+  rf_grid_cols: 10
+  rf_grid_rows: 10
+  save_rf_grid_png: true
+experiment:
+  device: cuda:0
+  name: voltage_S_full_N400_seed0__mnist_adex_baseline
+  project: stdp_scaffolding_ablation
+  save_dir: ./experiments/runs
+  seed: 0
+  use_wandb: false
+model:
+  arch: fc
+  n_input: 784
+  n_neurons: 400
+neuron:
+  I_sp: 0.2
+  a_adapt: 0.0
+  b_adapt: 0.1
+  delta_T: 2.0
+  model: adex
+  refrac_time: 5
+  tau_v: 100.0
+  tau_w_adapt: 144.0
+  tau_z: 40.0
+  v_T_offset: -2.0
+  v_reset: -65.0
+  v_rest: -65.0
+  v_thresh: -52.0
+rule:
+  formulation: clopath_gerstner_2010_visual_cortex
+  name: voltage
+scaffold:
+  adaptive_threshold: true
+  inh_weight: 5.0
+  lateral_inhibition: true
+  tc_theta_decay: 1.0e4
+  theta_init: 0.0
+  theta_plus: 0.05
+smoke:
+  n_train_override: 5000
+stdp:
+  A_minus: 0.003
+  A_plus: 0.001
+  tau_minus: 10.0
+  tau_plus: 7.0
+  tau_pre: 16.8
+  theta_ltd: -60.0
+  theta_ltp: -45.3
+training:
+  assignment_fraction: 1.0
+  checkpoint_interval: 10000
+  log_interval: 500
+  n_epochs: 1
+  n_test: 10000
+  n_train: 60000
+weight_init:
+  distribution: uniform
+  high: 0.3
+  low: 0.0
+weight_norm:
+  enabled: true
+  norm: 313.6
+  w_max: 1.0
+  w_min: 0.0

@@ -1,0 +1,96 @@
+{
+  "rule": "scripts/train/clopath_port_select_grid.py (PREREG Section 5)",
+  "calibration": "results/clopath_port_calibration/calibration.json",
+  "score": 0.12904774837835806,
+  "g": [
+    0.2,
+    0.275,
+    0.5
+  ],
+  "k_inh": [
+    0.1,
+    0.3,
+    100.0
+  ],
+  "cells": [
+    {
+      "id": "c11",
+      "g": 0.2,
+      "k_inh": 0.1,
+      "calib_rate_hz": 1.4263215065002441,
+      "calib_active_fraction": 0.20561999082565308
+    },
+    {
+      "id": "c12",
+      "g": 0.2,
+      "k_inh": 0.3,
+      "calib_rate_hz": 0.8399357199668884,
+      "calib_active_fraction": 0.1626325100660324
+    },
+    {
+      "id": "c13",
+      "g": 0.2,
+      "k_inh": 100.0,
+      "calib_rate_hz": 0.15612857043743134,
+      "calib_active_fraction": 0.04575500264763832
+    },
+    {
+      "id": "c21",
+      "g": 0.275,
+      "k_inh": 0.1,
+      "calib_rate_hz": 6.48007869720459,
+      "calib_active_fraction": 0.5506850481033325
+    },
+    {
+      "id": "c22",
+      "g": 0.275,
+      "k_inh": 0.3,
+      "calib_rate_hz": 3.8871500492095947,
+      "calib_active_fraction": 0.48608502745628357
+    },
+    {
+      "id": "c23",
+      "g": 0.275,
+      "k_inh": 100.0,
+      "calib_rate_hz": 0.6754643321037292,
+      "calib_active_fraction": 0.17813751101493835
+    },
+    {
+      "id": "c31",
+      "g": 0.5,
+      "k_inh": 0.1,
+      "calib_rate_hz": 33.583248138427734,
+      "calib_active_fraction": 0.9497600197792053
+    },
+    {
+      "id": "c32",
+      "g": 0.5,
+      "k_inh": 0.3,
+      "calib_rate_hz": 21.120935440063477,
+      "calib_active_fraction": 0.933257520198822
+    },
+    {
+      "id": "c33",
+      "g": 0.5,
+      "k_inh": 100.0,
+      "calib_rate_hz": 2.151878595352173,
+      "calib_active_fraction": 0.48414501547813416
+    }
+  ],
+  "amplitudes": [
+    "10x",
+    "1x"
+  ],
+  "nearest": {
+    "rate": {
+      "2.0": "c33",
+      "6.324555320336759": "c21",
+      "20.0": "c32"
+    },
+    "active": {
+      "0.05": "c13",
+      "0.15811388300841897": "c12",
+      "0.5": "c22"
+    }
+  }
+}

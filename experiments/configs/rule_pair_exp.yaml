@@ -1,0 +1,30 @@
+# Rule override: pair-based STDP with exponential window + weight dependence
+# --------------------------------------------------------------------
+# Family: Diehl & Cook 2015 "Rule 2" (pair-based, weight-dependent,
+# post-triggered LTP + pre-triggered LTD). Q6: canonical D&C values.
+#
+# Update rule (LIF neuron):
+#   x_pre(t)  = x_pre*decay_pre  + δ(pre spike)      ; decay_pre = exp(-dt/tau_pre)
+#   x_post(t) = x_post*decay_post + δ(post spike)    ; decay_post = exp(-dt/tau_post)
+#   on post-spike:  dW = η_post * (x_pre - x_target) * (w_max - w)^μ
+#   on pre-spike :  dW = -η_pre  * x_post             * w^μ
+#
+# Canonical D&C 2015 Rule 2 parameters (nu_ee_pre, nu_ee_post, x_tar, mu, etc.).
+# Q3: neurons use refractory multi-fire (not single-fire-per-image) — DOCUMENTED
+# deviation from the original SpikingConv; explicit in paper Methods.
+
+rule:
+  name: "pair_exp"
+  formulation: "diehl_cook_rule2"
+
+stdp:
+  # D&C 2015 Rule 2 canonical values
+  eta_post: 1.0e-2                   # post-triggered LTP rate (η_ee_post)
+  eta_pre:  1.0e-4                   # pre-triggered LTD rate (η_ee_pre) — note: much weaker
+  x_target: 0.04                     # target pre-trace value (x_tar)
+  mu: 0.2                            # weight-dependence exponent (weak dependence)
+  tau_pre: 20.0                      # ms, presynaptic trace time constant
+  tau_post: 20.0                     # ms, postsynaptic trace time constant
+
+neuron:
+  model: "lif"                       # LIF, NOT AdEx for pair_exp

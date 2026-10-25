@@ -1,0 +1,86 @@
+{
+  "seed": 0,
+  "n_train": 10000,
+  "n_test": 5000,
+  "specs": [
+    {
+      "cell": "e1",
+      "g": 0.2,
+      "k_inh": 0.0,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "e2",
+      "g": 0.275,
+      "k_inh": 0.0,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "e3",
+      "g": 0.5,
+      "k_inh": 0.0,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "e1",
+      "g": 0.2,
+      "k_inh": 0.0,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "e2",
+      "g": 0.275,
+      "k_inh": 0.0,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "e3",
+      "g": 0.5,
+      "k_inh": 0.0,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "e1",
+      "g": 0.2,
+      "k_inh": 0.0,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "e2",
+      "g": 0.275,
+      "k_inh": 0.0,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "e3",
+      "g": 0.5,
+      "k_inh": 0.0,
+      "amp": null,
+      "kind": "random"
+    }
+  ],
+  "grid_file": "results/clopath_port_calibration/grid_explore_k0.json",
+  "grid_sha256": "7a24bfd5458735cbd13bb3308f53f1ea70ead52bf87998e57b8745ccc7d676e6",
+  "prereg_sha256": "47fd6df62ab1548a37e1b8b757179bca98d7f6a9b76aef48b2f8cf89867250fe",
+  "git_head": "fac604cf20cd7046e1a7bc1929e347a7448253e1",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "dtype": "float64",
+  "fused_update": true,
+  "cuda_graph": true,
+  "u_floor": -100.0,
+  "started": "2026-10-13 19:00:19",
+  "resumed_at": 0,
+  "finished": "2026-10-13 21:01:43",
+  "train_minutes": 99.50639034907023,
+  "test_minutes": 21.87558976809184,
+  "max_count": 62
+}

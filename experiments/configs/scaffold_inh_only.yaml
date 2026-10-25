@@ -1,0 +1,9 @@
+# Scaffold override: S_inh_only
+# --------------------------------------------------------------------
+# Lateral inhibition ON, adaptive threshold OFF.
+# config.py zeroes theta_plus and forces decay_theta=1.0, so theta is
+# frozen at theta_init for the full run.
+
+scaffold:
+  lateral_inhibition: true
+  adaptive_threshold: false

@@ -1,0 +1,9 @@
+# Scaffold override: S_thr_only
+# --------------------------------------------------------------------
+# Lateral inhibition OFF, adaptive threshold ON.
+# config.py zeroes inh_weight, removing the subtractive inhibition term
+# on competing neurons at spike events.
+
+scaffold:
+  lateral_inhibition: false
+  adaptive_threshold: true

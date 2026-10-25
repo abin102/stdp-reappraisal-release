@@ -1,0 +1,29 @@
+# Rule override: Triplet STDP (Pfister & Gerstner 2006)
+# --------------------------------------------------------------------
+# Table 3 "Visual cortex" all-to-all parameters. These match the
+# pre-scaled values used in the existing run_diehl_cook.py replica.
+#
+# Update rule (4 traces: r1 (pre fast), r2 (pre slow), o1 (post fast),
+# o2 (post slow)):
+#   on post-spike: dW =  r1 * (A2+ + A3+ * o2_prev)
+#   on pre-spike : dW = -o1 * (A2- + A3- * r2_prev)
+#
+# Reference: Pfister & Gerstner (2006) J. Neurosci. 26:9673, Table 3
+# (all-to-all interaction, visual-cortex fit).
+
+rule:
+  name: "triplet"
+  formulation: "pfister_gerstner_2006_allpair_visual_cortex"
+
+stdp:
+  A2_plus:  6.1e-3
+  A2_minus: 1.6e-3
+  A3_plus:  3.5e-3
+  A3_minus: 1.4e-4
+  tau_plus:  16.8                    # ms, r1 (pre fast) decay
+  tau_minus: 33.7                    # ms, o1 (post fast) decay
+  tau_x:    101.0                    # ms, r2 (pre slow) decay
+  tau_y:    125.0                    # ms, o2 (post slow) decay
+
+neuron:
+  model: "lif"                       # LIF, NOT AdEx for triplet

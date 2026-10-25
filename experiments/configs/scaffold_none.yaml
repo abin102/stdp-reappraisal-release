@@ -1,0 +1,14 @@
+# Scaffold override: S_none — critical ablation condition
+# --------------------------------------------------------------------
+# Lateral inhibition OFF, adaptive threshold OFF.
+# Both inh_weight and theta_plus are zeroed by the merger, and
+# decay_theta is forced to 1.0 (theta frozen at theta_init).
+#
+# Hypothesis (H1): pair_exp under S_none will fail (≤30% accuracy,
+# weight bifurcation or RF collapse). Triplet will degrade less (H2),
+# voltage-based least (H3) thanks to internal rate-dependent LTD —
+# though this is a PARTIAL ablation; see paper Methods.
+
+scaffold:
+  lateral_inhibition: false
+  adaptive_threshold: false

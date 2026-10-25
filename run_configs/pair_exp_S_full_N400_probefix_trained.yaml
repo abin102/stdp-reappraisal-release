@@ -1,0 +1,74 @@
+experiment:
+  name: pair_exp_S_full_N400_seed0_probefix_trained
+  project: stdp_scaffolding_ablation
+  save_dir: ./experiments/runs
+  use_wandb: false
+  seed: 0
+data:
+  dataset: mnist
+  data_dir: ./data
+  encoding: poisson
+  sim_time: 350
+  quiet_time: 150
+  dt: 1.0
+  intensity: 63.75
+  flatten: true
+model:
+  arch: fc
+  n_input: 784
+  n_neurons: 400
+neuron:
+  v_rest: -65.0
+  v_reset: -65.0
+  v_thresh: -52.0
+  tau_v: 100.0
+  refrac_time: 5
+  model: lif
+scaffold:
+  lateral_inhibition: true
+  adaptive_threshold: true
+  inh_weight: 17.5
+  theta_plus: 0.05
+  tc_theta_decay: 1.0e7
+  theta_init: 0.0
+weight_norm:
+  enabled: true
+  norm: 78.4
+  w_min: 0.0
+  w_max: 1.0
+weight_init:
+  distribution: uniform
+  low: 0.0
+  high: 0.3
+training:
+  n_train: 10000
+  n_test: 1000000
+  n_epochs: 1
+  log_interval: 500
+  checkpoint_interval: 10000
+  assignment_fraction: 1.0
+evaluation:
+  method: posthoc_labelling
+  compute_selectivity: true
+  compute_cosine_similarity: true
+  compute_class_coverage: true
+  compute_weight_histogram: true
+  histogram_bins: 100
+  compute_firing_rate_cv: true
+  compute_nmi: true
+  save_rf_grid_png: true
+  rf_grid_rows: 10
+  rf_grid_cols: 10
+  save_train_features: true
+smoke:
+  n_train_override: 5000
+rule:
+  name: pair_exp
+  formulation: diehl_cook_rule2
+stdp:
+  eta_post: 0.01
+  eta_pre: 0.0001
+  x_target: 0.04
+  mu: 0.2
+  tau_pre: 20.0
+  tau_post: 20.0

@@ -1,0 +1,8 @@
+# Scaffold override: S_full — Diehl & Cook baseline
+# --------------------------------------------------------------------
+# Lateral inhibition ON, adaptive threshold ON. This is the standard
+# scaffold present in essentially all STDP-MNIST literature.
+
+scaffold:
+  lateral_inhibition: true
+  adaptive_threshold: true

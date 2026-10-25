@@ -1,0 +1,70 @@
+# Rule override: Voltage-based STDP (Clopath & Gerstner 2010)
+# --------------------------------------------------------------------
+# Q2: uses full AdEx neuron (factored into models/neurons.py:AdExNeuron).
+# Q7: canonical Clopath 2010 published values for visual cortex.
+#
+# Update rule (AdEx neuron, voltage traces ū_+, ū_-, filtered pre trace x̄):
+#   LTP (pre-spike triggered, voltage-gated):
+#     dW+ = A_LTP * x̄ * [u(t) - θ+]_+  * [ū_+(t) - θ-]_+
+#   LTD (pre-spike triggered, voltage-gated):
+#     dW− = -A_LTD * x_pre(t) * [ū_-(t) - θ-]_+
+#
+# Reference: Clopath, Büsing, Vasilaki, Gerstner (2010) Nat. Neurosci. 13:344,
+# Table 1 "visual cortex" fit; AdEx parameters from Brette & Gerstner (2005).
+#
+# Spec §3.2 caveat: voltage-based STDP carries an internal rate-dependent
+# LTD term, so S_none is a PARTIAL ablation — this is documented in the
+# paper's Methods and Discussion.
+
+rule:
+  name: "voltage"
+  formulation: "clopath_gerstner_2010_visual_cortex"
+
+stdp:
+  A_plus:   8.0e-3                   # A_LTP — Clopath 2010 visual cortex
+  A_minus:  1.4e-4                   # A_LTD — (much weaker than pair/triplet values)
+  tau_pre:  15.0                     # ms, x̄ filter (matches Clopath τ_x)
+  tau_plus:  7.0                     # ms, ū_+ filter
+  tau_minus: 10.0                    # ms, ū_- filter
+  theta_ltp: -45.3                   # mV, LTP rectification threshold (θ+)
+  theta_ltd: -70.6                   # mV, LTD rectification threshold (θ-, near v_rest)
+
+neuron:
+  model: "adex"                      # full AdEx per Q2 — REQUIRED for this rule
+  delta_T: 2.0                       # mV, exponential spike initiation sharpness
+  v_T_offset: -2.0                   # mV, v_T = v_thresh + offset
+  a_adapt: 0.0                       # nS, sub-threshold adaptation (Clopath: 0 for cortical)
+  b_adapt: 0.5                       # pA-equivalent, spike-triggered adaptation
+  tau_w_adapt: 144.0                 # ms, adaptation current time constant
+  I_sp: 0.5                          # depolarising afterpotential kick at spike
+  tau_z: 40.0                        # ms, afterpotential (z-current) decay
+
+# The voltage rule uses hard weight bounds [0, w_max] at the numerical
+# update site. The per-column L1 renormalization is still applied as
+# rule infrastructure (weight_norm.enabled=true in base).
+
+scaffold:
+  # Faster theta homeostasis for the voltage rule.
+  # --------------------------------------------------------------------
+  # AdEx + Clopath LTP fires more densely than pair/triplet at the same
+  # scaffold settings (~20 spikes/image vs ~5-10). With the base
+  # tc_theta_decay=1e7, theta accumulates without equilibrating: at 20k
+  # samples theta drifts from ~1 (5k smoke) to ~16, collapsing fire/img
+  # from 19 to <10, which in turn destroys the post-hoc assignments and
+  # drops accuracy from 17.4% (5k) to 10.26% (20k) — see
+  # results/week1_smoke_summary.md §4.8 for full postmortem.
+  #
+  # A 10× faster decay (tc=1e6) lets theta plateau at ~5 and keeps fire/img
+  # steady around 18-22 for the full 60k-sample epoch. Validated in the
+  # voltage_S_full_N400_seed0_val20k_tc1e6 run (2026-04-21).
+  #
+  # 2026-04-28 CORRECTION: a further 100× faster decay (tc=1e4) recovers
+  # +7-9 pp logreg on the S_full voltage cells. The paper's reported voltage
+  # results (Table A.1) all use 1e4, so it is the default here — the config
+  # now reproduces the paper without a launch-time --override.
+  # See results/scaffold_ablation_main_matrix.md (corrected voltage row).
+  #
+  # Note on scaffold interaction: apply_scaffold_toggles() overrides this
+  # to inf for S_inh_only and S_none (adaptive_threshold=false), so this
+  # rule-level setting only takes effect for voltage × {S_full, S_thr_only}.
+  tc_theta_decay: 1.0e4

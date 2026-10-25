@@ -1,0 +1,38 @@
+# Run data and trained weights are regenerated, not distributed (see README).
+# (no trailing slash, so local symlinks to existing run data are ignored too)
+experiments/runs
+checkpoints
+checkpoint_backups
+wandb
+*.pt
+*.pth
+
+# Logs: launcher logs (logs_run_seeds/, logs_reextract/, results/logs_*/ ...) and any *.log
+logs_*
+*.log
+*.nohup
+
+# Pooled convolutional features written by scripts/extract/ (inputs of conv_pair_n5_table.py)
+results/conv_feats_*.npz
+
+# Diagnostic images written next to their JSON by scripts/checks/ and
+# scripts/figures/clopath_curve_reproduction.py; regenerated, not cited
+results/*.png
+results/*.pdf
+results/clopath_port_validation/*.png
+results/clopath_port_validation/octave/
+
+# Datasets are downloaded into data/ at run time; only the loader modules are tracked.
+data/*
+!data/*.py
+
+# Figures written by scripts/figures/ (FIG_OUT_DIR, default figures/)
+/figures/
+
+# Release working notes
+.release_work/
+
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/

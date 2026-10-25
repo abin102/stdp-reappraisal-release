@@ -1,0 +1,9 @@
+{
+  "label": "random_s5",
+  "n_train": 12000,
+  "n_test": 10000,
+  "n_features": 11008,
+  "nonzero_pct": 12.985347020348836,
+  "linear_svm": 93.72999668121338,
+  "logreg": 94.83000040054321
+}

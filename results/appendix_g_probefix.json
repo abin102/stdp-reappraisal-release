@@ -1,0 +1,530 @@
+{
+ "scaffolds": {
+  "S_full": {
+   "5000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_peak5k",
+     "voltage_S_full_N400_seed1_peak5k",
+     "voltage_S_full_N400_seed2_peak5k",
+     "voltage_S_full_N400_seed3_peak5k",
+     "voltage_S_full_N400_seed4_peak5k"
+    ],
+    "acc": [
+     45.824,
+     0.5061422724886756,
+     5
+    ]
+   },
+   "20000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_flen20k",
+     "voltage_S_full_N400_seed1_flen20k",
+     "voltage_S_full_N400_seed2_flen20k",
+     "voltage_S_full_N400_seed3_flen20k",
+     "voltage_S_full_N400_seed4_flen20k"
+    ],
+    "acc": [
+     30.868000000000002,
+     0.3428848203114273,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_full_N400_seed0__b_fix_tc1e4_60k",
+     "voltage_S_full_N400_seed1__b_fix_tc1e4",
+     "voltage_S_full_N400_seed2__b_fix_tc1e4",
+     "voltage_S_full_N400_seed3__b_fix_tc1e4",
+     "voltage_S_full_N400_seed4__b_fix_tc1e4"
+    ],
+    "acc": [
+     19.292,
+     0.1849864859928964,
+     5
+    ]
+   }
+  },
+  "S_inh": {
+   "5000": {
+    "runs": [
+     "voltage_S_inh_only_N400_seed0_peak5k",
+     "voltage_S_inh_only_N400_seed1_peak5k",
+     "voltage_S_inh_only_N400_seed2_peak5k",
+     "voltage_S_inh_only_N400_seed3_peak5k",
+     "voltage_S_inh_only_N400_seed4_peak5k"
+    ],
+    "acc": [
+     46.036,
+     0.5740905851866944,
+     5
+    ]
+   },
+   "20000": {
+    "runs": [
+     "voltage_S_inh_only_N400_seed0_mid20k",
+     "voltage_S_inh_only_N400_seed1_mid20k",
+     "voltage_S_inh_only_N400_seed2_mid20k",
+     "voltage_S_inh_only_N400_seed3_mid20k",
+     "voltage_S_inh_only_N400_seed4_mid20k"
+    ],
+    "acc": [
+     30.932,
+     0.4285090430784394,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_inh_only_N400_seed0__b_fix_tc1e4",
+     "voltage_S_inh_only_N400_seed1__b_fix_tc1e4",
+     "voltage_S_inh_only_N400_seed2__b_fix_tc1e4",
+     "voltage_S_inh_only_N400_seed3__b_fix_tc1e4",
+     "voltage_S_inh_only_N400_seed4__b_fix_tc1e4"
+    ],
+    "acc": [
+     19.401999999999997,
+     0.3050737615725086,
+     5
+    ]
+   }
+  },
+  "S_none": {
+   "5000": {
+    "runs": [
+     "voltage_S_none_N400_seed0_peak5k",
+     "voltage_S_none_N400_seed1_peak5k",
+     "voltage_S_none_N400_seed2_peak5k",
+     "voltage_S_none_N400_seed3_peak5k",
+     "voltage_S_none_N400_seed4_peak5k"
+    ],
+    "acc": [
+     39.751999999999995,
+     0.3252998616661212,
+     5
+    ]
+   },
+   "20000": {
+    "runs": [
+     "voltage_S_none_N400_seed0_mid20k",
+     "voltage_S_none_N400_seed1_mid20k",
+     "voltage_S_none_N400_seed2_mid20k",
+     "voltage_S_none_N400_seed3_mid20k",
+     "voltage_S_none_N400_seed4_mid20k"
+    ],
+    "acc": [
+     28.438,
+     0.45620170977321056,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_none_N400_seed0__b_fix_tc1e4",
+     "voltage_S_none_N400_seed1__b_fix_tc1e4",
+     "voltage_S_none_N400_seed2__b_fix_tc1e4",
+     "voltage_S_none_N400_seed3__b_fix_tc1e4",
+     "voltage_S_none_N400_seed4__b_fix_tc1e4"
+    ],
+    "acc": [
+     19.162,
+     0.14939879517586482,
+     5
+    ]
+   }
+  },
+  "S_thr": {
+   "5000": {
+    "runs": [
+     "voltage_S_thr_only_N400_seed0_peak5k",
+     "voltage_S_thr_only_N400_seed1_peak5k",
+     "voltage_S_thr_only_N400_seed2_peak5k",
+     "voltage_S_thr_only_N400_seed3_peak5k",
+     "voltage_S_thr_only_N400_seed4_peak5k"
+    ],
+    "acc": [
+     27.851999999999997,
+     1.019666612182629,
+     5
+    ]
+   },
+   "20000": {
+    "runs": [
+     "voltage_S_thr_only_N400_seed0_mid20k",
+     "voltage_S_thr_only_N400_seed1_mid20k",
+     "voltage_S_thr_only_N400_seed2_mid20k",
+     "voltage_S_thr_only_N400_seed3_mid20k",
+     "voltage_S_thr_only_N400_seed4_mid20k"
+    ],
+    "acc": [
+     27.998,
+     1.9649732822611088,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_thr_only_N400_seed0__b_fix_tc1e4",
+     "voltage_S_thr_only_N400_seed1__b_fix_tc1e4",
+     "voltage_S_thr_only_N400_seed2__b_fix_tc1e4",
+     "voltage_S_thr_only_N400_seed3__b_fix_tc1e4",
+     "voltage_S_thr_only_N400_seed4__b_fix_tc1e4"
+    ],
+    "acc": [
+     27.4,
+     2.9543104102311255,
+     5
+    ]
+   }
+  }
+ },
+ "datasets": {
+  "mnist": {
+   "2000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_vhz2000",
+     "voltage_S_full_N400_seed1_vhz2000",
+     "voltage_S_full_N400_seed2_vhz2000",
+     "voltage_S_full_N400_seed3_vhz2000",
+     "voltage_S_full_N400_seed4_vhz2000"
+    ],
+    "acc": [
+     42.694,
+     0.6980544391378098,
+     5
+    ]
+   },
+   "5000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_vhz5000",
+     "voltage_S_full_N400_seed1_vhz5000",
+     "voltage_S_full_N400_seed2_vhz5000",
+     "voltage_S_full_N400_seed3_vhz5000",
+     "voltage_S_full_N400_seed4_vhz5000"
+    ],
+    "acc": [
+     34.168,
+     0.3408372045419929,
+     5
+    ]
+   },
+   "10000": {
+    "runs": [
+     "probe-fix matrix voltage mnist seed 0",
+     "probe-fix matrix voltage mnist seed 1",
+     "probe-fix matrix voltage mnist seed 2",
+     "probe-fix matrix voltage mnist seed 3",
+     "probe-fix matrix voltage mnist seed 4"
+    ],
+    "acc": [
+     29.002,
+     1.1842170409177535,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_mnist_vhz60000",
+     "voltage_S_full_N400_seed1_mnist_vhz60000",
+     "voltage_S_full_N400_seed2_mnist_vhz60000",
+     "voltage_S_full_N400_seed3_mnist_vhz60000",
+     "voltage_S_full_N400_seed4_mnist_vhz60000"
+    ],
+    "acc": [
+     24.764000000000003,
+     0.592646606334669,
+     5
+    ]
+   }
+  },
+  "nmnist": {
+   "2000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_nmnist_vhz2000",
+     "voltage_S_full_N400_seed1_nmnist_vhz2000",
+     "voltage_S_full_N400_seed2_nmnist_vhz2000",
+     "voltage_S_full_N400_seed3_nmnist_vhz2000",
+     "voltage_S_full_N400_seed4_nmnist_vhz2000"
+    ],
+    "acc": [
+     20.066,
+     0.5159263513332107,
+     5
+    ]
+   },
+   "5000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_nmnist_vhz5000",
+     "voltage_S_full_N400_seed1_nmnist_vhz5000",
+     "voltage_S_full_N400_seed2_nmnist_vhz5000",
+     "voltage_S_full_N400_seed3_nmnist_vhz5000",
+     "voltage_S_full_N400_seed4_nmnist_vhz5000"
+    ],
+    "acc": [
+     19.596,
+     0.49135526861935586,
+     5
+    ]
+   },
+   "10000": {
+    "runs": [
+     "probe-fix matrix voltage nmnist seed 0",
+     "probe-fix matrix voltage nmnist seed 1",
+     "probe-fix matrix voltage nmnist seed 2",
+     "probe-fix matrix voltage nmnist seed 3",
+     "probe-fix matrix voltage nmnist seed 4"
+    ],
+    "acc": [
+     20.602,
+     0.6284663873271191,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_nmnist__nmnist_n5",
+     "voltage_S_full_N400_seed1_nmnist__nmnist_n5",
+     "voltage_S_full_N400_seed2_nmnist__nmnist_n5",
+     "voltage_S_full_N400_seed3_nmnist__nmnist_n5",
+     "voltage_S_full_N400_seed4_nmnist__nmnist_n5"
+    ],
+    "acc": [
+     14.814000000000002,
+     0.20206434618705016,
+     5
+    ]
+   }
+  },
+  "emnist_letters": {
+   "2000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_emnist_letters_vhz2000",
+     "voltage_S_full_N400_seed1_emnist_letters_vhz2000",
+     "voltage_S_full_N400_seed2_emnist_letters_vhz2000",
+     "voltage_S_full_N400_seed3_emnist_letters_vhz2000",
+     "voltage_S_full_N400_seed4_emnist_letters_vhz2000"
+    ],
+    "acc": [
+     19.69038461538462,
+     0.2123454885531495,
+     5
+    ]
+   },
+   "5000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_emnist_letters_vhz5000",
+     "voltage_S_full_N400_seed1_emnist_letters_vhz5000",
+     "voltage_S_full_N400_seed2_emnist_letters_vhz5000",
+     "voltage_S_full_N400_seed3_emnist_letters_vhz5000",
+     "voltage_S_full_N400_seed4_emnist_letters_vhz5000"
+    ],
+    "acc": [
+     16.840384615384615,
+     0.15212377201422,
+     5
+    ]
+   },
+   "10000": {
+    "runs": [
+     "probe-fix matrix voltage emnist_letters seed 0",
+     "probe-fix matrix voltage emnist_letters seed 1",
+     "probe-fix matrix voltage emnist_letters seed 2",
+     "probe-fix matrix voltage emnist_letters seed 3",
+     "probe-fix matrix voltage emnist_letters seed 4"
+    ],
+    "acc": [
+     17.524038461538463,
+     0.4717176767602071,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_emnist_letters_emnist_letters_vhz60000",
+     "voltage_S_full_N400_seed1_emnist_letters_emnist_letters_vhz60000",
+     "voltage_S_full_N400_seed2_emnist_letters_emnist_letters_vhz60000",
+     "voltage_S_full_N400_seed3_emnist_letters_emnist_letters_vhz60000",
+     "voltage_S_full_N400_seed4_emnist_letters_emnist_letters_vhz60000"
+    ],
+    "acc": [
+     17.909615384615385,
+     0.18667842687137645,
+     5
+    ]
+   }
+  },
+  "fmnist": {
+   "2000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_fmnist_vhz2000",
+     "voltage_S_full_N400_seed1_fmnist_vhz2000",
+     "voltage_S_full_N400_seed2_fmnist_vhz2000",
+     "voltage_S_full_N400_seed3_fmnist_vhz2000",
+     "voltage_S_full_N400_seed4_fmnist_vhz2000"
+    ],
+    "acc": [
+     63.266000000000005,
+     0.35851080876313723,
+     5
+    ]
+   },
+   "5000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_fmnist_vhz5000",
+     "voltage_S_full_N400_seed1_fmnist_vhz5000",
+     "voltage_S_full_N400_seed2_fmnist_vhz5000",
+     "voltage_S_full_N400_seed3_fmnist_vhz5000",
+     "voltage_S_full_N400_seed4_fmnist_vhz5000"
+    ],
+    "acc": [
+     63.822,
+     0.5460036629913769,
+     5
+    ]
+   },
+   "10000": {
+    "runs": [
+     "probe-fix matrix voltage fmnist seed 0",
+     "probe-fix matrix voltage fmnist seed 1",
+     "probe-fix matrix voltage fmnist seed 2",
+     "probe-fix matrix voltage fmnist seed 3",
+     "probe-fix matrix voltage fmnist seed 4"
+    ],
+    "acc": [
+     64.194,
+     0.28762823227214995,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_fmnist__f3_fmnist_voltage_tuned",
+     "voltage_S_full_N400_seed1_fmnist__f3_fmnist_voltage_tuned",
+     "voltage_S_full_N400_seed2_fmnist__f3_fmnist_voltage_tuned",
+     "voltage_S_full_N400_seed3_fmnist__f3_fmnist_voltage_tuned",
+     "voltage_S_full_N400_seed4_fmnist__f3_fmnist_voltage_tuned"
+    ],
+    "acc": [
+     64.22399999999999,
+     0.47930157521126426,
+     5
+    ]
+   }
+  },
+  "organamnist": {
+   "2000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_organamnist_vhz2000",
+     "voltage_S_full_N400_seed1_organamnist_vhz2000",
+     "voltage_S_full_N400_seed2_organamnist_vhz2000",
+     "voltage_S_full_N400_seed3_organamnist_vhz2000",
+     "voltage_S_full_N400_seed4_organamnist_vhz2000"
+    ],
+    "acc": [
+     44.92406344920688,
+     0.6354378282185199,
+     5
+    ]
+   },
+   "5000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_organamnist_vhz5000",
+     "voltage_S_full_N400_seed1_organamnist_vhz5000",
+     "voltage_S_full_N400_seed2_organamnist_vhz5000",
+     "voltage_S_full_N400_seed3_organamnist_vhz5000",
+     "voltage_S_full_N400_seed4_organamnist_vhz5000"
+    ],
+    "acc": [
+     45.52368095398807,
+     0.4116472506279484,
+     5
+    ]
+   },
+   "10000": {
+    "runs": [
+     "probe-fix matrix voltage organamnist seed 0",
+     "probe-fix matrix voltage organamnist seed 1",
+     "probe-fix matrix voltage organamnist seed 2",
+     "probe-fix matrix voltage organamnist seed 3",
+     "probe-fix matrix voltage organamnist seed 4"
+    ],
+    "acc": [
+     45.22668466644167,
+     0.2948557882474411,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_organamnist__organa_smoke_tuned",
+     "voltage_S_full_N400_seed1_organamnist__n5_organa_tuned",
+     "voltage_S_full_N400_seed2_organamnist__n5_organa_tuned",
+     "voltage_S_full_N400_seed3_organamnist__n5_organa_tuned",
+     "voltage_S_full_N400_seed4_organamnist__n5_organa_tuned"
+    ],
+    "acc": [
+     45.426932163347956,
+     0.620669637454042,
+     5
+    ]
+   }
+  },
+  "bloodmnist": {
+   "2000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_bloodmnist_vhz2000",
+     "voltage_S_full_N400_seed1_bloodmnist_vhz2000",
+     "voltage_S_full_N400_seed2_bloodmnist_vhz2000",
+     "voltage_S_full_N400_seed3_bloodmnist_vhz2000",
+     "voltage_S_full_N400_seed4_bloodmnist_vhz2000"
+    ],
+    "acc": [
+     44.62437883659749,
+     1.0709562283658751,
+     5
+    ]
+   },
+   "5000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_bloodmnist_vhz5000",
+     "voltage_S_full_N400_seed1_bloodmnist_vhz5000",
+     "voltage_S_full_N400_seed2_bloodmnist_vhz5000",
+     "voltage_S_full_N400_seed3_bloodmnist_vhz5000",
+     "voltage_S_full_N400_seed4_bloodmnist_vhz5000"
+    ],
+    "acc": [
+     45.355159310143236,
+     1.1124389619764006,
+     5
+    ]
+   },
+   "10000": {
+    "runs": [
+     "probe-fix matrix voltage bloodmnist seed 0",
+     "probe-fix matrix voltage bloodmnist seed 1",
+     "probe-fix matrix voltage bloodmnist seed 2",
+     "probe-fix matrix voltage bloodmnist seed 3",
+     "probe-fix matrix voltage bloodmnist seed 4"
+    ],
+    "acc": [
+     44.64191756796259,
+     0.8872048156723296,
+     5
+    ]
+   },
+   "60000": {
+    "runs": [
+     "voltage_S_full_N400_seed0_bloodmnist__blood_smoke_tuned",
+     "voltage_S_full_N400_seed1_bloodmnist__n5_blood_tuned",
+     "voltage_S_full_N400_seed2_bloodmnist__n5_blood_tuned",
+     "voltage_S_full_N400_seed3_bloodmnist__n5_blood_tuned",
+     "voltage_S_full_N400_seed4_bloodmnist__n5_blood_tuned"
+    ],
+    "acc": [
+     44.62437883659749,
+     0.4137017904400293,
+     5
+    ]
+   }
+  }
+ }
+}

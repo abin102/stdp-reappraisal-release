@@ -1,0 +1,883 @@
+{
+ "protocol": "Aggregate the voltage-STDP threshold / spike-plateau add-on (scripts/train/probefix_voltage_thresholds_n5.sh).\n\nTrain-fit probe, as in scripts/score/probefix_aggregate.py: multinomial logistic regression, L2, C = 1,\nfitted on the frozen spike counts of the 10,000 training images and scored on the full test set.\nEach setting is compared, seed by seed, with the voltage-STDP MNIST random network of the\nprobe-fix matrix (voltage_S_full_N400_seed{s}_probefix_frozen); the thresholds and the plateau\nact only inside the plasticity rule, so that network is the random baseline of every setting.\nThe reference row is voltage_S_full_N400_seed{s}_probefix_trained (published thresholds).",
+ "runs": [
+  {
+   "label": "trained",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_trained",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 29.25,
+   "spikes_test": 18.2157
+  },
+  {
+   "label": "trained",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_trained",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 29.189999999999998,
+   "spikes_test": 15.1328
+  },
+  {
+   "label": "trained",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_trained",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 28.910000000000004,
+   "spikes_test": 16.4458
+  },
+  {
+   "label": "trained",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_trained",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 30.48,
+   "spikes_test": 15.6865
+  },
+  {
+   "label": "trained",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_trained",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 27.18,
+   "spikes_test": 19.6165
+  },
+  {
+   "label": "thltd_m68",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m68",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 32.53,
+   "spikes_test": 9.0475
+  },
+  {
+   "label": "thltd_m68",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m68",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 31.759999999999998,
+   "spikes_test": 8.4863
+  },
+  {
+   "label": "thltd_m68",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m68",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 32.34,
+   "spikes_test": 8.5078
+  },
+  {
+   "label": "thltd_m68",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m68",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 32.98,
+   "spikes_test": 8.3352
+  },
+  {
+   "label": "thltd_m68",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m68",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 32.96,
+   "spikes_test": 8.4
+  },
+  {
+   "label": "thltd_m65",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m65",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 40.81,
+   "spikes_test": 15.6488
+  },
+  {
+   "label": "thltd_m65",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m65",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 39.23,
+   "spikes_test": 15.5
+  },
+  {
+   "label": "thltd_m65",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m65",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 38.65,
+   "spikes_test": 15.4789
+  },
+  {
+   "label": "thltd_m65",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m65",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 38.5,
+   "spikes_test": 15.4854
+  },
+  {
+   "label": "thltd_m65",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m65",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 38.49,
+   "spikes_test": 15.4918
+  },
+  {
+   "label": "thltd_m62",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m62",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 52.239999999999995,
+   "spikes_test": 72.0315
+  },
+  {
+   "label": "thltd_m62",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m62",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 52.080000000000005,
+   "spikes_test": 70.6546
+  },
+  {
+   "label": "thltd_m62",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m62",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 52.82,
+   "spikes_test": 70.3729
+  },
+  {
+   "label": "thltd_m62",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m62",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 52.980000000000004,
+   "spikes_test": 71.4181
+  },
+  {
+   "label": "thltd_m62",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m62",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 52.800000000000004,
+   "spikes_test": 70.5282
+  },
+  {
+   "label": "thltd_m60",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m60",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 71.39,
+   "spikes_test": 231.9716
+  },
+  {
+   "label": "thltd_m60",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m60",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 70.35,
+   "spikes_test": 231.3465
+  },
+  {
+   "label": "thltd_m60",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m60",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 71.02000000000001,
+   "spikes_test": 232.2619
+  },
+  {
+   "label": "thltd_m60",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m60",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 70.45,
+   "spikes_test": 231.0131
+  },
+  {
+   "label": "thltd_m60",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m60",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 69.82000000000001,
+   "spikes_test": 231.5355
+  },
+  {
+   "label": "thltd_m58",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m58",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 42.3,
+   "spikes_test": 335.4581
+  },
+  {
+   "label": "thltd_m58",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m58",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 49.980000000000004,
+   "spikes_test": 308.3998
+  },
+  {
+   "label": "thltd_m58",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m58",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 49.41,
+   "spikes_test": 308.7971
+  },
+  {
+   "label": "thltd_m58",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m58",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 43.93,
+   "spikes_test": 328.3865
+  },
+  {
+   "label": "thltd_m58",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m58",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 42.74,
+   "spikes_test": 334.3801
+  },
+  {
+   "label": "thltd_m55",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m55",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 49.94,
+   "spikes_test": 309.0613
+  },
+  {
+   "label": "thltd_m55",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m55",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 72.41,
+   "spikes_test": 282.7912
+  },
+  {
+   "label": "thltd_m55",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m55",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 50.57000000000001,
+   "spikes_test": 307.9344
+  },
+  {
+   "label": "thltd_m55",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m55",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 67.67,
+   "spikes_test": 287.9487
+  },
+  {
+   "label": "thltd_m55",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m55",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 49.54,
+   "spikes_test": 307.4638
+  },
+  {
+   "label": "thltd_m50",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m50",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.25,
+   "spikes_test": 294.1579
+  },
+  {
+   "label": "thltd_m50",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m50",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.53,
+   "spikes_test": 294.459
+  },
+  {
+   "label": "thltd_m50",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m50",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.68,
+   "spikes_test": 294.3129
+  },
+  {
+   "label": "thltd_m50",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m50",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.42,
+   "spikes_test": 294.7914
+  },
+  {
+   "label": "thltd_m50",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m50",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.84,
+   "spikes_test": 293.7229
+  },
+  {
+   "label": "thltp_m52",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 29.909999999999997,
+   "spikes_test": 18.4492
+  },
+  {
+   "label": "thltp_m52",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 29.459999999999997,
+   "spikes_test": 16.2956
+  },
+  {
+   "label": "thltp_m52",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 29.09,
+   "spikes_test": 16.0691
+  },
+  {
+   "label": "thltp_m52",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 30.04,
+   "spikes_test": 17.6772
+  },
+  {
+   "label": "thltp_m52",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 27.54,
+   "spikes_test": 19.9952
+  },
+  {
+   "label": "thltd_m65_thltp_m52",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_thltd_m65_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 40.550000000000004,
+   "spikes_test": 16.1483
+  },
+  {
+   "label": "thltd_m65_thltp_m52",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_thltd_m65_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 39.739999999999995,
+   "spikes_test": 15.8412
+  },
+  {
+   "label": "thltd_m65_thltp_m52",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_thltd_m65_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 38.74,
+   "spikes_test": 15.8825
+  },
+  {
+   "label": "thltd_m65_thltp_m52",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_thltd_m65_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 39.32,
+   "spikes_test": 15.9508
+  },
+  {
+   "label": "thltd_m65_thltp_m52",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_thltd_m65_thltp_m52",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 38.11,
+   "spikes_test": 15.905
+  },
+  {
+   "label": "plateau",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_plateau",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 31.36,
+   "spikes_test": 1057.8674
+  },
+  {
+   "label": "plateau",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_plateau",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 42.04,
+   "spikes_test": 785.7575
+  },
+  {
+   "label": "plateau",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_plateau",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 26.44,
+   "spikes_test": 1343.1387
+  },
+  {
+   "label": "plateau",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_plateau",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 30.9,
+   "spikes_test": 1067.2931
+  },
+  {
+   "label": "plateau",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_plateau",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 35.43,
+   "spikes_test": 942.0256
+  },
+  {
+   "label": "frozen",
+   "seed": 0,
+   "run": "voltage_S_full_N400_seed0_probefix_frozen",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.25,
+   "spikes_test": 293.9584
+  },
+  {
+   "label": "frozen",
+   "seed": 1,
+   "run": "voltage_S_full_N400_seed1_probefix_frozen",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.37,
+   "spikes_test": 293.9523
+  },
+  {
+   "label": "frozen",
+   "seed": 2,
+   "run": "voltage_S_full_N400_seed2_probefix_frozen",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.77000000000001,
+   "spikes_test": 294.4513
+  },
+  {
+   "label": "frozen",
+   "seed": 3,
+   "run": "voltage_S_full_N400_seed3_probefix_frozen",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.86,
+   "spikes_test": 294.6408
+  },
+  {
+   "label": "frozen",
+   "seed": 4,
+   "run": "voltage_S_full_N400_seed4_probefix_frozen",
+   "complete": true,
+   "n_train": 10000,
+   "n_test": 10000,
+   "linear": 75.69,
+   "spikes_test": 293.594
+  }
+ ],
+ "settings": {
+  "trained": {
+   "description": "reference: theta- = -70.6, theta+ = -45.3 (Clopath's values)",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    29.002,
+    1.1842170409177535
+   ],
+   "delta": [
+    -46.586,
+    1.1978647669916669
+   ],
+   "spikes_test": [
+    17.019460000000002,
+    1.8601721030592835
+   ]
+  },
+  "thltd_m68": {
+   "description": "theta- = -68",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    32.513999999999996,
+    0.503765818610195
+   ],
+   "delta": [
+    -43.074,
+    0.4169292505929555
+   ],
+   "spikes_test": [
+    8.55536,
+    0.28365479548211375
+   ]
+  },
+  "thltd_m65": {
+   "description": "theta- = -65 (our resting potential)",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    39.136,
+    0.9835039400022765
+   ],
+   "delta": [
+    -36.452,
+    1.2222602014301223
+   ],
+   "spikes_test": [
+    15.52098,
+    0.0718788007690723
+   ]
+  },
+  "thltd_m62": {
+   "description": "theta- = -62",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    52.584,
+    0.39734116323381447
+   ],
+   "delta": [
+    -23.004,
+    0.1681665840766241
+   ],
+   "spikes_test": [
+    71.00106000000001,
+    0.7024857742331838
+   ]
+  },
+  "thltd_m60": {
+   "description": "theta- = -60",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    70.60600000000001,
+    0.6110891915260815
+   ],
+   "delta": [
+    -4.981999999999999,
+    0.7559563479460937
+   ],
+   "spikes_test": [
+    231.62572,
+    0.4964284157861999
+   ]
+  },
+  "thltd_m58": {
+   "description": "theta- = -58",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    45.672000000000004,
+    3.7260260331887114
+   ],
+   "delta": [
+    -29.916000000000004,
+    3.7281469928102315
+   ],
+   "spikes_test": [
+    323.08432000000005,
+    13.496091776955282
+   ]
+  },
+  "thltd_m55": {
+   "description": "theta- = -55",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    58.02600000000001,
+    11.100604938470694
+   ],
+   "delta": [
+    -17.562,
+    11.103795297104497
+   ],
+   "spikes_test": [
+    299.03988,
+    12.624753943622034
+   ]
+  },
+  "thltd_m50": {
+   "description": "theta- = -50",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    75.54400000000001,
+    0.2281008548866068
+   ],
+   "delta": [
+    -0.043999999999999775,
+    0.24501020386914468
+   ],
+   "spikes_test": [
+    294.28882,
+    0.3935521655384573
+   ]
+  },
+  "thltp_m52": {
+   "description": "theta+ = -52 (firing threshold), theta- = -70.6",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    29.208,
+    1.005569490388406
+   ],
+   "delta": [
+    -46.38,
+    1.0998863577661082
+   ],
+   "spikes_test": [
+    17.697259999999996,
+    1.6172430361575225
+   ]
+  },
+  "thltd_m65_thltp_m52": {
+   "description": "theta+ = -52 and theta- = -65 (Table 3 row 4)",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    39.291999999999994,
+    0.9335255754396884
+   ],
+   "delta": [
+    -36.29600000000001,
+    1.1443032814774245
+   ],
+   "spikes_test": [
+    15.94556,
+    0.12004546222160947
+   ]
+  },
+  "plateau": {
+   "description": "Clopath's 2-ms spike plateau (Table 3 row 5)",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    33.234,
+    5.8627195054854875
+   ],
+   "delta": [
+    -42.354,
+    5.992339276109124
+   ],
+   "spikes_test": [
+    1039.21646,
+    204.44583079327634
+   ]
+  },
+  "frozen": {
+   "description": "STDP disabled (random)",
+   "n": 5,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "accuracy": [
+    75.588,
+    0.26423474411969416
+   ],
+   "delta": [
+    0.0,
+    0.0
+   ],
+   "spikes_test": [
+    294.11936,
+    0.42187205761937885
+   ]
+  }
+ }
+}

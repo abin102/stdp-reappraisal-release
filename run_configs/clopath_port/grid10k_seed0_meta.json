@@ -1,0 +1,212 @@
+{
+  "seed": 0,
+  "n_train": 10000,
+  "n_test": 10000,
+  "specs": [
+    {
+      "cell": "c11",
+      "g": 0.2,
+      "k_inh": 0.1,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c12",
+      "g": 0.2,
+      "k_inh": 0.3,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c13",
+      "g": 0.2,
+      "k_inh": 100.0,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c21",
+      "g": 0.275,
+      "k_inh": 0.1,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c22",
+      "g": 0.275,
+      "k_inh": 0.3,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c23",
+      "g": 0.275,
+      "k_inh": 100.0,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c31",
+      "g": 0.5,
+      "k_inh": 0.1,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c32",
+      "g": 0.5,
+      "k_inh": 0.3,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c33",
+      "g": 0.5,
+      "k_inh": 100.0,
+      "amp": "10x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c11",
+      "g": 0.2,
+      "k_inh": 0.1,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c12",
+      "g": 0.2,
+      "k_inh": 0.3,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c13",
+      "g": 0.2,
+      "k_inh": 100.0,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c21",
+      "g": 0.275,
+      "k_inh": 0.1,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c22",
+      "g": 0.275,
+      "k_inh": 0.3,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c23",
+      "g": 0.275,
+      "k_inh": 100.0,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c31",
+      "g": 0.5,
+      "k_inh": 0.1,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c32",
+      "g": 0.5,
+      "k_inh": 0.3,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c33",
+      "g": 0.5,
+      "k_inh": 100.0,
+      "amp": "1x",
+      "kind": "trained"
+    },
+    {
+      "cell": "c11",
+      "g": 0.2,
+      "k_inh": 0.1,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c12",
+      "g": 0.2,
+      "k_inh": 0.3,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c13",
+      "g": 0.2,
+      "k_inh": 100.0,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c21",
+      "g": 0.275,
+      "k_inh": 0.1,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c22",
+      "g": 0.275,
+      "k_inh": 0.3,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c23",
+      "g": 0.275,
+      "k_inh": 100.0,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c31",
+      "g": 0.5,
+      "k_inh": 0.1,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c32",
+      "g": 0.5,
+      "k_inh": 0.3,
+      "amp": null,
+      "kind": "random"
+    },
+    {
+      "cell": "c33",
+      "g": 0.5,
+      "k_inh": 100.0,
+      "amp": null,
+      "kind": "random"
+    }
+  ],
+  "grid_file": "results/clopath_port_calibration/grid.json",
+  "grid_sha256": "bcda279a8ef88e1aab8846d62cef25b352516069344db592ffc1a6c97fb4159e",
+  "prereg_sha256": "225e36b36a9fd5f27a24a3a93fc287181ec019650aab666fb5e4c9f6deb25e32",
+  "git_head": "fac604cf20cd7046e1a7bc1929e347a7448253e1",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "dtype": "float64",
+  "fused_update": true,
+  "cuda_graph": true,
+  "u_floor": -100.0,
+  "started": "2026-10-13 14:14:07",
+  "resumed_at": 0,
+  "finished": "2026-10-13 18:56:39",
+  "train_minutes": 213.01376220782598,
+  "test_minutes": 69.46604315837224,
+  "max_count": 58
+}

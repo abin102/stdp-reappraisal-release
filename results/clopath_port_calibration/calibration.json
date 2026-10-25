@@ -1,0 +1,1237 @@
+{
+  "seed": 0,
+  "n_images": 1000,
+  "g": [
+    0.15,
+    0.175,
+    0.2,
+    0.225,
+    0.25,
+    0.275,
+    0.3,
+    0.35,
+    0.4,
+    0.5,
+    0.6,
+    0.8
+  ],
+  "k": [
+    0.0,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0,
+    30.0,
+    100.0,
+    300.0
+  ],
+  "wall_s": 755.6656475067139,
+  "definition": {
+    "rate_hz": "mean over images and the 400 neurons of spikes in the 350-ms presentation / 0.35 s",
+    "active_fraction": "mean over images of the fraction of the 400 neurons with >= 1 spike in the 350-ms presentation"
+  },
+  "cells": [
+    {
+      "g": 0.15,
+      "k_inh": 0.0,
+      "rate_hz": 0.3412928581237793,
+      "active_fraction": 0.044530000537633896,
+      "spikes_per_image_presentation": 47.78099822998047,
+      "spikes_per_image_slot": 47.965999603271484,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.15,
+      "k_inh": 0.03,
+      "rate_hz": 0.25063571333885193,
+      "active_fraction": 0.03771499916911125,
+      "spikes_per_image_presentation": 35.0890007019043,
+      "spikes_per_image_slot": 35.2760009765625,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.15,
+      "k_inh": 0.1,
+      "rate_hz": 0.16099286079406738,
+      "active_fraction": 0.030184999108314514,
+      "spikes_per_image_presentation": 22.538999557495117,
+      "spikes_per_image_slot": 22.677000045776367,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.15,
+      "k_inh": 0.3,
+      "rate_hz": 0.09305000305175781,
+      "active_fraction": 0.021809997037053108,
+      "spikes_per_image_presentation": 13.027000427246094,
+      "spikes_per_image_slot": 13.081000328063965,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.15,
+      "k_inh": 1.0,
+      "rate_hz": 0.053300000727176666,
+      "active_fraction": 0.014242500066757202,
+      "spikes_per_image_presentation": 7.461999893188477,
+      "spikes_per_image_slot": 7.541999816894531,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 399
+    },
+    {
+      "g": 0.15,
+      "k_inh": 3.0,
+      "rate_hz": 0.03734999895095825,
+      "active_fraction": 0.010522499680519104,
+      "spikes_per_image_presentation": 5.229000091552734,
+      "spikes_per_image_slot": 5.322000026702881,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 391
+    },
+    {
+      "g": 0.15,
+      "k_inh": 10.0,
+      "rate_hz": 0.030799997970461845,
+      "active_fraction": 0.009002500213682652,
+      "spikes_per_image_presentation": 4.311999797821045,
+      "spikes_per_image_slot": 4.322999954223633,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 381
+    },
+    {
+      "g": 0.15,
+      "k_inh": 30.0,
+      "rate_hz": 0.025771427899599075,
+      "active_fraction": 0.007597499992698431,
+      "spikes_per_image_presentation": 3.6080000400543213,
+      "spikes_per_image_slot": 3.6600000858306885,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 375
+    },
+    {
+      "g": 0.15,
+      "k_inh": 100.0,
+      "rate_hz": 0.021214285865426064,
+      "active_fraction": 0.00645249942317605,
+      "spikes_per_image_presentation": 2.9700000286102295,
+      "spikes_per_image_slot": 2.9760000705718994,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 366
+    },
+    {
+      "g": 0.15,
+      "k_inh": 300.0,
+      "rate_hz": 0.01720714196562767,
+      "active_fraction": 0.005337499547749758,
+      "spikes_per_image_presentation": 2.4089999198913574,
+      "spikes_per_image_slot": 2.430000066757202,
+      "frac_images_silent": 0.914,
+      "neurons_ever_active": 326
+    },
+    {
+      "g": 0.175,
+      "k_inh": 0.0,
+      "rate_hz": 1.2316142320632935,
+      "active_fraction": 0.14033250510692596,
+      "spikes_per_image_presentation": 172.42599487304688,
+      "spikes_per_image_slot": 173.18099975585938,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.175,
+      "k_inh": 0.03,
+      "rate_hz": 0.9059786200523376,
+      "active_fraction": 0.12131750583648682,
+      "spikes_per_image_presentation": 126.83699798583984,
+      "spikes_per_image_slot": 127.45700073242188,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.175,
+      "k_inh": 0.1,
+      "rate_hz": 0.5834000110626221,
+      "active_fraction": 0.09980500489473343,
+      "spikes_per_image_presentation": 81.6760025024414,
+      "spikes_per_image_slot": 82.1449966430664,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.175,
+      "k_inh": 0.3,
+      "rate_hz": 0.33812856674194336,
+      "active_fraction": 0.07374250143766403,
+      "spikes_per_image_presentation": 47.3380012512207,
+      "spikes_per_image_slot": 47.641998291015625,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.175,
+      "k_inh": 1.0,
+      "rate_hz": 0.191935732960701,
+      "active_fraction": 0.04813250154256821,
+      "spikes_per_image_presentation": 26.871000289916992,
+      "spikes_per_image_slot": 26.97599983215332,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.175,
+      "k_inh": 3.0,
+      "rate_hz": 0.13452856242656708,
+      "active_fraction": 0.03550000116229057,
+      "spikes_per_image_presentation": 18.833999633789062,
+      "spikes_per_image_slot": 18.92099952697754,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.175,
+      "k_inh": 10.0,
+      "rate_hz": 0.10605714470148087,
+      "active_fraction": 0.029740000143647194,
+      "spikes_per_image_presentation": 14.847999572753906,
+      "spikes_per_image_slot": 15.019000053405762,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 398
+    },
+    {
+      "g": 0.175,
+      "k_inh": 30.0,
+      "rate_hz": 0.08644285798072815,
+      "active_fraction": 0.025332501158118248,
+      "spikes_per_image_presentation": 12.10200023651123,
+      "spikes_per_image_slot": 12.234000205993652,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 393
+    },
+    {
+      "g": 0.175,
+      "k_inh": 100.0,
+      "rate_hz": 0.0694499984383583,
+      "active_fraction": 0.020647499710321426,
+      "spikes_per_image_presentation": 9.722999572753906,
+      "spikes_per_image_slot": 9.815999984741211,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 398
+    },
+    {
+      "g": 0.175,
+      "k_inh": 300.0,
+      "rate_hz": 0.05959999933838844,
+      "active_fraction": 0.01784750074148178,
+      "spikes_per_image_presentation": 8.343999862670898,
+      "spikes_per_image_slot": 8.454999923706055,
+      "frac_images_silent": 0.785,
+      "neurons_ever_active": 385
+    },
+    {
+      "g": 0.2,
+      "k_inh": 0.0,
+      "rate_hz": 2.9421002864837646,
+      "active_fraction": 0.2538275122642517,
+      "spikes_per_image_presentation": 411.8940124511719,
+      "spikes_per_image_slot": 414.3340148925781,
+      "frac_images_silent": 0.64,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 0.03,
+      "rate_hz": 2.1934714317321777,
+      "active_fraction": 0.23362499475479126,
+      "spikes_per_image_presentation": 307.08599853515625,
+      "spikes_per_image_slot": 308.83099365234375,
+      "frac_images_silent": 0.639,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 0.1,
+      "rate_hz": 1.4263215065002441,
+      "active_fraction": 0.20561999082565308,
+      "spikes_per_image_presentation": 199.68499755859375,
+      "spikes_per_image_slot": 200.92300415039062,
+      "frac_images_silent": 0.639,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 0.3,
+      "rate_hz": 0.8399357199668884,
+      "active_fraction": 0.1626325100660324,
+      "spikes_per_image_presentation": 117.59100341796875,
+      "spikes_per_image_slot": 118.3740005493164,
+      "frac_images_silent": 0.638,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 1.0,
+      "rate_hz": 0.4901285469532013,
+      "active_fraction": 0.11397500336170197,
+      "spikes_per_image_presentation": 68.61799621582031,
+      "spikes_per_image_slot": 69.13500213623047,
+      "frac_images_silent": 0.636,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 3.0,
+      "rate_hz": 0.36002856492996216,
+      "active_fraction": 0.08951999992132187,
+      "spikes_per_image_presentation": 50.40399932861328,
+      "spikes_per_image_slot": 50.941001892089844,
+      "frac_images_silent": 0.636,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 10.0,
+      "rate_hz": 0.26300713419914246,
+      "active_fraction": 0.0704599991440773,
+      "spikes_per_image_presentation": 36.82099914550781,
+      "spikes_per_image_slot": 36.95500183105469,
+      "frac_images_silent": 0.636,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 30.0,
+      "rate_hz": 0.21875713765621185,
+      "active_fraction": 0.061309996992349625,
+      "spikes_per_image_presentation": 30.625999450683594,
+      "spikes_per_image_slot": 30.78700065612793,
+      "frac_images_silent": 0.636,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.2,
+      "k_inh": 100.0,
+      "rate_hz": 0.15612857043743134,
+      "active_fraction": 0.04575500264763832,
+      "spikes_per_image_presentation": 21.857999801635742,
+      "spikes_per_image_slot": 21.993000030517578,
+      "frac_images_silent": 0.636,
+      "neurons_ever_active": 399
+    },
+    {
+      "g": 0.2,
+      "k_inh": 300.0,
+      "rate_hz": 0.13975000381469727,
+      "active_fraction": 0.040597498416900635,
+      "spikes_per_image_presentation": 19.565000534057617,
+      "spikes_per_image_slot": 19.624000549316406,
+      "frac_images_silent": 0.636,
+      "neurons_ever_active": 398
+    },
+    {
+      "g": 0.225,
+      "k_inh": 0.0,
+      "rate_hz": 5.565999984741211,
+      "active_fraction": 0.371242493391037,
+      "spikes_per_image_presentation": 779.239990234375,
+      "spikes_per_image_slot": 783.8150024414062,
+      "frac_images_silent": 0.499,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 0.03,
+      "rate_hz": 4.17650032043457,
+      "active_fraction": 0.3473750054836273,
+      "spikes_per_image_presentation": 584.7100219726562,
+      "spikes_per_image_slot": 588.1439819335938,
+      "frac_images_silent": 0.499,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 0.1,
+      "rate_hz": 2.6897642612457275,
+      "active_fraction": 0.3146499693393707,
+      "spikes_per_image_presentation": 376.5669860839844,
+      "spikes_per_image_slot": 378.60101318359375,
+      "frac_images_silent": 0.497,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 0.3,
+      "rate_hz": 1.5990713834762573,
+      "active_fraction": 0.2648650109767914,
+      "spikes_per_image_presentation": 223.8699951171875,
+      "spikes_per_image_slot": 225.20599365234375,
+      "frac_images_silent": 0.496,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 1.0,
+      "rate_hz": 0.9329500794410706,
+      "active_fraction": 0.19788748025894165,
+      "spikes_per_image_presentation": 130.61300659179688,
+      "spikes_per_image_slot": 131.26699829101562,
+      "frac_images_silent": 0.495,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 3.0,
+      "rate_hz": 0.6883071064949036,
+      "active_fraction": 0.1583625078201294,
+      "spikes_per_image_presentation": 96.36299896240234,
+      "spikes_per_image_slot": 96.97899627685547,
+      "frac_images_silent": 0.493,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 10.0,
+      "rate_hz": 0.5254500508308411,
+      "active_fraction": 0.13164499402046204,
+      "spikes_per_image_presentation": 73.56300354003906,
+      "spikes_per_image_slot": 73.9520034790039,
+      "frac_images_silent": 0.493,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 30.0,
+      "rate_hz": 0.4012000262737274,
+      "active_fraction": 0.10735000669956207,
+      "spikes_per_image_presentation": 56.167999267578125,
+      "spikes_per_image_slot": 56.61199951171875,
+      "frac_images_silent": 0.493,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 100.0,
+      "rate_hz": 0.32512858510017395,
+      "active_fraction": 0.09068749845027924,
+      "spikes_per_image_presentation": 45.518001556396484,
+      "spikes_per_image_slot": 45.709999084472656,
+      "frac_images_silent": 0.49,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.225,
+      "k_inh": 300.0,
+      "rate_hz": 0.2605142891407013,
+      "active_fraction": 0.07303749769926071,
+      "spikes_per_image_presentation": 36.47200012207031,
+      "spikes_per_image_slot": 36.56999969482422,
+      "frac_images_silent": 0.492,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 0.0,
+      "rate_hz": 9.030064582824707,
+      "active_fraction": 0.5008025169372559,
+      "spikes_per_image_presentation": 1264.208984375,
+      "spikes_per_image_slot": 1271.0030517578125,
+      "frac_images_silent": 0.349,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 0.03,
+      "rate_hz": 6.841457366943359,
+      "active_fraction": 0.4714449942111969,
+      "spikes_per_image_presentation": 957.8040161132812,
+      "spikes_per_image_slot": 963.1069946289062,
+      "frac_images_silent": 0.348,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 0.1,
+      "rate_hz": 4.384471416473389,
+      "active_fraction": 0.43278250098228455,
+      "spikes_per_image_presentation": 613.8259887695312,
+      "spikes_per_image_slot": 617.3930053710938,
+      "frac_images_silent": 0.347,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 0.3,
+      "rate_hz": 2.6244287490844727,
+      "active_fraction": 0.3744199872016907,
+      "spikes_per_image_presentation": 367.4200134277344,
+      "spikes_per_image_slot": 369.4309997558594,
+      "frac_images_silent": 0.346,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 1.0,
+      "rate_hz": 1.549042820930481,
+      "active_fraction": 0.2930775284767151,
+      "spikes_per_image_presentation": 216.86599731445312,
+      "spikes_per_image_slot": 218.03700256347656,
+      "frac_images_silent": 0.346,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 3.0,
+      "rate_hz": 1.1269285678863525,
+      "active_fraction": 0.23979251086711884,
+      "spikes_per_image_presentation": 157.77000427246094,
+      "spikes_per_image_slot": 158.97300720214844,
+      "frac_images_silent": 0.344,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 10.0,
+      "rate_hz": 0.8729499578475952,
+      "active_fraction": 0.20202751457691193,
+      "spikes_per_image_presentation": 122.21299743652344,
+      "spikes_per_image_slot": 123.06700134277344,
+      "frac_images_silent": 0.343,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 30.0,
+      "rate_hz": 0.6868071556091309,
+      "active_fraction": 0.17291750013828278,
+      "spikes_per_image_presentation": 96.15299987792969,
+      "spikes_per_image_slot": 96.56300354003906,
+      "frac_images_silent": 0.342,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 100.0,
+      "rate_hz": 0.49927860498428345,
+      "active_fraction": 0.13494500517845154,
+      "spikes_per_image_presentation": 69.89900207519531,
+      "spikes_per_image_slot": 70.2229995727539,
+      "frac_images_silent": 0.341,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.25,
+      "k_inh": 300.0,
+      "rate_hz": 0.4150643050670624,
+      "active_fraction": 0.11271999776363373,
+      "spikes_per_image_presentation": 58.10900115966797,
+      "spikes_per_image_slot": 58.303001403808594,
+      "frac_images_silent": 0.342,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 0.0,
+      "rate_hz": 13.189957618713379,
+      "active_fraction": 0.6184225082397461,
+      "spikes_per_image_presentation": 1846.593994140625,
+      "spikes_per_image_slot": 1857.4339599609375,
+      "frac_images_silent": 0.251,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 0.03,
+      "rate_hz": 10.097421646118164,
+      "active_fraction": 0.5903874635696411,
+      "spikes_per_image_presentation": 1413.6390380859375,
+      "spikes_per_image_slot": 1421.93896484375,
+      "frac_images_silent": 0.251,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 0.1,
+      "rate_hz": 6.48007869720459,
+      "active_fraction": 0.5506850481033325,
+      "spikes_per_image_presentation": 907.2109985351562,
+      "spikes_per_image_slot": 912.3599853515625,
+      "frac_images_silent": 0.251,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 0.3,
+      "rate_hz": 3.8871500492095947,
+      "active_fraction": 0.48608502745628357,
+      "spikes_per_image_presentation": 544.2009887695312,
+      "spikes_per_image_slot": 546.9860229492188,
+      "frac_images_silent": 0.25,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 1.0,
+      "rate_hz": 2.289264440536499,
+      "active_fraction": 0.3919750154018402,
+      "spikes_per_image_presentation": 320.49700927734375,
+      "spikes_per_image_slot": 322.1709899902344,
+      "frac_images_silent": 0.248,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 3.0,
+      "rate_hz": 1.680492877960205,
+      "active_fraction": 0.3282625079154968,
+      "spikes_per_image_presentation": 235.2689971923828,
+      "spikes_per_image_slot": 236.46299743652344,
+      "frac_images_silent": 0.245,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 10.0,
+      "rate_hz": 1.235371470451355,
+      "active_fraction": 0.2748600244522095,
+      "spikes_per_image_presentation": 172.95199584960938,
+      "spikes_per_image_slot": 173.822998046875,
+      "frac_images_silent": 0.245,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 30.0,
+      "rate_hz": 0.9313143491744995,
+      "active_fraction": 0.22789250314235687,
+      "spikes_per_image_presentation": 130.38400268554688,
+      "spikes_per_image_slot": 131.29299926757812,
+      "frac_images_silent": 0.242,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 100.0,
+      "rate_hz": 0.6754643321037292,
+      "active_fraction": 0.17813751101493835,
+      "spikes_per_image_presentation": 94.56500244140625,
+      "spikes_per_image_slot": 95.0260009765625,
+      "frac_images_silent": 0.24,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.275,
+      "k_inh": 300.0,
+      "rate_hz": 0.5433642864227295,
+      "active_fraction": 0.14469501376152039,
+      "spikes_per_image_presentation": 76.07099914550781,
+      "spikes_per_image_slot": 76.32499694824219,
+      "frac_images_silent": 0.241,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 0.0,
+      "rate_hz": 17.83330726623535,
+      "active_fraction": 0.7133899927139282,
+      "spikes_per_image_presentation": 2496.6630859375,
+      "spikes_per_image_slot": 2512.117919921875,
+      "frac_images_silent": 0.18,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 0.03,
+      "rate_hz": 13.819242477416992,
+      "active_fraction": 0.6897175312042236,
+      "spikes_per_image_presentation": 1934.6939697265625,
+      "spikes_per_image_slot": 1946.156982421875,
+      "frac_images_silent": 0.179,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 0.1,
+      "rate_hz": 8.864371299743652,
+      "active_fraction": 0.6521775126457214,
+      "spikes_per_image_presentation": 1241.011962890625,
+      "spikes_per_image_slot": 1247.989990234375,
+      "frac_images_silent": 0.179,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 0.3,
+      "rate_hz": 5.392871856689453,
+      "active_fraction": 0.588902473449707,
+      "spikes_per_image_presentation": 755.0020141601562,
+      "spikes_per_image_slot": 759.0469970703125,
+      "frac_images_silent": 0.175,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 1.0,
+      "rate_hz": 3.1843929290771484,
+      "active_fraction": 0.4901749789714813,
+      "spikes_per_image_presentation": 445.81500244140625,
+      "spikes_per_image_slot": 448.1310119628906,
+      "frac_images_silent": 0.174,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 3.0,
+      "rate_hz": 2.2895357608795166,
+      "active_fraction": 0.41597750782966614,
+      "spikes_per_image_presentation": 320.5350036621094,
+      "spikes_per_image_slot": 322.3909912109375,
+      "frac_images_silent": 0.17,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 10.0,
+      "rate_hz": 1.6958856582641602,
+      "active_fraction": 0.35576996207237244,
+      "spikes_per_image_presentation": 237.4239959716797,
+      "spikes_per_image_slot": 238.65499877929688,
+      "frac_images_silent": 0.168,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 30.0,
+      "rate_hz": 1.2693071365356445,
+      "active_fraction": 0.2965400218963623,
+      "spikes_per_image_presentation": 177.7030029296875,
+      "spikes_per_image_slot": 178.82000732421875,
+      "frac_images_silent": 0.168,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 100.0,
+      "rate_hz": 0.9027357697486877,
+      "active_fraction": 0.2327674925327301,
+      "spikes_per_image_presentation": 126.38300323486328,
+      "spikes_per_image_slot": 126.97200012207031,
+      "frac_images_silent": 0.168,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.3,
+      "k_inh": 300.0,
+      "rate_hz": 0.7339499592781067,
+      "active_fraction": 0.19036999344825745,
+      "spikes_per_image_presentation": 102.75299835205078,
+      "spikes_per_image_slot": 103.1989974975586,
+      "frac_images_silent": 0.168,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 0.0,
+      "rate_hz": 28.01891326904297,
+      "active_fraction": 0.837565004825592,
+      "spikes_per_image_presentation": 3922.64794921875,
+      "spikes_per_image_slot": 3944.908935546875,
+      "frac_images_silent": 0.095,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 0.03,
+      "rate_hz": 22.190279006958008,
+      "active_fraction": 0.8217474818229675,
+      "spikes_per_image_presentation": 3106.638916015625,
+      "spikes_per_image_slot": 3124.81103515625,
+      "frac_images_silent": 0.095,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 0.1,
+      "rate_hz": 14.382257461547852,
+      "active_fraction": 0.7965749502182007,
+      "spikes_per_image_presentation": 2013.5159912109375,
+      "spikes_per_image_slot": 2024.1669921875,
+      "frac_images_silent": 0.094,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 0.3,
+      "rate_hz": 8.777678489685059,
+      "active_fraction": 0.7475274801254272,
+      "spikes_per_image_presentation": 1228.875,
+      "spikes_per_image_slot": 1235.593017578125,
+      "frac_images_silent": 0.095,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 1.0,
+      "rate_hz": 5.1994147300720215,
+      "active_fraction": 0.6557850241661072,
+      "spikes_per_image_presentation": 727.9180297851562,
+      "spikes_per_image_slot": 731.7059936523438,
+      "frac_images_silent": 0.092,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 3.0,
+      "rate_hz": 3.678149938583374,
+      "active_fraction": 0.5778249502182007,
+      "spikes_per_image_presentation": 514.9409790039062,
+      "spikes_per_image_slot": 517.4749755859375,
+      "frac_images_silent": 0.092,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 10.0,
+      "rate_hz": 2.6954071521759033,
+      "active_fraction": 0.4997100234031677,
+      "spikes_per_image_presentation": 377.35699462890625,
+      "spikes_per_image_slot": 378.84100341796875,
+      "frac_images_silent": 0.092,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 30.0,
+      "rate_hz": 1.9699784517288208,
+      "active_fraction": 0.41910502314567566,
+      "spikes_per_image_presentation": 275.7969970703125,
+      "spikes_per_image_slot": 276.72100830078125,
+      "frac_images_silent": 0.091,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 100.0,
+      "rate_hz": 1.2529429197311401,
+      "active_fraction": 0.313260018825531,
+      "spikes_per_image_presentation": 175.41200256347656,
+      "spikes_per_image_slot": 176.08599853515625,
+      "frac_images_silent": 0.091,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.35,
+      "k_inh": 300.0,
+      "rate_hz": 1.0297499895095825,
+      "active_fraction": 0.25697001814842224,
+      "spikes_per_image_presentation": 144.1649932861328,
+      "spikes_per_image_slot": 144.79400634765625,
+      "frac_images_silent": 0.09,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 0.0,
+      "rate_hz": 38.57444763183594,
+      "active_fraction": 0.9013299345970154,
+      "spikes_per_image_presentation": 5400.4228515625,
+      "spikes_per_image_slot": 5431.73779296875,
+      "frac_images_silent": 0.049,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 0.03,
+      "rate_hz": 31.192378997802734,
+      "active_fraction": 0.8896575570106506,
+      "spikes_per_image_presentation": 4366.93310546875,
+      "spikes_per_image_slot": 4392.28515625,
+      "frac_images_silent": 0.049,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 0.1,
+      "rate_hz": 20.504457473754883,
+      "active_fraction": 0.8726950287818909,
+      "spikes_per_image_presentation": 2870.6240234375,
+      "spikes_per_image_slot": 2885.04296875,
+      "frac_images_silent": 0.049,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 0.3,
+      "rate_hz": 12.693349838256836,
+      "active_fraction": 0.8402774930000305,
+      "spikes_per_image_presentation": 1777.0689697265625,
+      "spikes_per_image_slot": 1786.5970458984375,
+      "frac_images_silent": 0.048,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 1.0,
+      "rate_hz": 7.399722099304199,
+      "active_fraction": 0.7680550217628479,
+      "spikes_per_image_presentation": 1035.9610595703125,
+      "spikes_per_image_slot": 1041.1529541015625,
+      "frac_images_silent": 0.045,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 3.0,
+      "rate_hz": 5.177999973297119,
+      "active_fraction": 0.691955029964447,
+      "spikes_per_image_presentation": 724.9199829101562,
+      "spikes_per_image_slot": 728.3469848632812,
+      "frac_images_silent": 0.045,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 10.0,
+      "rate_hz": 3.690842866897583,
+      "active_fraction": 0.6104074716567993,
+      "spikes_per_image_presentation": 516.718017578125,
+      "spikes_per_image_slot": 519.2869873046875,
+      "frac_images_silent": 0.045,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 30.0,
+      "rate_hz": 2.7106571197509766,
+      "active_fraction": 0.5234675407409668,
+      "spikes_per_image_presentation": 379.49200439453125,
+      "spikes_per_image_slot": 381.22601318359375,
+      "frac_images_silent": 0.045,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 100.0,
+      "rate_hz": 1.5645071268081665,
+      "active_fraction": 0.3784349858760834,
+      "spikes_per_image_presentation": 219.031005859375,
+      "spikes_per_image_slot": 219.80599975585938,
+      "frac_images_silent": 0.044,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.4,
+      "k_inh": 300.0,
+      "rate_hz": 1.3363714218139648,
+      "active_fraction": 0.31899499893188477,
+      "spikes_per_image_presentation": 187.0919952392578,
+      "spikes_per_image_slot": 187.5850067138672,
+      "frac_images_silent": 0.045,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 0.0,
+      "rate_hz": 58.71080780029297,
+      "active_fraction": 0.9639849662780762,
+      "spikes_per_image_presentation": 8219.5126953125,
+      "spikes_per_image_slot": 8263.96484375,
+      "frac_images_silent": 0.01,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 0.03,
+      "rate_hz": 49.300838470458984,
+      "active_fraction": 0.9585675001144409,
+      "spikes_per_image_presentation": 6902.1171875,
+      "spikes_per_image_slot": 6939.96923828125,
+      "frac_images_silent": 0.01,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 0.1,
+      "rate_hz": 33.583248138427734,
+      "active_fraction": 0.9497600197792053,
+      "spikes_per_image_presentation": 4701.65478515625,
+      "spikes_per_image_slot": 4726.14501953125,
+      "frac_images_silent": 0.009,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 0.3,
+      "rate_hz": 21.120935440063477,
+      "active_fraction": 0.933257520198822,
+      "spikes_per_image_presentation": 2956.930908203125,
+      "spikes_per_image_slot": 2970.85400390625,
+      "frac_images_silent": 0.008,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 1.0,
+      "rate_hz": 12.127815246582031,
+      "active_fraction": 0.8913575410842896,
+      "spikes_per_image_presentation": 1697.89404296875,
+      "spikes_per_image_slot": 1705.862060546875,
+      "frac_images_silent": 0.007,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 3.0,
+      "rate_hz": 8.227822303771973,
+      "active_fraction": 0.8355724811553955,
+      "spikes_per_image_presentation": 1151.89501953125,
+      "spikes_per_image_slot": 1157.407958984375,
+      "frac_images_silent": 0.007,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 10.0,
+      "rate_hz": 5.676978588104248,
+      "active_fraction": 0.7591475248336792,
+      "spikes_per_image_presentation": 794.7769775390625,
+      "spikes_per_image_slot": 798.6909790039062,
+      "frac_images_silent": 0.007,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 30.0,
+      "rate_hz": 4.1774001121521,
+      "active_fraction": 0.6736900210380554,
+      "spikes_per_image_presentation": 584.8359985351562,
+      "spikes_per_image_slot": 587.7589721679688,
+      "frac_images_silent": 0.007,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 100.0,
+      "rate_hz": 2.151878595352173,
+      "active_fraction": 0.48414501547813416,
+      "spikes_per_image_presentation": 301.26300048828125,
+      "spikes_per_image_slot": 302.24798583984375,
+      "frac_images_silent": 0.007,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.5,
+      "k_inh": 300.0,
+      "rate_hz": 1.819514274597168,
+      "active_fraction": 0.4033850133419037,
+      "spikes_per_image_presentation": 254.73199462890625,
+      "spikes_per_image_slot": 255.55799865722656,
+      "frac_images_silent": 0.007,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 0.0,
+      "rate_hz": 76.68551635742188,
+      "active_fraction": 0.9904850125312805,
+      "spikes_per_image_presentation": 10735.97265625,
+      "spikes_per_image_slot": 10795.9111328125,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 0.03,
+      "rate_hz": 66.34182739257812,
+      "active_fraction": 0.987012505531311,
+      "spikes_per_image_presentation": 9287.85546875,
+      "spikes_per_image_slot": 9341.3779296875,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 0.1,
+      "rate_hz": 47.09210205078125,
+      "active_fraction": 0.9819024801254272,
+      "spikes_per_image_presentation": 6592.89404296875,
+      "spikes_per_image_slot": 6626.1337890625,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 0.3,
+      "rate_hz": 29.730295181274414,
+      "active_fraction": 0.9722099900245667,
+      "spikes_per_image_presentation": 4162.2412109375,
+      "spikes_per_image_slot": 4181.9169921875,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 1.0,
+      "rate_hz": 16.683942794799805,
+      "active_fraction": 0.9477599859237671,
+      "spikes_per_image_presentation": 2335.751953125,
+      "spikes_per_image_slot": 2346.330078125,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 3.0,
+      "rate_hz": 11.065842628479004,
+      "active_fraction": 0.9062325358390808,
+      "spikes_per_image_presentation": 1549.218017578125,
+      "spikes_per_image_slot": 1555.5040283203125,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 10.0,
+      "rate_hz": 7.667571544647217,
+      "active_fraction": 0.849120020866394,
+      "spikes_per_image_presentation": 1073.4599609375,
+      "spikes_per_image_slot": 1077.4549560546875,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 30.0,
+      "rate_hz": 5.707028865814209,
+      "active_fraction": 0.7786924839019775,
+      "spikes_per_image_presentation": 798.9840087890625,
+      "spikes_per_image_slot": 801.7670288085938,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 100.0,
+      "rate_hz": 2.722957134246826,
+      "active_fraction": 0.5682424902915955,
+      "spikes_per_image_presentation": 381.2139892578125,
+      "spikes_per_image_slot": 382.0450134277344,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.6,
+      "k_inh": 300.0,
+      "rate_hz": 2.3394858837127686,
+      "active_fraction": 0.48607000708580017,
+      "spikes_per_image_presentation": 327.52801513671875,
+      "spikes_per_image_slot": 328.5050048828125,
+      "frac_images_silent": 0.005,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 0.0,
+      "rate_hz": 106.8915786743164,
+      "active_fraction": 0.9967125058174133,
+      "spikes_per_image_presentation": 14964.8203125,
+      "spikes_per_image_slot": 15042.3662109375,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 0.03,
+      "rate_hz": 95.90693664550781,
+      "active_fraction": 0.9964549541473389,
+      "spikes_per_image_presentation": 13426.9716796875,
+      "spikes_per_image_slot": 13494.3076171875,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 0.1,
+      "rate_hz": 74.01715850830078,
+      "active_fraction": 0.9960074424743652,
+      "spikes_per_image_presentation": 10362.4013671875,
+      "spikes_per_image_slot": 10412.4404296875,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 0.3,
+      "rate_hz": 46.65449905395508,
+      "active_fraction": 0.9942750334739685,
+      "spikes_per_image_presentation": 6531.6298828125,
+      "spikes_per_image_slot": 6564.0830078125,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 1.0,
+      "rate_hz": 25.53269386291504,
+      "active_fraction": 0.9851550459861755,
+      "spikes_per_image_presentation": 3574.576904296875,
+      "spikes_per_image_slot": 3590.654052734375,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 3.0,
+      "rate_hz": 16.431772232055664,
+      "active_fraction": 0.9662500023841858,
+      "spikes_per_image_presentation": 2300.447998046875,
+      "spikes_per_image_slot": 2309.968017578125,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 10.0,
+      "rate_hz": 11.322843551635742,
+      "active_fraction": 0.9383599758148193,
+      "spikes_per_image_presentation": 1585.197998046875,
+      "spikes_per_image_slot": 1591.449951171875,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 30.0,
+      "rate_hz": 8.19633674621582,
+      "active_fraction": 0.8872600197792053,
+      "spikes_per_image_presentation": 1147.487060546875,
+      "spikes_per_image_slot": 1150.5870361328125,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 100.0,
+      "rate_hz": 4.19282865524292,
+      "active_fraction": 0.7187575101852417,
+      "spikes_per_image_presentation": 586.9959716796875,
+      "spikes_per_image_slot": 588.3679809570312,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    },
+    {
+      "g": 0.8,
+      "k_inh": 300.0,
+      "rate_hz": 3.5574429035186768,
+      "active_fraction": 0.6432225108146667,
+      "spikes_per_image_presentation": 498.0419921875,
+      "spikes_per_image_slot": 499.2300109863281,
+      "frac_images_silent": 0.001,
+      "neurons_ever_active": 400
+    }
+  ]
+}
