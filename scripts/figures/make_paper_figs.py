@@ -155,7 +155,7 @@ ax0.text(0.99, RAND60-1.5, f"pair/triplet, STDP disabled ({RAND60:.1f}%)", color
          ha="right", va="top", transform=ax0.get_yaxis_transform())
 ax0.set_xticks(xs, [SCAF_T[s] for s in SCAF]); ax0.tick_params(axis="x", length=0)
 ax0.set_ylim(0, 100)
-ax0.set_ylabel("accuracy, train-fit probe (%)")
+ax0.set_ylabel("accuracy (%)")
 ax0.legend(loc="upper right", ncol=3, bbox_to_anchor=(1.0, 1.02))
 ps.save(fig, FIG5_OUT); plt.close(fig)
 
