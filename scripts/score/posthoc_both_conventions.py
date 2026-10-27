@@ -14,6 +14,13 @@ Covers: the 60 MNIST scaffold networks (Section 4.1, Figure 2, Table A.3). The r
 dropped the 88 networks of the retired tier-1 table (old Table A.2) and its run list
 (results/tier1_source_map.txt); no current table uses them.
 
+Since 2026-10-27 the Diehl-Cook labels are formed from the FROZEN spike counts of the first
+10,000 training images (train_spike_counts.npz, the same counts the linear probe is fitted on), as
+Diehl and Cook (2015) and Methods 3.10 describe, and neurons that never fire on those images are
+left unassigned. Before, they came from `class_rates`, accumulated during training while the
+weights were still changing, and silent neurons fell to class 0; that value is kept as
+`posthoc_dc_trainingpass`.
+
 Writes results/posthoc_both_conventions.csv and prints the per-group tables.
 
 Usage (repo root): PYTHONPATH=. python scripts/score/posthoc_both_conventions.py [--runs DIR]
@@ -40,7 +47,7 @@ def class_counts(ds):
     return _counts[ds]
 
 
-def both(run, ds):
+def both(run, ds, frozen=False):
     d = R / run
     f = d / "test_spike_counts_full.npz"          # 26-letter EMNIST re-extraction
     z = np.load(f if f.exists() else d / "test_spike_counts.npz")
@@ -69,9 +76,20 @@ def both(run, ds):
         return 100.0 * (pred == y).mean(), pred
     a_sum, pred_sum = score(cr.argmax(1), False)
     a_dc, pred_dc = score((cr / cnt[None, :]).argmax(1), True)
+    a_dc_tp = a_dc
+    if frozen:
+        zt = np.load(d / "train_spike_counts.npz")
+        Xtr, ytr = zt["train_spike_counts"].astype(np.float64), zt["train_labels"]
+        means = np.stack([Xtr[ytr == c].mean(0) if (ytr == c).any() else np.zeros(Xtr.shape[1])
+                          for c in range(C)], 1)
+        asg = means.argmax(1)
+        asg[Xtr.sum(0) == 0] = -1                   # never fires on the labelling images
+        a_dc, pred_dc = score(asg, True)
     conc = lambda p: 100.0 * np.bincount(p, minlength=C).max() / len(p)
     return dict(run=run, dataset=ds, n_test=len(y), n_classes=C,
-                posthoc_dc=round(a_dc, 2), posthoc_summed=round(a_sum, 2),
+                posthoc_dc=round(a_dc, 2), posthoc_dc_trainingpass=round(a_dc_tp, 2),
+                label_source="frozen_train_counts" if frozen else "class_rates_training_pass",
+                posthoc_summed=round(a_sum, 2),
                 difference_pp=round(a_dc - a_sum, 2),
                 pct_images_one_class_dc=round(conc(pred_dc), 1),
                 pct_images_one_class_summed=round(conc(pred_sum), 1))
@@ -114,10 +132,10 @@ def main():
                         if (R / f"{name}{suffix}").is_dir():
                             name = f"{name}{suffix}"
                             break
-                r = both(name, "mnist")
+                r = both(name, "mnist", frozen=True)
                 r.update(group="scaffold", rule=rule, scaffold=sc, seed=s); rows.append(r)
     cols = ["group", "rule", "dataset", "scaffold", "seed", "run", "n_test", "n_classes",
-            "posthoc_dc", "posthoc_summed", "difference_pp",
+            "posthoc_dc", "posthoc_dc_trainingpass", "label_source", "posthoc_summed", "difference_pp",
             "pct_images_one_class_dc", "pct_images_one_class_summed"]
     with open(OUT, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n"); w.writeheader()
