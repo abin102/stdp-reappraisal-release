@@ -1,0 +1,57 @@
+{
+ "dataset": "bloodmnist",
+ "mode": "trained",
+ "seed": 0,
+ "n_train": 10000,
+ "n_test": 3421,
+ "n_classes": 8,
+ "test_acc_last": 91.81525869628764,
+ "train_acc_last": 93.69,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 59.38,
+   "test_acc": 76.64425606547793
+  },
+  {
+   "epoch": 11,
+   "train_acc": 88.89,
+   "test_acc": 89.15521777258112
+  },
+  {
+   "epoch": 21,
+   "train_acc": 91.97,
+   "test_acc": 91.52294650686935
+  },
+  {
+   "epoch": 31,
+   "train_acc": 93.16,
+   "test_acc": 91.87372113417129
+  },
+  {
+   "epoch": 41,
+   "train_acc": 93.7,
+   "test_acc": 91.75679625840397
+  },
+  {
+   "epoch": 50,
+   "train_acc": 93.69,
+   "test_acc": 91.81525869628764
+  }
+ ],
+ "weight_change_max": [
+  11.412843704223633,
+  2.731792449951172,
+  0.8659584522247314
+ ],
+ "weight_norm_mean": [
+  1.680968165397644,
+  10.197622299194336,
+  24.40553092956543
+ ],
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_unsup": 5.072892189025879,
+ "seconds_total": 92.35443115234375,
+ "torch": "2.7.0+cu126"
+}

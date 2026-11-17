@@ -1,0 +1,47 @@
+{
+ "dataset": "tissuemnist",
+ "mode": "pixels",
+ "seed": 4,
+ "n_train": 10000,
+ "n_test": 47280,
+ "n_classes": 8,
+ "test_acc_last": 47.45135363790186,
+ "train_acc_last": 49.11,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 41.21,
+   "test_acc": 44.95558375634518
+  },
+  {
+   "epoch": 11,
+   "train_acc": 44.23,
+   "test_acc": 45.64932318104907
+  },
+  {
+   "epoch": 21,
+   "train_acc": 47.13,
+   "test_acc": 46.95219966159053
+  },
+  {
+   "epoch": 31,
+   "train_acc": 48.65,
+   "test_acc": 47.07698815566836
+  },
+  {
+   "epoch": 41,
+   "train_acc": 48.96,
+   "test_acc": 47.358291032148905
+  },
+  {
+   "epoch": 50,
+   "train_acc": 49.11,
+   "test_acc": 47.45135363790186
+  }
+ ],
+ "n_features": 3072,
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_total": 5.766848087310791,
+ "torch": "2.7.0+cu126"
+}

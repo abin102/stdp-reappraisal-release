@@ -1,0 +1,47 @@
+{
+ "dataset": "pathmnist",
+ "mode": "pixels",
+ "seed": 0,
+ "n_train": 89996,
+ "n_test": 7180,
+ "n_classes": 9,
+ "test_acc_last": 58.523676880222844,
+ "train_acc_last": 49.85666029601315,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 38.95506466954087,
+   "test_acc": 50.571030640668525
+  },
+  {
+   "epoch": 11,
+   "train_acc": 42.95746477621228,
+   "test_acc": 58.70473537604457
+  },
+  {
+   "epoch": 21,
+   "train_acc": 45.94537535001555,
+   "test_acc": 54.554317548746525
+  },
+  {
+   "epoch": 31,
+   "train_acc": 48.35103782390328,
+   "test_acc": 56.211699164345404
+  },
+  {
+   "epoch": 41,
+   "train_acc": 49.64109515978488,
+   "test_acc": 59.62395543175487
+  },
+  {
+   "epoch": 50,
+   "train_acc": 49.85666029601315,
+   "test_acc": 58.523676880222844
+  }
+ ],
+ "n_features": 3072,
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_total": 46.485541582107544,
+ "torch": "2.7.0+cu126"
+}

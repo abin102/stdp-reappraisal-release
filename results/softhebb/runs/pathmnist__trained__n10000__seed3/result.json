@@ -1,0 +1,57 @@
+{
+ "dataset": "pathmnist",
+ "mode": "trained",
+ "seed": 3,
+ "n_train": 10000,
+ "n_test": 7180,
+ "n_classes": 9,
+ "test_acc_last": 79.44289693593315,
+ "train_acc_last": 83.1,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 48.99,
+   "test_acc": 71.5041782729805
+  },
+  {
+   "epoch": 11,
+   "train_acc": 76.16,
+   "test_acc": 79.16434540389972
+  },
+  {
+   "epoch": 21,
+   "train_acc": 80.26,
+   "test_acc": 77.54874651810584
+  },
+  {
+   "epoch": 31,
+   "train_acc": 81.73,
+   "test_acc": 79.65181058495821
+  },
+  {
+   "epoch": 41,
+   "train_acc": 82.56,
+   "test_acc": 78.96935933147631
+  },
+  {
+   "epoch": 50,
+   "train_acc": 83.1,
+   "test_acc": 79.44289693593315
+  }
+ ],
+ "weight_change_max": [
+  11.931445121765137,
+  2.727017402648926,
+  0.9046873450279236
+ ],
+ "weight_norm_mean": [
+  1.2345805168151855,
+  12.323005676269531,
+  24.48932647705078
+ ],
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_unsup": 5.126096725463867,
+ "seconds_total": 93.51641130447388,
+ "torch": "2.7.0+cu126"
+}

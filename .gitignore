@@ -29,6 +29,9 @@ data/*
 # Figures written by scripts/figures/ (FIG_OUT_DIR, default figures/)
 /figures/
 
+# Third-party code fetched by the user, not redistributed (SoftHebb: results/softhebb/README.md)
+third_party/
+
 # Release working notes
 .release_work/
 

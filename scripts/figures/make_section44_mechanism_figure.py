@@ -23,7 +23,7 @@
              The potentiation : depression ratios are checked against Table A.7(b) in
              results/section44_table.md.
 
-Style: scripts/figures/paper_style.py (Elsevier sizing, Okabe-Ito). Green and the triangle mean
+Style: scripts/figures/paper_style.py (journal sizing, Okabe-Ito). Green and the triangle mean
 voltage-STDP and grey the random initialisation, as in the other figures; the two
 accents (reddish purple, orange) mark theta- / depression and theta+ / potentiation.
 Writes $FIG_OUT_DIR/fig_section44_mechanism.{pdf,png} (default figures/) and prints every plotted number.

@@ -10,7 +10,7 @@ fig8 (protocol schematic, Figure 8) by scripts/figures/make_protocol_figure.py,
 fig_section44_mechanism (Figure 4) by scripts/figures/make_section44_mechanism_figure.py and
 fig_voltage_controls (Figure A.2) by scripts/figures/make_voltage_controls_figure.py.
 Each figure is written as a vector PDF (what the manuscript includes) and a 600 dpi PNG.
-Style, sizes and colours come from scripts/figures/paper_style.py (Elsevier artwork sizing).
+Style, sizes and colours come from scripts/figures/paper_style.py (journal artwork sizing).
 Run: PYTHONPATH=. python scripts/figures/make_paper_figs.py
 """
 import csv, json, os, sys, numpy as np
@@ -101,7 +101,7 @@ ps.save(fig, f"{OUT}/fig3_delta_over_random"); plt.close(fig)
 # rule, voltage at the corrected tc_theta_decay=1e4) rather than being typed in here.
 # The previous hard-coded sweep was the superseded pair: a 5k cell at tc=1e7 against a
 # 60k cell at tc=1e6. See results/voltage_audit_2026-09.md.
-# A single panel is printed at Elsevier's single-column width (90 mm).
+# A single panel is printed at the single-column width (90 mm).
 # 2026-10-21: single linear probe (fit on 10,000 training images, full test set), every point from
 # spike counts recorded the same way after training: results/section45_probefix_mnist.json
 # (scripts/score/section45_probefix_mnist.py). Replaced forgetting_curve.json (70/30 test split).

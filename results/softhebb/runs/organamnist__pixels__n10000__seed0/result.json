@@ -1,0 +1,47 @@
+{
+ "dataset": "organamnist",
+ "mode": "pixels",
+ "seed": 0,
+ "n_train": 10000,
+ "n_test": 17778,
+ "n_classes": 11,
+ "test_acc_last": 62.650466869164134,
+ "train_acc_last": 78.21,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 64.82,
+   "test_acc": 62.97671279109011
+  },
+  {
+   "epoch": 11,
+   "train_acc": 74.76,
+   "test_acc": 62.206097423782204
+  },
+  {
+   "epoch": 21,
+   "train_acc": 77.43,
+   "test_acc": 62.68984137698279
+  },
+  {
+   "epoch": 31,
+   "train_acc": 78.12,
+   "test_acc": 62.27922150973113
+  },
+  {
+   "epoch": 41,
+   "train_acc": 78.37,
+   "test_acc": 62.79671504106199
+  },
+  {
+   "epoch": 50,
+   "train_acc": 78.21,
+   "test_acc": 62.650466869164134
+  }
+ ],
+ "n_features": 3072,
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_total": 5.2843732833862305,
+ "torch": "2.7.0+cu126"
+}

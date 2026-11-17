@@ -22,10 +22,10 @@ Conventions:
   their `PYTHONPATH=. python` prefix. Scorers run with one BLAS thread (README,
   step 3). "Linear probe" always means the probe described in the README.
 
-## 1. Eight-dataset matrix: Table 2, Figure 7, Sections 4.2 and 4.7, Table S2, Section S9, Table S8
+## 1. Eight-dataset matrix: Table 2, Figure 7, Sections 3.2 and 3.7, Table S2, Section S9, Table S8
 
 Also the reference row of Table 3 (29.0 against 75.6) and the Fashion-MNIST
-comparison of Section 4.3 (64.2 against 64.5).
+comparison of Section 3.3 (64.2 against 64.5).
 
 | | |
 |---|---|
@@ -46,7 +46,7 @@ Built on the same networks:
 | Section S9 (Fisher ratio, filter similarity) | `scripts/score/appendix_i_probefix.py` | the trained networks above on six datasets (test counts, `metrics.json`), `results/probefix_matrix_n5.json` | `results/appendix_i_probefix.{md,json}` |
 | Table S8, unsup-STDP column | `scripts/score/supervised_ceiling_5seed.py` (GPU) | pair-STDP rows of `results/probefix_matrix_n5.json`; the CNN is trained with torch seeds 0-4, the raw-pixel regression once | `results/supervised_ceiling_5seed.{md,json}` |
 
-## 2. Voltage-STDP thresholds and spike plateau: Table 3, Table S7(a), Figure 4(c), Section 4.4
+## 2. Voltage-STDP thresholds and spike plateau: Table 3, Table S7(a), Figure 4(c), Section 3.4
 
 | | |
 |---|---|
@@ -107,7 +107,7 @@ Built on the same networks:
 | configuration | `run_configs/voltage_S_full_N400__*.yaml` [R5]; each file holds the values of that run |
 | score | `scripts/score/reextract_probefix_score.py` → `results/reextract_probefix_scores.md` (section "Appendix C"); the n = 5 means pool the per-network rows listed above |
 
-## 8. Scaffold matrix at 60,000 images: Section 4.1, Table S3, Figures 2 and 6, Section 4.6
+## 8. Scaffold matrix at 60,000 images: Section 3.1, Table S3, Figures 2 and 6, Section 3.6
 
 | | |
 |---|---|
@@ -119,7 +119,7 @@ Built on the same networks:
 | results | `results/posthoc_both_conventions.csv`, `results/scaffold_readout_table.csv`, `results/scaffold_readout_summary.md`, `results/identical_neuron_check.csv` |
 | figures | Figure 2 (`fig2_readout.pdf`) and Figure 6 (`fig5_scaffold_fragility.pdf`) from `scripts/figures/make_paper_figs.py` |
 
-## 9. Matched random baseline at 60,000 images: Section 4.2, Figure 6 dashed line
+## 9. Matched random baseline at 60,000 images: Section 3.2, Figure 6 dashed line
 
 | | |
 |---|---|
@@ -137,12 +137,12 @@ Built on the same networks:
 `voltage_S_full_N400_seed0__b_fix_tc1e4_60k` (section 8). The random row is a
 fresh draw from the initial distribution. Output `figures/fig7_receptive_fields.pdf`.
 
-## 11. Training length: Section 4.5, Figure 5, Section S7
+## 11. Training length: Section 3.5, Figure 5, Section S7
 
 | paper element | networks (seeds 0-4) | configuration | score | results |
 |---|---|---|---|---|
 | Figure 5, default configurations | `{pair_exp,triplet,voltage}_S_full_N400_seed{S}_flen{5k,10k,20k}` [R9]; 60,000 images = the S_full networks of section 8 | `run_configs/{rule}_S_full_N400_flen*.yaml` | `scripts/score/section45_probefix_mnist.py` | `results/section45_probefix_mnist.{md,json}` |
-| Section 4.5, tuned voltage-STDP on MNIST | `voltage_S_full_N400_seed{S}_{vhz2000,vhz5000,mnist_vhz60000}` [R10] | `run_configs/voltage_S_full_N400_{vhz2000,vhz5000,mnist_vhz60000}.yaml` | same | same |
+| Section 3.5, tuned voltage-STDP on MNIST | `voltage_S_full_N400_seed{S}_{vhz2000,vhz5000,mnist_vhz60000}` [R10] | `run_configs/voltage_S_full_N400_{vhz2000,vhz5000,mnist_vhz60000}.yaml` | same | same |
 | check of the re-extraction (in the same table) | `voltage_S_full_N400_seed{S}_thltd_ref` and `_plateau_T_ap0.001`, seeds 0-2 [R1, R3], against `_probefix_trained` and `_probefix_plateau` | as listed | same | same |
 | receptive-field cosine and clustering NMI | `voltage_S_full_N400_seed{S}_flen{5k,10k,20k}` and the voltage S_full networks of section 8 | as above | `scripts/score/section45_cosine_nmi.py` (reads `metrics.json`) | `results/section45_cosine_nmi.{md,json}` |
 | Section S7, scaffolds | `voltage_S_{full,inh_only,none,thr_only}_N400_seed{S}_peak5k`, `voltage_S_{inh_only,none,thr_only}_N400_seed{S}_mid20k` [R7]; S_full at 20,000 = `flen20k`; 60,000 = section 8 | `run_configs/voltage_S_*_N400_{peak5k,mid20k}.yaml` | `scripts/score/appendix_g_probefix.py` | `results/appendix_g_probefix.{md,json}` |
@@ -157,7 +157,7 @@ of section 8 were also re-extracted; Figure 5 uses those counts, which is why it
 60,000-image values (86.7 and 88.1%) differ from Table S3 (85.9 and 87.7%). Figure 5 (`figures/fig4_forgetting.pdf`) is drawn by
 `scripts/figures/make_paper_figs.py` from `results/section45_probefix_mnist.json`.
 
-## 12. Convolutional networks: Table 3 architecture row, Section 4.3, Section S9
+## 12. Convolutional networks: Table 3 architecture row, Section 3.3, Section S9
 
 Voltage-STDP convolutional network (seeds 1-5):
 
@@ -189,7 +189,7 @@ not recorded and no launcher for it is shipped. Given the weights,
 `results/conv_feats_pairN5_{trained,random}_s{0-4}.npz`, and
 `scripts/score/conv_pair_n5_table.py` writes `results/conv_pair_n5.json`.
 
-## 13. Gate measurements: Table S7(b), Figure 4(b), Section 4.4
+## 13. Gate measurements: Table S7(b), Figure 4(b), Section 3.4
 
 These run the plasticity rule for the first 1,000 training images (seed 0 unless a
 row says otherwise) and need no trained run.
@@ -197,8 +197,8 @@ row says otherwise) and need no trained run.
 | paper element | command | results |
 |---|---|---|
 | Table S7(b), Figure 4(b) | `scripts/score/voltage_gate_saturation_probe.py --config-file results/gate_probes_2026-10/<p>.yaml --seed 0 --n-train 1000 --device cuda:0 --out results/gate_probes_2026-10/<p>.json` for `<p>` = `p0_tuned_repro`, `p1_no_inhibition`, `p2_thltd_m65`, `p3_thltd_m60`, `p4_thltd_m58`, `p5_thltd_m50`, `p6_thltp_m52`; then `scripts/score/make_section44_table.py` | `results/gate_probes_2026-10/*.json`, `results/section44_table.md` |
-| Section 4.4, "267 to 319 times" (default configuration with τθ = 10⁶ ms) | the same probe with `--config-file run_configs/voltage_S_full_N400.yaml --seed S --out results/gate_scaffold_seedS.json`, S = 0-4 [V0] | `results/gate_scaffold_seed{0-4}.json` |
-| Section 4.3, "94% of its spikes" (tuned configuration) | the same probe with `--config-file run_configs/voltage_S_full_N400__mnist_adex_baseline.yaml --seed S --n-train 1000 --out results/gate_tuned_seedS.json`, S = 0-2; the share reset before θ₊ is 1 − ltp_v_gate_active_frac × n_events / n_spikes | `results/gate_tuned_seed{0-2}.json` |
+| Section S15, "267 to 319 times" (default configuration with τθ = 10⁶ ms) | the same probe with `--config-file run_configs/voltage_S_full_N400.yaml --seed S --out results/gate_scaffold_seedS.json`, S = 0-4 [V0] | `results/gate_scaffold_seed{0-4}.json` |
+| Section S16, "94% of its spikes" (tuned configuration) | the same probe with `--config-file run_configs/voltage_S_full_N400__mnist_adex_baseline.yaml --seed S --n-train 1000 --out results/gate_tuned_seedS.json`, S = 0-2; the share reset before θ₊ is 1 − ltp_v_gate_active_frac × n_events / n_spikes | `results/gate_tuned_seed{0-2}.json` |
 | Figure 4 | `CLOPATH_MODELDB_DIR=... scripts/figures/make_section44_mechanism_figure.py`; reads `run_configs/voltage_S_full_N400_vb3_trained.yaml` [V1], the gate-probe JSONs, `results/section44_table.md` and `results/probefix_voltage_thresholds_n5.json` | `figures/fig_section44_mechanism.pdf` |
 
 ## 14. Exact reimplementation of Clopath's neuron: Table 3, Tables S9 and S10, Section S10
@@ -247,3 +247,17 @@ No trained network is needed.
 - Figure S2 is drawn by `scripts/figures/make_voltage_controls_figure.py` from
   `results/probefix_voltage_thresholds_n5.json` and
   `results/reextract_probefix_scores.json` (sections 2 to 4).
+
+## 17. SoftHebb with the matched random baseline: Table 5, Section 3.9, Section 2.13, Section S18
+
+| | |
+|---|---|
+| networks | `results/softhebb/runs/<dataset>__<mode>__n<N>__seed<S>/`; mode = `trained`, `random` (weight updates disabled, same seed, initial weights and image order), `pixels` (the same readout on the pixels); 114 runs |
+| datasets, seeds | CIFAR-10, whole training split (`n0`), seeds 0-2; OrganAMNIST, BloodMNIST, PathMNIST, TissueMNIST at 10,000 training images (`n10000`), seeds 0-4; OrganAMNIST, BloodMNIST, PathMNIST, whole training split (`n0`), seeds 0-4 |
+| configuration | the released SoftHebb demo (Journé et al., 2023), unchanged; SoftHebb's code is not shipped (no licence): clone https://github.com/NeuromorphicComputing/SoftHebb at commit `f4252307633ba38a26ab52504f5fd40352f5a6fd` into `third_party/SoftHebb` (`results/softhebb/README.md`) |
+| train | `DEVICE=cuda:0 bash scripts/train/softhebb_runs.sh` (runs `scripts/train/softhebb_run.py`; new runs go to `experiments/runs/softhebb/`) |
+| score | `scripts/score/softhebb_table5.py` (Table 5), `scripts/score/softhebb_summary.py` (per-seed values and the pre-registered readings); both read the shipped `result.json` files by default |
+| results | `results/softhebb/table5_values.json`, `results/softhebb/pilot_summary.{md,json}`; the rules fixed before the runs are in `results/softhebb/pilot_README_2026-11-16.md` |
+
+The readout of these runs is SoftHebb's own (a linear layer trained with dropout for 50
+epochs, scored at the last epoch), not the linear probe of the README.

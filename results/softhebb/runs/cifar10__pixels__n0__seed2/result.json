@@ -1,0 +1,47 @@
+{
+ "dataset": "cifar10",
+ "mode": "pixels",
+ "seed": 2,
+ "n_train": 50000,
+ "n_test": 10000,
+ "n_classes": 10,
+ "test_acc_last": 41.349999999999994,
+ "train_acc_last": 40.9,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 30.782,
+   "test_acc": 32.74
+  },
+  {
+   "epoch": 11,
+   "train_acc": 34.07,
+   "test_acc": 37.74
+  },
+  {
+   "epoch": 21,
+   "train_acc": 37.246,
+   "test_acc": 39.300000000000004
+  },
+  {
+   "epoch": 31,
+   "train_acc": 39.508,
+   "test_acc": 40.86
+  },
+  {
+   "epoch": 41,
+   "train_acc": 40.594,
+   "test_acc": 41.57
+  },
+  {
+   "epoch": 50,
+   "train_acc": 40.9,
+   "test_acc": 41.349999999999994
+  }
+ ],
+ "n_features": 3072,
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_total": 26.150806427001953,
+ "torch": "2.7.0+cu126"
+}

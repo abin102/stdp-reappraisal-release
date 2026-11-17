@@ -1,0 +1,57 @@
+{
+ "dataset": "organamnist",
+ "mode": "trained",
+ "seed": 0,
+ "n_train": 10000,
+ "n_test": 17778,
+ "n_classes": 11,
+ "test_acc_last": 89.79075261559231,
+ "train_acc_last": 99.11,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 73.81,
+   "test_acc": 84.68894138823265
+  },
+  {
+   "epoch": 11,
+   "train_acc": 97.06,
+   "test_acc": 89.12138598267522
+  },
+  {
+   "epoch": 21,
+   "train_acc": 98.5,
+   "test_acc": 89.5770052874339
+  },
+  {
+   "epoch": 31,
+   "train_acc": 99.13,
+   "test_acc": 89.60512993587581
+  },
+  {
+   "epoch": 41,
+   "train_acc": 99.16,
+   "test_acc": 89.61075486556418
+  },
+  {
+   "epoch": 50,
+   "train_acc": 99.11,
+   "test_acc": 89.79075261559231
+  }
+ ],
+ "weight_change_max": [
+  11.719690322875977,
+  3.1632256507873535,
+  1.295701265335083
+ ],
+ "weight_norm_mean": [
+  2.9083516597747803,
+  6.647258758544922,
+  21.440227508544922
+ ],
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_unsup": 5.0691077709198,
+ "seconds_total": 95.98585963249207,
+ "torch": "2.7.0+cu126"
+}

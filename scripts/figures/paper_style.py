@@ -1,12 +1,11 @@
-"""Shared figure style for the STDP paper, following Elsevier's artwork instructions.
+"""Shared figure style for the STDP paper, following common journal artwork guidelines.
 
 Every figure is drawn at the size it is printed, so a font size here is the printed size.
-Elsevier asks for lettering of about 7 pt (never below 6 pt for sub/superscripts), a
+Lettering is about 7 pt (never below 6 pt for sub/superscripts), a
 sans-serif such as Arial or Helvetica, and widths of 90 mm (single column), 140 mm
-(1.5 column) or 190 mm (double column):
-https://www.elsevier.com/about/policies-and-standards/author/artwork-and-media-instructions/artwork-sizing
+(1.5 column) or 190 mm (double column).
 The manuscript's text width is 390 pt = 137 mm, close to the 1.5-column size, and
-paper_nn/main.tex includes figures at \\linewidth, so FULL_W figures print at 1:1.
+the manuscript includes figures at \\linewidth, so FULL_W figures print at 1:1.
 SINGLE_W figures carry {width=90mm} in their markdown image link.
 
 Rule colours are the Okabe-Ito palette, which stays distinguishable under the common
@@ -15,11 +14,11 @@ forms of colour blindness (the earlier red/green pair did not).
 import matplotlib as mpl
 
 MM = 1 / 25.4
-FULL_W = 390 / 72.27          # in, = \linewidth of paper_nn/main.tex (137 mm)
-SINGLE_W = 90 * MM            # in, Elsevier single column
+FULL_W = 390 / 72.27          # in, = \linewidth of the manuscript (137 mm)
+SINGLE_W = 90 * MM            # in, single column
 
 # matplotlib sets sub/superscripts at 0.7 of the font size, so labels are set at 6/0.7 pt:
-# a subscript in any label then prints at Elsevier's 6 pt minimum, and labels with and
+# a subscript in any label then prints at the 6 pt minimum, and labels with and
 # without subscripts are the same size.
 FS = 7              # tick labels, legends, annotations
 FS_LABEL = 6 / 0.7  # axis labels, panel titles, schematic text (8.6 pt)

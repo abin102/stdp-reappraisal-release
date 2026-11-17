@@ -11,14 +11,22 @@ is compared with the same network with STDP disabled (the matched random
 baseline), and is read out with a linear probe as well as the usual post-hoc
 labelling. The comparison covers eight datasets: MNIST, N-MNIST, EMNIST-Letters,
 Fashion-MNIST and four MedMNIST sets. Controls include a two-layer convolutional
-network and an exact reimplementation of Clopath's neuron and update rule.
+network and an exact reimplementation of Clopath's neuron and update rule. The same
+matched random baseline is also applied to SoftHebb (Journé et al., 2023), a recent
+Hebbian method, on CIFAR-10 and four medical datasets (Table 5).
 
 **Labels.** Sections, tables and figures numbered with an S (for example Section S5 or
 Table S5) are in the paper's Supplementary material. Script names and comments, the
 results sheets in `results/`, and the section names quoted from them keep the labels of
 an earlier draft: Appendices A to J are Sections S1 to S10, Tables A.1 to A.10 are
-Tables S1 to S10, and Figures A.1 and A.2 are Figures S1 and S2. A few script messages carry labels
-from still earlier drafts.
+Tables S1 to S10, and Figures A.1 and A.2 are Figures S1 and S2. They also keep the
+section numbers of a draft that had a Related work section: there, Sections 3.x
+(Methods), 4.x (Results), 5.x (Discussion) and 6 (Conclusion) are the paper's Sections
+2.x, 3.x, 4.x and 5. Some passages have since moved to the Supplementary material: the
+share of spikes reset before θ₊ ("Section 4.3", "94% of its spikes") is in Section S16,
+and the potentiation : depression ratio of the default configuration ("Section 4.4",
+"267 to 319 times") in Section S15. A few script messages carry labels from still
+earlier drafts.
 
 ## What is in this repository
 
@@ -34,7 +42,7 @@ from still earlier drafts.
 | `scripts/score/` | one scorer per results table; they fit the linear probe and write `results/` |
 | `scripts/figures/` | the figure scripts |
 | `scripts/checks/` | checks: regenerate and compare every table, plus the checks of the Clopath implementations |
-| `results/` | the result tables the paper cites, the run lists the scorers read, and the pre-registrations |
+| `results/` | the result tables the paper cites, the run lists the scorers read, and the pre-registrations; `results/softhebb/` holds the SoftHebb runs of Table 5 and their notes |
 | `RUN_MAP.md` | for each group of reported numbers: the networks behind it, their configuration, the scorer and the results file |
 
 ## What is not included
@@ -56,6 +64,12 @@ from still earlier drafts.
   `scripts/figures/make_section44_mechanism_figure.py` (Figure 4) and the Octave
   comparisons of `scripts/checks/clopath_port_equivalence.py`. Both stop with
   these instructions when the variable is not set.
+- **SoftHebb's code.** The SoftHebb runs (Table 5) import the demo released by
+  Journé et al. at https://github.com/NeuromorphicComputing/SoftHebb, commit
+  `f4252307633ba38a26ab52504f5fd40352f5a6fd`. That repository has no licence, so it
+  is not redistributed. Clone it into `third_party/SoftHebb` (or set `SOFTHEBB_DIR`);
+  `results/softhebb/README.md` gives the commands. It is needed only to rerun the
+  SoftHebb networks, not to rebuild Table 5 from the shipped runs.
 
 ## Setup
 
@@ -96,7 +110,7 @@ bash scripts/train/probefix_matrix_n5.sh "0" 4
 # the 50 voltage-STDP threshold and spike-plateau networks (Table 3, Table S7)
 bash scripts/train/probefix_voltage_thresholds_n5.sh "0" 4
 
-# the convolutional voltage-STDP network, seeds 1-5 (Table 3, Section 4.3)
+# the convolutional voltage-STDP network, seeds 1-5 (Table 3, Section 3.3)
 SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_stdp
 SEEDS="1 2 3 4" bash scripts/train/run_seeds.sh conv_trainedreadout
 SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_randomfilters conv_svm
@@ -104,6 +118,9 @@ SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_randomfilters conv_svm
 # the reimplementation of Clopath's neuron (Table 3, Tables S9 and S10)
 SEEDS="0 1 2 3 4" bash scripts/train/run_seeds.sh port_grid10k port_explore_k0
 bash scripts/train/clopath_port_thetatar_sweep.sh   # seeds 0-2; needs the check run of RUN_MAP.md, section 14
+
+# SoftHebb with the matched random baseline, 114 runs (Table 5); needs SoftHebb's code, see results/softhebb/README.md
+DEVICE=cuda:0 bash scripts/train/softhebb_runs.sh
 ```
 
 A finished run has a `completed.flag` and is skipped, so a launcher can be
@@ -161,6 +178,8 @@ python scripts/score/conv_surrogate_readout_n5.py --log_dir DIR   # readout logs
 python scripts/score/conv_pair_n5_table.py
 python scripts/score/make_section44_table.py
 python scripts/score/supervised_ceiling_5seed.py                  # GPU: trains the supervised CNNs
+python scripts/score/softhebb_table5.py                           # Table 5, from results/softhebb/runs/
+python scripts/score/softhebb_summary.py
 ```
 
 Some tables come from a GPU computation instead of saved runs: the gate probes
@@ -176,7 +195,9 @@ of 10,000 training images and scored on the full test set. Every fit runs with o
 BLAS thread: fits on raw counts are badly conditioned, so where L-BFGS stops depends
 on the order of floating-point sums, which changes with the number of threads
 (`scripts/score/_blas.py`). All shipped tables were recomputed this way on
-2026-10-26.
+2026-10-26. The SoftHebb comparison (Table 5) does not use this probe: as in
+SoftHebb's own code, its readout and its pixel baseline are linear layers trained with
+dropout for 50 epochs (Section 3.9, Section S18).
 
 ### 4. Figures
 
@@ -241,13 +262,14 @@ the networks each scorer reads.
 | Figure 8, evaluation protocol | `scripts/figures/make_protocol_figure.py` | `figures/fig8_protocol.pdf` |
 | Figure S1, positive control | `scripts/figures/clopath_curve_reproduction.py` | `results/clopath_curve_reproduction.json`, `figures/fig6_clopath_curves.pdf` |
 | Figure S2, voltage-STDP controls by seed | `scripts/figures/make_voltage_controls_figure.py` | `figures/fig_voltage_controls.pdf`, `figures/fig_voltage_controls_data.json` |
-| Section 4.1, collapse counts and Remark 1 | `scripts/score/posthoc_both_conventions.py`, `scaffold_readout_table.py`, `identical_neuron_check.py`; `scripts/checks/verify_readout_bound.py` (prints the check) | `results/posthoc_both_conventions.csv`, `results/scaffold_readout_table.csv`, `results/scaffold_readout_summary.md`, `results/identical_neuron_check.csv` |
-| Section 4.2, matched random baseline at 60,000 images | `scripts/score/matched_random_60k_table.py` | `results/matched_random_60k.json` |
-| Section 4.3, convolutional readouts | `scripts/score/conv_surrogate_readout_n5.py`, `conv_pair_n5_table.py` | `results/conv_surrogate_readout_n5.{md,json}`, `results/conv_pair_n5.json` |
-| Section 4.3, share of spikes reset before θ₊ (tuned configuration) | `scripts/score/voltage_gate_saturation_probe.py --config-file run_configs/voltage_S_full_N400__mnist_adex_baseline.yaml` | `results/gate_tuned_seed{0-2}.json` |
-| Section 4.4, potentiation : depression in the default configuration with τθ = 10⁶ ms | `scripts/score/voltage_gate_saturation_probe.py --config-file run_configs/voltage_S_full_N400.yaml` | `results/gate_scaffold_seed{0-4}.json` |
-| Section 4.5 and Section S7, training length | `scripts/score/section45_probefix_mnist.py`, `section45_cosine_nmi.py`, `appendix_g_probefix.py` | `results/section45_probefix_mnist.{md,json}`, `results/section45_cosine_nmi.{md,json}`, `results/appendix_g_probefix.{md,json}` |
-| Sections 4.6 and 4.7 | as Table S3, Figure 6, Table 2 and Figure 7 | as above |
+| Section 3.1, collapse counts and Remark 1 | `scripts/score/posthoc_both_conventions.py`, `scaffold_readout_table.py`, `identical_neuron_check.py`; `scripts/checks/verify_readout_bound.py` (prints the check) | `results/posthoc_both_conventions.csv`, `results/scaffold_readout_table.csv`, `results/scaffold_readout_summary.md`, `results/identical_neuron_check.csv` |
+| Section 3.2, matched random baseline at 60,000 images | `scripts/score/matched_random_60k_table.py` | `results/matched_random_60k.json` |
+| Section 3.3, convolutional readouts | `scripts/score/conv_surrogate_readout_n5.py`, `conv_pair_n5_table.py` | `results/conv_surrogate_readout_n5.{md,json}`, `results/conv_pair_n5.json` |
+| Section S16, share of spikes reset before θ₊ (tuned configuration) | `scripts/score/voltage_gate_saturation_probe.py --config-file run_configs/voltage_S_full_N400__mnist_adex_baseline.yaml` | `results/gate_tuned_seed{0-2}.json` |
+| Section S15, potentiation : depression in the default configuration with τθ = 10⁶ ms | `scripts/score/voltage_gate_saturation_probe.py --config-file run_configs/voltage_S_full_N400.yaml` | `results/gate_scaffold_seed{0-4}.json` |
+| Section 3.5 and Section S7, training length | `scripts/score/section45_probefix_mnist.py`, `section45_cosine_nmi.py`, `appendix_g_probefix.py` | `results/section45_probefix_mnist.{md,json}`, `results/section45_cosine_nmi.{md,json}`, `results/appendix_g_probefix.{md,json}` |
+| Sections 3.6 and 3.7 | as Table S3, Figure 6, Table 2 and Figure 7 | as above |
+| Table 5, Section 3.9, Section 2.13 and Section S18, SoftHebb with the matched random baseline | `scripts/score/softhebb_table5.py`, `softhebb_summary.py` (from the shipped runs); the runs: `scripts/train/softhebb_runs.sh` (needs SoftHebb's code) | `results/softhebb/table5_values.json`, `results/softhebb/pilot_summary.{md,json}`, `results/softhebb/runs/*/result.json` |
 | Section S4, positive control | `scripts/checks/clopath_positive_control.py`, `scripts/figures/clopath_curve_reproduction.py` | `results/clopath_positive_control.{json,md}`, `results/clopath_curve_reproduction.json` |
 | Section S5, homeostasis | `scripts/score/reextract_probefix_score.py` | `results/reextract_probefix_scores.md` (section "Appendix E: homeostasis") |
 | Section S9, Fisher ratio | `scripts/score/appendix_i_probefix.py` | `results/appendix_i_probefix.{md,json}` |
@@ -286,12 +308,14 @@ fails. With the library versions in `requirements.txt` the tables should match
 exactly. With another BLAS build a probe fit can move by about one test image.
 The tables made by a GPU simulation (gate probes, convolutional readouts,
 supervised ceiling, the Clopath calibration and equivalence checks) are not rerun;
-the docstring of `check_results.py` lists them.
+the docstring of `check_results.py` lists them. The SoftHebb networks are not rerun
+either; Table 5 is rebuilt from their shipped `result.json` files, which needs no run
+data.
 
 ## Seeds
 
 Every reported comparison uses five seeds, 0 to 4 (1 to 5 for the convolutional
-voltage-STDP network). A seed fixes the initial weights, the order of the training
+voltage-STDP network; SoftHebb on CIFAR-10 uses three, 0 to 2). A seed fixes the initial weights, the order of the training
 images and the Poisson draws. A trained network and its STDP-disabled control use
 the same seed. Single-seed screens (Tables S4 to S6 and S7(b)) are marked as
 such in the paper and in `run_configs/INDEX.md`.

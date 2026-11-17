@@ -1,0 +1,57 @@
+{
+ "dataset": "cifar10",
+ "mode": "random",
+ "seed": 2,
+ "n_train": 50000,
+ "n_test": 10000,
+ "n_classes": 10,
+ "test_acc_last": 73.7,
+ "train_acc_last": 72.784,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 45.322,
+   "test_acc": 60.31999999999999
+  },
+  {
+   "epoch": 11,
+   "train_acc": 66.352,
+   "test_acc": 69.1
+  },
+  {
+   "epoch": 21,
+   "train_acc": 69.496,
+   "test_acc": 71.04
+  },
+  {
+   "epoch": 31,
+   "train_acc": 71.804,
+   "test_acc": 73.5
+  },
+  {
+   "epoch": 41,
+   "train_acc": 72.604,
+   "test_acc": 73.82
+  },
+  {
+   "epoch": 50,
+   "train_acc": 72.784,
+   "test_acc": 73.7
+  }
+ ],
+ "weight_change_max": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "weight_norm_mean": [
+  24.70379638671875,
+  24.968318939208984,
+  24.99811363220215
+ ],
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_unsup": 23.756089210510254,
+ "seconds_total": 442.0442473888397,
+ "torch": "2.7.0+cu126"
+}

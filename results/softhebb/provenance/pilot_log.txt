@@ -1,0 +1,899 @@
+### SoftHebb pilot start 2026-11-11_17:59:30 on cuda:0, phase short; SHA-256 of the rule, scripts and third-party demo:
+c8c55a62a17de638629b6a5d807ef23c006c20d3f906ce2f8c95c08ad248c81f  README.md
+8ea8ebb49f8ea86c7066ca7d145d4f40e7990d8ff4aab3a00a36cf866a598de5  run_softhebb.py
+a2e23369f1cbfbf67b064ebcc5e9ed4f375734907f099be8cfd0089c998841f4  score_softhebb.py
+6c568e4ed9e6cded5b62837254e633a4bcafd71f75ffcb7b26bbc65ec3c65aa4  run_pilot.sh
+0e44b4e6e830670f2bcd57b8fe845e29472c8c77d108b3db3a2dcb12a5d3630b  third_party/SoftHebb/demo.py
+[cifar10 trained n0 s0] epoch 1: train 55.97% test 65.95%
+[cifar10 trained n0 s0] epoch 11: train 77.89% test 77.05%
+[cifar10 trained n0 s0] epoch 21: train 80.87% test 78.52%
+[cifar10 trained n0 s0] epoch 31: train 82.69% test 79.53%
+[cifar10 trained n0 s0] epoch 41: train 83.35% test 79.62%
+[cifar10 trained n0 s0] epoch 50: train 83.22% test 79.72%
+{"dataset": "cifar10", "mode": "trained", "seed": 0, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 79.72, "train_acc_last": 83.22, "weight_change_max": [10.86284351348877, 3.3603789806365967, 1.4536536931991577], "weight_norm_mean": [4.817580223083496, 5.088196754455566, 17.857351303100586], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 23.19318437576294, "seconds_total": 476.11495542526245, "torch": "2.7.0+cu126"}
+### 2026-11-11_18:07:30 another job is on cuda:0; waiting before cifar10 random n0 seed0
+[cifar10 random n0 s0] epoch 1: train 45.05% test 57.40%
+[cifar10 random n0 s0] epoch 11: train 65.91% test 67.09%
+[cifar10 random n0 s0] epoch 21: train 68.90% test 71.07%
+[cifar10 random n0 s0] epoch 31: train 71.37% test 73.35%
+[cifar10 random n0 s0] epoch 41: train 72.22% test 73.79%
+[cifar10 random n0 s0] epoch 50: train 72.55% test 73.86%
+{"dataset": "cifar10", "mode": "random", "seed": 0, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 73.86, "train_acc_last": 72.548, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 23.099908590316772, "seconds_total": 468.8710517883301, "torch": "2.7.0+cu126"}
+[bloodmnist trained n10000 s0] epoch 1: train 59.38% test 76.64%
+[bloodmnist trained n10000 s0] epoch 11: train 88.89% test 89.16%
+[bloodmnist trained n10000 s0] epoch 21: train 91.97% test 91.52%
+[bloodmnist trained n10000 s0] epoch 31: train 93.16% test 91.87%
+[bloodmnist trained n10000 s0] epoch 41: train 93.70% test 91.76%
+[bloodmnist trained n10000 s0] epoch 50: train 93.69% test 91.82%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 0, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 91.81525869628764, "train_acc_last": 93.69, "weight_change_max": [11.412843704223633, 2.731792449951172, 0.8659584522247314], "weight_norm_mean": [1.680968165397644, 10.197622299194336, 24.40553092956543], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.072892189025879, "seconds_total": 92.35443115234375, "torch": "2.7.0+cu126"}
+[bloodmnist random n10000 s0] epoch 1: train 62.40% test 79.77%
+[bloodmnist random n10000 s0] epoch 11: train 90.19% test 90.24%
+[bloodmnist random n10000 s0] epoch 21: train 92.62% test 90.73%
+[bloodmnist random n10000 s0] epoch 31: train 93.61% test 92.69%
+[bloodmnist random n10000 s0] epoch 41: train 94.77% test 92.60%
+[bloodmnist random n10000 s0] epoch 50: train 94.58% test 92.72%
+{"dataset": "bloodmnist", "mode": "random", "seed": 0, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.72142648348436, "train_acc_last": 94.58, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.020634889602661, "seconds_total": 92.14599919319153, "torch": "2.7.0+cu126"}
+[organamnist trained n10000 s0] epoch 1: train 73.81% test 84.69%
+[organamnist trained n10000 s0] epoch 11: train 97.06% test 89.12%
+[organamnist trained n10000 s0] epoch 21: train 98.50% test 89.58%
+[organamnist trained n10000 s0] epoch 31: train 99.13% test 89.61%
+[organamnist trained n10000 s0] epoch 41: train 99.16% test 89.61%
+[organamnist trained n10000 s0] epoch 50: train 99.11% test 89.79%
+{"dataset": "organamnist", "mode": "trained", "seed": 0, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.79075261559231, "train_acc_last": 99.11, "weight_change_max": [11.719690322875977, 3.1632256507873535, 1.295701265335083], "weight_norm_mean": [2.9083516597747803, 6.647258758544922, 21.440227508544922], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.0691077709198, "seconds_total": 95.98585963249207, "torch": "2.7.0+cu126"}
+[organamnist random n10000 s0] epoch 1: train 72.33% test 74.30%
+[organamnist random n10000 s0] epoch 11: train 96.73% test 87.93%
+[organamnist random n10000 s0] epoch 21: train 97.99% test 89.06%
+[organamnist random n10000 s0] epoch 31: train 98.72% test 89.63%
+[organamnist random n10000 s0] epoch 41: train 98.89% test 89.75%
+[organamnist random n10000 s0] epoch 50: train 98.94% test 89.88%
+{"dataset": "organamnist", "mode": "random", "seed": 0, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.87512656091798, "train_acc_last": 98.94, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.002178907394409, "seconds_total": 95.81549167633057, "torch": "2.7.0+cu126"}
+[pathmnist trained n10000 s0] epoch 1: train 48.46% test 70.82%
+[pathmnist trained n10000 s0] epoch 11: train 76.42% test 67.28%
+[pathmnist trained n10000 s0] epoch 21: train 79.97% test 76.18%
+[pathmnist trained n10000 s0] epoch 31: train 81.99% test 78.26%
+[pathmnist trained n10000 s0] epoch 41: train 83.29% test 78.25%
+[pathmnist trained n10000 s0] epoch 50: train 83.34% test 77.60%
+{"dataset": "pathmnist", "mode": "trained", "seed": 0, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 77.60445682451254, "train_acc_last": 83.34, "weight_change_max": [11.775835990905762, 2.6644997596740723, 1.077728033065796], "weight_norm_mean": [1.1881721019744873, 12.255681991577148, 24.24270248413086], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.124940872192383, "seconds_total": 94.00490045547485, "torch": "2.7.0+cu126"}
+[pathmnist random n10000 s0] epoch 1: train 48.84% test 67.56%
+[pathmnist random n10000 s0] epoch 11: train 76.85% test 77.84%
+[pathmnist random n10000 s0] epoch 21: train 82.40% test 71.52%
+[pathmnist random n10000 s0] epoch 31: train 83.13% test 77.35%
+[pathmnist random n10000 s0] epoch 41: train 84.29% test 76.82%
+[pathmnist random n10000 s0] epoch 50: train 84.43% test 76.52%
+{"dataset": "pathmnist", "mode": "random", "seed": 0, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 76.51810584958217, "train_acc_last": 84.43, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.015550374984741, "seconds_total": 93.81992220878601, "torch": "2.7.0+cu126"}
+[bloodmnist trained n10000 s1] epoch 1: train 57.89% test 79.16%
+[bloodmnist trained n10000 s1] epoch 11: train 88.95% test 89.21%
+[bloodmnist trained n10000 s1] epoch 21: train 90.87% test 90.38%
+[bloodmnist trained n10000 s1] epoch 31: train 92.48% test 91.49%
+[bloodmnist trained n10000 s1] epoch 41: train 92.88% test 91.35%
+[bloodmnist trained n10000 s1] epoch 50: train 93.07% test 91.58%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 1, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 91.581408944753, "train_acc_last": 93.07, "weight_change_max": [11.9558687210083, 2.841641426086426, 0.8767987489700317], "weight_norm_mean": [1.4611589908599854, 10.463563919067383, 24.999969482421875], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.043309688568115, "seconds_total": 92.63672018051147, "torch": "2.7.0+cu126"}
+[bloodmnist random n10000 s1] epoch 1: train 62.17% test 80.44%
+[bloodmnist random n10000 s1] epoch 11: train 90.16% test 89.86%
+[bloodmnist random n10000 s1] epoch 21: train 92.43% test 91.64%
+[bloodmnist random n10000 s1] epoch 31: train 93.83% test 91.67%
+[bloodmnist random n10000 s1] epoch 41: train 94.48% test 92.02%
+[bloodmnist random n10000 s1] epoch 50: train 94.39% test 92.25%
+{"dataset": "bloodmnist", "mode": "random", "seed": 1, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.25372698041508, "train_acc_last": 94.39, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 4.986672639846802, "seconds_total": 92.26590466499329, "torch": "2.7.0+cu126"}
+[organamnist trained n10000 s1] epoch 1: train 75.23% test 83.70%
+[organamnist trained n10000 s1] epoch 11: train 96.93% test 88.83%
+[organamnist trained n10000 s1] epoch 21: train 98.26% test 88.47%
+[organamnist trained n10000 s1] epoch 31: train 98.80% test 89.45%
+[organamnist trained n10000 s1] epoch 41: train 99.04% test 90.18%
+[organamnist trained n10000 s1] epoch 50: train 99.04% test 90.17%
+{"dataset": "organamnist", "mode": "trained", "seed": 1, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.17324783440208, "train_acc_last": 99.04, "weight_change_max": [10.864850997924805, 3.4337334632873535, 1.000964641571045], "weight_norm_mean": [2.8337950706481934, 6.391935348510742, 21.371292114257812], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.066443204879761, "seconds_total": 95.97764992713928, "torch": "2.7.0+cu126"}
+[organamnist random n10000 s1] epoch 1: train 73.95% test 80.33%
+[organamnist random n10000 s1] epoch 11: train 97.07% test 86.67%
+[organamnist random n10000 s1] epoch 21: train 98.08% test 88.73%
+[organamnist random n10000 s1] epoch 31: train 98.81% test 88.91%
+[organamnist random n10000 s1] epoch 41: train 99.06% test 89.17%
+[organamnist random n10000 s1] epoch 50: train 99.01% test 89.26%
+{"dataset": "organamnist", "mode": "random", "seed": 1, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.2620092248847, "train_acc_last": 99.01, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.001195192337036, "seconds_total": 95.71776223182678, "torch": "2.7.0+cu126"}
+[pathmnist trained n10000 s1] epoch 1: train 52.03% test 69.44%
+[pathmnist trained n10000 s1] epoch 11: train 80.85% test 78.47%
+[pathmnist trained n10000 s1] epoch 21: train 84.96% test 81.03%
+[pathmnist trained n10000 s1] epoch 31: train 87.35% test 81.53%
+[pathmnist trained n10000 s1] epoch 41: train 88.07% test 81.13%
+[pathmnist trained n10000 s1] epoch 50: train 88.37% test 80.86%
+{"dataset": "pathmnist", "mode": "trained", "seed": 1, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 80.86350974930362, "train_acc_last": 88.37, "weight_change_max": [11.635042190551758, 2.6551594734191895, 0.8646249771118164], "weight_norm_mean": [1.9813320636749268, 11.917486190795898, 23.862850189208984], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.113646984100342, "seconds_total": 93.78359699249268, "torch": "2.7.0+cu126"}
+[pathmnist random n10000 s1] epoch 1: train 49.67% test 72.73%
+[pathmnist random n10000 s1] epoch 11: train 77.77% test 77.16%
+[pathmnist random n10000 s1] epoch 21: train 80.87% test 78.16%
+[pathmnist random n10000 s1] epoch 31: train 83.81% test 79.09%
+[pathmnist random n10000 s1] epoch 41: train 84.87% test 78.34%
+[pathmnist random n10000 s1] epoch 50: train 84.67% test 78.38%
+{"dataset": "pathmnist", "mode": "random", "seed": 1, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 78.38440111420613, "train_acc_last": 84.67, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.007046222686768, "seconds_total": 93.67318081855774, "torch": "2.7.0+cu126"}
+[bloodmnist trained n10000 s2] epoch 1: train 63.76% test 80.56%
+[bloodmnist trained n10000 s2] epoch 11: train 90.40% test 86.32%
+[bloodmnist trained n10000 s2] epoch 21: train 92.56% test 91.08%
+[bloodmnist trained n10000 s2] epoch 31: train 94.26% test 92.28%
+[bloodmnist trained n10000 s2] epoch 41: train 94.57% test 91.82%
+[bloodmnist trained n10000 s2] epoch 50: train 94.46% test 92.31%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 2, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.31218941829874, "train_acc_last": 94.46, "weight_change_max": [10.22939395904541, 2.9752931594848633, 0.8091797828674316], "weight_norm_mean": [2.414266347885132, 9.253154754638672, 24.893033981323242], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.058502674102783, "seconds_total": 92.38153052330017, "torch": "2.7.0+cu126"}
+[bloodmnist random n10000 s2] epoch 1: train 63.21% test 82.46%
+[bloodmnist random n10000 s2] epoch 11: train 89.59% test 88.54%
+[bloodmnist random n10000 s2] epoch 21: train 92.72% test 92.14%
+[bloodmnist random n10000 s2] epoch 31: train 93.99% test 92.25%
+[bloodmnist random n10000 s2] epoch 41: train 94.50% test 92.58%
+[bloodmnist random n10000 s2] epoch 50: train 94.47% test 92.58%
+{"dataset": "bloodmnist", "mode": "random", "seed": 2, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.57527038877521, "train_acc_last": 94.47, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.006983757019043, "seconds_total": 92.12340044975281, "torch": "2.7.0+cu126"}
+[organamnist trained n10000 s2] epoch 1: train 74.83% test 83.27%
+[organamnist trained n10000 s2] epoch 11: train 97.24% test 89.00%
+[organamnist trained n10000 s2] epoch 21: train 98.49% test 88.95%
+[organamnist trained n10000 s2] epoch 31: train 98.93% test 89.83%
+[organamnist trained n10000 s2] epoch 41: train 99.17% test 90.09%
+[organamnist trained n10000 s2] epoch 50: train 99.20% test 90.00%
+{"dataset": "organamnist", "mode": "trained", "seed": 2, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.99887501406234, "train_acc_last": 99.2, "weight_change_max": [10.01228141784668, 3.00886607170105, 0.990182638168335], "weight_norm_mean": [3.219045400619507, 6.249087333679199, 21.45431900024414], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.071943044662476, "seconds_total": 95.79312825202942, "torch": "2.7.0+cu126"}
+[organamnist random n10000 s2] epoch 1: train 73.05% test 75.89%
+[organamnist random n10000 s2] epoch 11: train 96.86% test 87.29%
+[organamnist random n10000 s2] epoch 21: train 98.09% test 88.79%
+[organamnist random n10000 s2] epoch 31: train 98.85% test 89.23%
+[organamnist random n10000 s2] epoch 41: train 99.09% test 89.29%
+[organamnist random n10000 s2] epoch 50: train 99.05% test 89.44%
+{"dataset": "organamnist", "mode": "random", "seed": 2, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.43638204522443, "train_acc_last": 99.05, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 4.9983930587768555, "seconds_total": 95.44384169578552, "torch": "2.7.0+cu126"}
+[pathmnist trained n10000 s2] epoch 1: train 47.86% test 68.25%
+[pathmnist trained n10000 s2] epoch 11: train 74.59% test 77.24%
+[pathmnist trained n10000 s2] epoch 21: train 79.74% test 78.30%
+[pathmnist trained n10000 s2] epoch 31: train 82.71% test 79.16%
+[pathmnist trained n10000 s2] epoch 41: train 83.10% test 77.66%
+[pathmnist trained n10000 s2] epoch 50: train 83.05% test 78.75%
+{"dataset": "pathmnist", "mode": "trained", "seed": 2, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 78.74651810584959, "train_acc_last": 83.05, "weight_change_max": [10.69775676727295, 2.6776123046875, 0.9881297945976257], "weight_norm_mean": [1.1398048400878906, 12.687121391296387, 24.32143211364746], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.111502170562744, "seconds_total": 93.5212414264679, "torch": "2.7.0+cu126"}
+[pathmnist random n10000 s2] epoch 1: train 47.83% test 57.72%
+[pathmnist random n10000 s2] epoch 11: train 76.67% test 76.34%
+[pathmnist random n10000 s2] epoch 21: train 81.71% test 76.07%
+[pathmnist random n10000 s2] epoch 31: train 83.89% test 79.39%
+[pathmnist random n10000 s2] epoch 41: train 84.88% test 78.01%
+[pathmnist random n10000 s2] epoch 50: train 84.43% test 78.11%
+{"dataset": "pathmnist", "mode": "random", "seed": 2, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 78.10584958217271, "train_acc_last": 84.43, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.009714841842651, "seconds_total": 94.05965662002563, "torch": "2.7.0+cu126"}
+# SoftHebb pilot: trained against untrained weights
+
+## Reproduction check (CIFAR-10, whole training split, seed 0)
+
+- trained: 79.72% (paper 80.3%; bar 78.3%): met
+- random: 73.86%; gain +5.86 points
+
+## Medical sets, 10,000 training images (the STDP paper's matrix size)
+
+| Dataset | Trained, seeds 0-2 | Random, seeds 0-2 | Gain per seed, points | Mean gain | Reading |
+|---|---|---|---|---|---|
+| organamnist | 89.79, 90.17, 90.00 | 89.88, 89.26, 89.44 | -0.08, +0.91, +0.56 | +0.46 | mixed |
+| bloodmnist | 91.82, 91.58, 92.31 | 92.72, 92.25, 92.58 | -0.91, -0.67, -0.26 | -0.61 | does not add |
+| pathmnist | 77.60, 80.86, 78.75 | 76.52, 78.38, 78.11 | +1.09, +2.48, +0.64 | +1.40 | adds |
+
+## Medical sets, the whole training split
+
+| Dataset | Trained, seeds 0-2 | Random, seeds 0-2 | Gain per seed, points | Mean gain | Reading |
+|---|---|---|---|---|---|
+| organamnist | waiting, waiting, waiting | waiting, waiting, waiting | | | waiting |
+| bloodmnist | waiting, waiting, waiting | waiting, waiting, waiting | | | waiting |
+| pathmnist | waiting, waiting, waiting | waiting, waiting, waiting | | | waiting |
+
+### SoftHebb pilot phase short done 2026-11-11_18:49:44
+### SoftHebb pilot start 2026-11-11_19:10:44 on cuda:0, phase full; SHA-256 of the rule, scripts and third-party demo:
+c8c55a62a17de638629b6a5d807ef23c006c20d3f906ce2f8c95c08ad248c81f  README.md
+8ea8ebb49f8ea86c7066ca7d145d4f40e7990d8ff4aab3a00a36cf866a598de5  run_softhebb.py
+a2e23369f1cbfbf67b064ebcc5e9ed4f375734907f099be8cfd0089c998841f4  score_softhebb.py
+6c568e4ed9e6cded5b62837254e633a4bcafd71f75ffcb7b26bbc65ec3c65aa4  run_pilot.sh
+0e44b4e6e830670f2bcd57b8fe845e29472c8c77d108b3db3a2dcb12a5d3630b  third_party/SoftHebb/demo.py
+[bloodmnist trained n0 s0] epoch 1: train 57.44% test 81.06%
+[bloodmnist trained n0 s0] epoch 11: train 87.35% test 88.54%
+[bloodmnist trained n0 s0] epoch 21: train 89.62% test 90.30%
+[bloodmnist trained n0 s0] epoch 31: train 91.36% test 90.73%
+[bloodmnist trained n0 s0] epoch 41: train 91.58% test 91.23%
+[bloodmnist trained n0 s0] epoch 50: train 92.11% test 91.46%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 0, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 91.46448406898567, "train_acc_last": 92.10636340831174, "weight_change_max": [11.8599214553833, 3.378329277038574, 1.0105234384536743], "weight_norm_mean": [1.1376886367797852, 11.126238822937012, 25.987213134765625], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.7297139167785645, "seconds_total": 108.38084745407104, "torch": "2.7.0+cu126"}
+[bloodmnist random n0 s0] epoch 1: train 65.42% test 84.30%
+[bloodmnist random n0 s0] epoch 11: train 90.87% test 91.29%
+[bloodmnist random n0 s0] epoch 21: train 92.89% test 91.61%
+[bloodmnist random n0 s0] epoch 31: train 94.26% test 92.52%
+[bloodmnist random n0 s0] epoch 41: train 94.89% test 93.07%
+[bloodmnist random n0 s0] epoch 50: train 94.13% test 93.01%
+{"dataset": "bloodmnist", "mode": "random", "seed": 0, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 93.01373867290266, "train_acc_last": 94.12994397524876, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.979593515396118, "seconds_total": 112.04148554801941, "torch": "2.7.0+cu126"}
+[organamnist trained n0 s0] epoch 1: train 85.37% test 87.24%
+[organamnist trained n0 s0] epoch 11: train 98.46% test 90.85%
+[organamnist trained n0 s0] epoch 21: train 99.12% test 90.85%
+[organamnist trained n0 s0] epoch 31: train 99.44% test 91.22%
+[organamnist trained n0 s0] epoch 41: train 99.55% test 91.20%
+[organamnist trained n0 s0] epoch 50: train 99.60% test 91.27%
+{"dataset": "organamnist", "mode": "trained", "seed": 0, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 91.27010912363596, "train_acc_last": 99.60359943288678, "weight_change_max": [11.721227645874023, 3.8874635696411133, 1.6513005495071411], "weight_norm_mean": [2.931772232055664, 3.3482043743133545, 17.594968795776367], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.88439154624939, "seconds_total": 319.24769401550293, "torch": "2.7.0+cu126"}
+[organamnist random n0 s0] epoch 1: train 83.20% test 83.73%
+[organamnist random n0 s0] epoch 11: train 98.07% test 89.10%
+[organamnist random n0 s0] epoch 21: train 98.80% test 90.43%
+[organamnist random n0 s0] epoch 31: train 99.19% test 90.49%
+[organamnist random n0 s0] epoch 41: train 99.31% test 90.41%
+[organamnist random n0 s0] epoch 50: train 99.41% test 90.33%
+{"dataset": "organamnist", "mode": "random", "seed": 0, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.33074586567668, "train_acc_last": 99.41263273632129, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.618289709091187, "seconds_total": 315.72816371917725, "torch": "2.7.0+cu126"}
+[pathmnist trained n0 s0] epoch 1: train 59.75% test 68.61%
+[pathmnist trained n0 s0] epoch 11: train 73.35% test 77.55%
+[pathmnist trained n0 s0] epoch 21: train 75.23% test 76.39%
+[pathmnist trained n0 s0] epoch 31: train 77.19% test 75.58%
+[pathmnist trained n0 s0] epoch 41: train 77.79% test 77.24%
+[pathmnist trained n0 s0] epoch 50: train 77.80% test 77.17%
+{"dataset": "pathmnist", "mode": "trained", "seed": 0, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 77.17270194986072, "train_acc_last": 77.80012444997556, "weight_change_max": [11.956085205078125, 3.6856932640075684, 2.0108206272125244], "weight_norm_mean": [1.0001208782196045, 15.07265853881836, 16.84560775756836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 43.29038047790527, "seconds_total": 818.2263867855072, "torch": "2.7.0+cu126"}
+[pathmnist random n0 s0] epoch 1: train 63.56% test 62.77%
+[pathmnist random n0 s0] epoch 11: train 78.85% test 75.26%
+[pathmnist random n0 s0] epoch 21: train 81.33% test 77.27%
+[pathmnist random n0 s0] epoch 31: train 83.20% test 82.76%
+[pathmnist random n0 s0] epoch 41: train 84.08% test 81.75%
+[pathmnist random n0 s0] epoch 50: train 84.05% test 82.27%
+{"dataset": "pathmnist", "mode": "random", "seed": 0, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 82.27019498607243, "train_acc_last": 84.05373572158763, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 42.9586341381073, "seconds_total": 814.0557043552399, "torch": "2.7.0+cu126"}
+[bloodmnist trained n0 s1] epoch 1: train 58.21% test 77.58%
+[bloodmnist trained n0 s1] epoch 11: train 88.18% test 86.41%
+[bloodmnist trained n0 s1] epoch 21: train 90.68% test 90.82%
+[bloodmnist trained n0 s1] epoch 31: train 91.96% test 90.70%
+[bloodmnist trained n0 s1] epoch 41: train 92.62% test 91.84%
+[bloodmnist trained n0 s1] epoch 50: train 92.30% test 91.67%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 1, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 91.66910260157849, "train_acc_last": 92.29868718120244, "weight_change_max": [11.956811904907227, 3.1649324893951416, 0.8306423425674438], "weight_norm_mean": [1.2300831079483032, 10.704099655151367, 25.921676635742188], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.988636255264282, "seconds_total": 108.0648558139801, "torch": "2.7.0+cu126"}
+[bloodmnist random n0 s1] epoch 1: train 63.03% test 77.73%
+[bloodmnist random n0 s1] epoch 11: train 89.72% test 91.11%
+[bloodmnist random n0 s1] epoch 21: train 92.17% test 92.31%
+[bloodmnist random n0 s1] epoch 31: train 93.90% test 91.84%
+[bloodmnist random n0 s1] epoch 41: train 94.54% test 92.34%
+[bloodmnist random n0 s1] epoch 50: train 94.42% test 92.52%
+{"dataset": "bloodmnist", "mode": "random", "seed": 1, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.51680795089156, "train_acc_last": 94.42261058616941, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.903928995132446, "seconds_total": 108.07233142852783, "torch": "2.7.0+cu126"}
+[organamnist trained n0 s1] epoch 1: train 85.22% test 86.30%
+[organamnist trained n0 s1] epoch 11: train 98.40% test 89.80%
+[organamnist trained n0 s1] epoch 21: train 99.10% test 90.70%
+[organamnist trained n0 s1] epoch 31: train 99.45% test 91.03%
+[organamnist trained n0 s1] epoch 41: train 99.52% test 90.96%
+[organamnist trained n0 s1] epoch 50: train 99.60% test 91.10%
+{"dataset": "organamnist", "mode": "trained", "seed": 1, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 91.0957363032962, "train_acc_last": 99.60070599809033, "weight_change_max": [10.899369239807129, 3.934770107269287, 1.7507257461547852], "weight_norm_mean": [3.040280818939209, 3.2369728088378906, 17.762775421142578], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.7662136554718, "seconds_total": 315.18134808540344, "torch": "2.7.0+cu126"}
+[organamnist random n0 s1] epoch 1: train 83.07% test 84.09%
+[organamnist random n0 s1] epoch 11: train 98.01% test 89.92%
+[organamnist random n0 s1] epoch 21: train 98.81% test 89.93%
+[organamnist random n0 s1] epoch 31: train 99.22% test 90.60%
+[organamnist random n0 s1] epoch 41: train 99.38% test 90.51%
+[organamnist random n0 s1] epoch 50: train 99.39% test 90.49%
+{"dataset": "organamnist", "mode": "random", "seed": 1, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.49386882663967, "train_acc_last": 99.39237869274616, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.565431594848633, "seconds_total": 314.42852568626404, "torch": "2.7.0+cu126"}
+[pathmnist trained n0 s1] epoch 1: train 59.67% test 67.80%
+[pathmnist trained n0 s1] epoch 11: train 72.62% test 75.06%
+[pathmnist trained n0 s1] epoch 21: train 74.82% test 76.10%
+[pathmnist trained n0 s1] epoch 31: train 76.33% test 76.42%
+[pathmnist trained n0 s1] epoch 41: train 77.43% test 77.28%
+[pathmnist trained n0 s1] epoch 50: train 77.59% test 77.41%
+{"dataset": "pathmnist", "mode": "trained", "seed": 1, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 77.40947075208913, "train_acc_last": 77.59455975821147, "weight_change_max": [12.042658805847168, 3.7332828044891357, 1.8725285530090332], "weight_norm_mean": [1.0001273155212402, 14.020442008972168, 17.03363609313965], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 43.42903017997742, "seconds_total": 817.6818141937256, "torch": "2.7.0+cu126"}
+[pathmnist random n0 s1] epoch 1: train 62.95% test 66.25%
+[pathmnist random n0 s1] epoch 11: train 78.40% test 79.35%
+[pathmnist random n0 s1] epoch 21: train 80.99% test 79.65%
+[pathmnist random n0 s1] epoch 31: train 83.00% test 79.28%
+[pathmnist random n0 s1] epoch 41: train 83.79% test 81.66%
+[pathmnist random n0 s1] epoch 50: train 83.78% test 81.17%
+{"dataset": "pathmnist", "mode": "random", "seed": 1, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 81.1699164345404, "train_acc_last": 83.7848348815503, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 42.91390872001648, "seconds_total": 814.5614511966705, "torch": "2.7.0+cu126"}
+[bloodmnist trained n0 s2] epoch 1: train 64.49% test 76.59%
+[bloodmnist trained n0 s2] epoch 11: train 90.30% test 89.39%
+[bloodmnist trained n0 s2] epoch 21: train 92.42% test 92.11%
+[bloodmnist trained n0 s2] epoch 31: train 94.10% test 92.87%
+[bloodmnist trained n0 s2] epoch 41: train 94.62% test 92.96%
+[bloodmnist trained n0 s2] epoch 50: train 94.45% test 92.84%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 2, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.83835135925167, "train_acc_last": 94.44769629567689, "weight_change_max": [10.181082725524902, 3.4510343074798584, 0.8685469031333923], "weight_norm_mean": [1.8775436878204346, 8.722853660583496, 25.00078582763672], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.976468324661255, "seconds_total": 107.96360659599304, "torch": "2.7.0+cu126"}
+[bloodmnist random n0 s2] epoch 1: train 64.68% test 80.01%
+[bloodmnist random n0 s2] epoch 11: train 90.43% test 89.86%
+[bloodmnist random n0 s2] epoch 21: train 92.90% test 92.43%
+[bloodmnist random n0 s2] epoch 31: train 94.35% test 92.40%
+[bloodmnist random n0 s2] epoch 41: train 94.56% test 92.98%
+[bloodmnist random n0 s2] epoch 50: train 95.13% test 92.90%
+{"dataset": "bloodmnist", "mode": "random", "seed": 2, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.89681379713534, "train_acc_last": 95.12501045237896, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.935579538345337, "seconds_total": 108.10499501228333, "torch": "2.7.0+cu126"}
+[organamnist trained n0 s2] epoch 1: train 84.96% test 87.26%
+[organamnist trained n0 s2] epoch 11: train 98.41% test 89.58%
+[organamnist trained n0 s2] epoch 21: train 99.15% test 90.62%
+[organamnist trained n0 s2] epoch 31: train 99.50% test 90.92%
+[organamnist trained n0 s2] epoch 41: train 99.55% test 90.95%
+[organamnist trained n0 s2] epoch 50: train 99.55% test 91.04%
+{"dataset": "organamnist", "mode": "trained", "seed": 2, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 91.03948700641243, "train_acc_last": 99.55151760655073, "weight_change_max": [10.617255210876465, 3.728281021118164, 1.6071656942367554], "weight_norm_mean": [3.07578444480896, 3.397216320037842, 17.747066497802734], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.756280660629272, "seconds_total": 314.7331600189209, "torch": "2.7.0+cu126"}
+[organamnist random n0 s2] epoch 1: train 82.95% test 84.29%
+[organamnist random n0 s2] epoch 11: train 98.07% test 90.02%
+[organamnist random n0 s2] epoch 21: train 98.85% test 90.05%
+[organamnist random n0 s2] epoch 31: train 99.24% test 90.22%
+[organamnist random n0 s2] epoch 41: train 99.38% test 90.33%
+[organamnist random n0 s2] epoch 50: train 99.32% test 90.43%
+{"dataset": "organamnist", "mode": "random", "seed": 2, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.42636967037913, "train_acc_last": 99.31714938803854, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.60568594932556, "seconds_total": 313.9547426700592, "torch": "2.7.0+cu126"}
+[pathmnist trained n0 s2] epoch 1: train 59.51% test 65.50%
+[pathmnist trained n0 s2] epoch 11: train 72.78% test 75.78%
+[pathmnist trained n0 s2] epoch 21: train 75.25% test 76.45%
+[pathmnist trained n0 s2] epoch 31: train 76.75% test 78.48%
+[pathmnist trained n0 s2] epoch 41: train 77.74% test 78.31%
+[pathmnist trained n0 s2] epoch 50: train 77.77% test 77.69%
+{"dataset": "pathmnist", "mode": "trained", "seed": 2, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 77.68802228412255, "train_acc_last": 77.76901195608694, "weight_change_max": [10.810102462768555, 3.3694989681243896, 2.0373928546905518], "weight_norm_mean": [1.000126600265503, 14.435546875, 16.313690185546875], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 43.319536447525024, "seconds_total": 815.8629808425903, "torch": "2.7.0+cu126"}
+[pathmnist random n0 s2] epoch 1: train 62.94% test 75.35%
+[pathmnist random n0 s2] epoch 11: train 78.34% test 74.81%
+[pathmnist random n0 s2] epoch 21: train 80.91% test 78.73%
+[pathmnist random n0 s2] epoch 31: train 82.88% test 80.77%
+[pathmnist random n0 s2] epoch 41: train 83.77% test 80.84%
+[pathmnist random n0 s2] epoch 50: train 83.92% test 81.63%
+{"dataset": "pathmnist", "mode": "random", "seed": 2, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 81.62952646239555, "train_acc_last": 83.92484110404907, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 42.918577432632446, "seconds_total": 813.2092747688293, "torch": "2.7.0+cu126"}
+# SoftHebb pilot: trained against untrained weights
+
+## Reproduction check (CIFAR-10, whole training split, seed 0)
+
+- trained: 79.72% (paper 80.3%; bar 78.3%): met
+- random: 73.86%; gain +5.86 points
+
+## Medical sets, 10,000 training images (the STDP paper's matrix size)
+
+| Dataset | Trained, seeds 0-2 | Random, seeds 0-2 | Gain per seed, points | Mean gain | Reading |
+|---|---|---|---|---|---|
+| organamnist | 89.79, 90.17, 90.00 | 89.88, 89.26, 89.44 | -0.08, +0.91, +0.56 | +0.46 | mixed |
+| bloodmnist | 91.82, 91.58, 92.31 | 92.72, 92.25, 92.58 | -0.91, -0.67, -0.26 | -0.61 | does not add |
+| pathmnist | 77.60, 80.86, 78.75 | 76.52, 78.38, 78.11 | +1.09, +2.48, +0.64 | +1.40 | adds |
+
+## Medical sets, the whole training split
+
+| Dataset | Trained, seeds 0-2 | Random, seeds 0-2 | Gain per seed, points | Mean gain | Reading |
+|---|---|---|---|---|---|
+| organamnist | 91.27, 91.10, 91.04 | 90.33, 90.49, 90.43 | +0.94, +0.60, +0.61 | +0.72 |  |
+| bloodmnist | 91.46, 91.67, 92.84 | 93.01, 92.52, 92.90 | -1.55, -0.85, -0.06 | -0.82 |  |
+| pathmnist | 77.17, 77.41, 77.69 | 82.27, 81.17, 81.63 | -5.10, -3.76, -3.94 | -4.27 |  |
+
+### SoftHebb pilot phase full done 2026-11-11_21:15:54
+### SoftHebb pilot start 2026-11-16_10:55:34 on cuda:0, phase all; SHA-256 of the rule, scripts and third-party demo:
+a579b3b8c9d0b3af84618e451c169d230354975c10d08928042356a1377811ea  README.md
+a29042cd067752f0565a838da174e46e65d7f81a743938d3b406f1dbd68561e0  run_softhebb.py
+bf0b1f4b2446432bab2df53a5d8bb11e3fc00aad4b0e9ab3a95a5c1eb120fea8  score_softhebb.py
+41c35c7fe470575037778238dc0e89659a097e0533d0fd44b0e27f339d2a7324  run_pilot.sh
+0e44b4e6e830670f2bcd57b8fe845e29472c8c77d108b3db3a2dcb12a5d3630b  third_party/SoftHebb/demo.py
+[bloodmnist pixels n10000 s0] epoch 1: train 59.22% test 69.86%
+[bloodmnist pixels n10000 s0] epoch 11: train 74.22% test 79.10%
+[bloodmnist pixels n10000 s0] epoch 21: train 75.93% test 79.28%
+[bloodmnist pixels n10000 s0] epoch 31: train 77.72% test 79.39%
+[bloodmnist pixels n10000 s0] epoch 41: train 77.92% test 79.98%
+[bloodmnist pixels n10000 s0] epoch 50: train 77.65% test 79.66%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 0, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 79.65507161648641, "train_acc_last": 77.65, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.521203517913818, "torch": "2.7.0+cu126"}
+[organamnist pixels n10000 s0] epoch 1: train 64.82% test 62.98%
+[organamnist pixels n10000 s0] epoch 11: train 74.76% test 62.21%
+[organamnist pixels n10000 s0] epoch 21: train 77.43% test 62.69%
+[organamnist pixels n10000 s0] epoch 31: train 78.12% test 62.28%
+[organamnist pixels n10000 s0] epoch 41: train 78.37% test 62.80%
+[organamnist pixels n10000 s0] epoch 50: train 78.21% test 62.65%
+{"dataset": "organamnist", "mode": "pixels", "seed": 0, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 62.650466869164134, "train_acc_last": 78.21, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.2843732833862305, "torch": "2.7.0+cu126"}
+[pathmnist pixels n10000 s0] epoch 1: train 32.09% test 54.74%
+[pathmnist pixels n10000 s0] epoch 11: train 44.52% test 55.31%
+[pathmnist pixels n10000 s0] epoch 21: train 48.37% test 54.94%
+[pathmnist pixels n10000 s0] epoch 31: train 49.46% test 57.87%
+[pathmnist pixels n10000 s0] epoch 41: train 50.01% test 56.11%
+[pathmnist pixels n10000 s0] epoch 50: train 49.64% test 55.82%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 0, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 55.82172701949861, "train_acc_last": 49.64, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.37530779838562, "torch": "2.7.0+cu126"}
+[tissuemnist trained n10000 s0] epoch 1: train 36.69% test 45.40%
+[tissuemnist trained n10000 s0] epoch 11: train 56.28% test 51.74%
+[tissuemnist trained n10000 s0] epoch 21: train 62.37% test 53.10%
+[tissuemnist trained n10000 s0] epoch 31: train 65.17% test 54.47%
+[tissuemnist trained n10000 s0] epoch 41: train 65.65% test 54.38%
+[tissuemnist trained n10000 s0] epoch 50: train 66.42% test 54.53%
+{"dataset": "tissuemnist", "mode": "trained", "seed": 0, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 54.52834179357022, "train_acc_last": 66.42, "weight_change_max": [10.975582122802734, 3.014633893966675, 1.380395531654358], "weight_norm_mean": [3.4913463592529297, 8.660083770751953, 22.342443466186523], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.14889669418335, "seconds_total": 96.61679267883301, "torch": "2.7.0+cu126"}
+[tissuemnist random n10000 s0] epoch 1: train 35.79% test 48.57%
+[tissuemnist random n10000 s0] epoch 11: train 55.22% test 54.28%
+[tissuemnist random n10000 s0] epoch 21: train 60.00% test 54.74%
+[tissuemnist random n10000 s0] epoch 31: train 62.39% test 56.03%
+[tissuemnist random n10000 s0] epoch 41: train 63.72% test 56.45%
+[tissuemnist random n10000 s0] epoch 50: train 65.71% test 56.75%
+{"dataset": "tissuemnist", "mode": "random", "seed": 0, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 56.74915397631134, "train_acc_last": 65.71, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.940624237060547, 24.999189376831055, 24.989980697631836], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.146118640899658, "seconds_total": 98.99038600921631, "torch": "2.7.0+cu126"}
+[tissuemnist pixels n10000 s0] epoch 1: train 39.43% test 45.67%
+[tissuemnist pixels n10000 s0] epoch 11: train 42.72% test 45.96%
+[tissuemnist pixels n10000 s0] epoch 21: train 45.07% test 46.85%
+[tissuemnist pixels n10000 s0] epoch 31: train 46.31% test 46.80%
+[tissuemnist pixels n10000 s0] epoch 41: train 47.20% test 47.19%
+[tissuemnist pixels n10000 s0] epoch 50: train 47.59% test 47.08%
+{"dataset": "tissuemnist", "mode": "pixels", "seed": 0, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 47.083333333333336, "train_acc_last": 47.59, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.287903785705566, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n10000 s1] epoch 1: train 59.39% test 67.96%
+[bloodmnist pixels n10000 s1] epoch 11: train 74.67% test 75.62%
+[bloodmnist pixels n10000 s1] epoch 21: train 76.41% test 78.75%
+[bloodmnist pixels n10000 s1] epoch 31: train 77.39% test 79.13%
+[bloodmnist pixels n10000 s1] epoch 41: train 77.36% test 79.86%
+[bloodmnist pixels n10000 s1] epoch 50: train 78.47% test 80.06%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 1, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 80.06430868167203, "train_acc_last": 78.47, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.372753143310547, "torch": "2.7.0+cu126"}
+[organamnist pixels n10000 s1] epoch 1: train 65.24% test 61.62%
+[organamnist pixels n10000 s1] epoch 11: train 75.02% test 62.43%
+[organamnist pixels n10000 s1] epoch 21: train 76.98% test 63.26%
+[organamnist pixels n10000 s1] epoch 31: train 78.11% test 63.51%
+[organamnist pixels n10000 s1] epoch 41: train 79.14% test 63.38%
+[organamnist pixels n10000 s1] epoch 50: train 78.85% test 63.34%
+{"dataset": "organamnist", "mode": "pixels", "seed": 1, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 63.33670829114636, "train_acc_last": 78.85, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.306082248687744, "torch": "2.7.0+cu126"}
+[pathmnist pixels n10000 s1] epoch 1: train 33.18% test 40.11%
+[pathmnist pixels n10000 s1] epoch 11: train 45.87% test 54.35%
+[pathmnist pixels n10000 s1] epoch 21: train 48.75% test 55.43%
+[pathmnist pixels n10000 s1] epoch 31: train 49.66% test 54.55%
+[pathmnist pixels n10000 s1] epoch 41: train 51.08% test 55.29%
+[pathmnist pixels n10000 s1] epoch 50: train 50.82% test 55.46%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 1, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 55.459610027855156, "train_acc_last": 50.82, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.241433143615723, "torch": "2.7.0+cu126"}
+[tissuemnist trained n10000 s1] epoch 1: train 35.10% test 47.36%
+[tissuemnist trained n10000 s1] epoch 11: train 55.90% test 51.50%
+[tissuemnist trained n10000 s1] epoch 21: train 61.99% test 53.14%
+[tissuemnist trained n10000 s1] epoch 31: train 65.03% test 53.57%
+[tissuemnist trained n10000 s1] epoch 41: train 66.43% test 54.18%
+[tissuemnist trained n10000 s1] epoch 50: train 66.68% test 54.17%
+{"dataset": "tissuemnist", "mode": "trained", "seed": 1, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 54.17089678510998, "train_acc_last": 66.68, "weight_change_max": [12.154276847839355, 3.3417160511016846, 1.5445703268051147], "weight_norm_mean": [3.711216926574707, 9.02413558959961, 22.150096893310547], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.14503026008606, "seconds_total": 99.06402492523193, "torch": "2.7.0+cu126"}
+[tissuemnist random n10000 s1] epoch 1: train 36.64% test 46.14%
+[tissuemnist random n10000 s1] epoch 11: train 55.95% test 54.17%
+[tissuemnist random n10000 s1] epoch 21: train 60.66% test 55.48%
+[tissuemnist random n10000 s1] epoch 31: train 63.77% test 55.29%
+[tissuemnist random n10000 s1] epoch 41: train 64.64% test 56.54%
+[tissuemnist random n10000 s1] epoch 50: train 65.07% test 56.44%
+{"dataset": "tissuemnist", "mode": "random", "seed": 1, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 56.44247038917089, "train_acc_last": 65.07, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.149691343307495, "seconds_total": 99.60471296310425, "torch": "2.7.0+cu126"}
+[tissuemnist pixels n10000 s1] epoch 1: train 39.91% test 44.07%
+[tissuemnist pixels n10000 s1] epoch 11: train 42.99% test 46.45%
+[tissuemnist pixels n10000 s1] epoch 21: train 46.11% test 47.04%
+[tissuemnist pixels n10000 s1] epoch 31: train 47.47% test 47.18%
+[tissuemnist pixels n10000 s1] epoch 41: train 46.99% test 47.22%
+[tissuemnist pixels n10000 s1] epoch 50: train 47.74% test 47.32%
+{"dataset": "tissuemnist", "mode": "pixels", "seed": 1, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 47.32445008460237, "train_acc_last": 47.74, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.680996417999268, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n10000 s2] epoch 1: train 59.36% test 70.18%
+[bloodmnist pixels n10000 s2] epoch 11: train 74.41% test 79.30%
+[bloodmnist pixels n10000 s2] epoch 21: train 76.37% test 77.81%
+[bloodmnist pixels n10000 s2] epoch 31: train 76.58% test 79.68%
+[bloodmnist pixels n10000 s2] epoch 41: train 77.51% test 79.83%
+[bloodmnist pixels n10000 s2] epoch 50: train 76.99% test 79.80%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 2, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 79.80122771119555, "train_acc_last": 76.99, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.696039915084839, "torch": "2.7.0+cu126"}
+[organamnist pixels n10000 s2] epoch 1: train 64.80% test 61.20%
+[organamnist pixels n10000 s2] epoch 11: train 75.41% test 62.91%
+[organamnist pixels n10000 s2] epoch 21: train 76.68% test 64.02%
+[organamnist pixels n10000 s2] epoch 31: train 78.20% test 63.62%
+[organamnist pixels n10000 s2] epoch 41: train 79.00% test 63.54%
+[organamnist pixels n10000 s2] epoch 50: train 79.39% test 63.83%
+{"dataset": "organamnist", "mode": "pixels", "seed": 2, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 63.83170210372371, "train_acc_last": 79.39, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.675395727157593, "torch": "2.7.0+cu126"}
+[pathmnist pixels n10000 s2] epoch 1: train 33.30% test 47.27%
+[pathmnist pixels n10000 s2] epoch 11: train 45.49% test 53.69%
+[pathmnist pixels n10000 s2] epoch 21: train 48.22% test 56.87%
+[pathmnist pixels n10000 s2] epoch 31: train 50.75% test 56.23%
+[pathmnist pixels n10000 s2] epoch 41: train 50.88% test 57.35%
+[pathmnist pixels n10000 s2] epoch 50: train 51.43% test 56.67%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 2, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 56.67130919220056, "train_acc_last": 51.43, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.631033420562744, "torch": "2.7.0+cu126"}
+[tissuemnist trained n10000 s2] epoch 1: train 37.01% test 44.65%
+[tissuemnist trained n10000 s2] epoch 11: train 56.94% test 51.21%
+[tissuemnist trained n10000 s2] epoch 21: train 61.16% test 53.02%
+[tissuemnist trained n10000 s2] epoch 31: train 65.47% test 53.87%
+[tissuemnist trained n10000 s2] epoch 41: train 65.94% test 54.16%
+[tissuemnist trained n10000 s2] epoch 50: train 66.46% test 54.03%
+{"dataset": "tissuemnist", "mode": "trained", "seed": 2, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 54.02707275803722, "train_acc_last": 66.46, "weight_change_max": [9.731863021850586, 3.1109862327575684, 1.527552843093872], "weight_norm_mean": [3.703932285308838, 8.70506477355957, 22.809904098510742], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.228173494338989, "seconds_total": 101.25214338302612, "torch": "2.7.0+cu126"}
+[tissuemnist random n10000 s2] epoch 1: train 36.89% test 47.10%
+[tissuemnist random n10000 s2] epoch 11: train 55.59% test 53.57%
+[tissuemnist random n10000 s2] epoch 21: train 60.63% test 54.41%
+[tissuemnist random n10000 s2] epoch 31: train 63.16% test 56.04%
+[tissuemnist random n10000 s2] epoch 41: train 64.51% test 56.20%
+[tissuemnist random n10000 s2] epoch 50: train 64.52% test 56.34%
+{"dataset": "tissuemnist", "mode": "random", "seed": 2, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 56.340947546531304, "train_acc_last": 64.52, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.218889236450195, "seconds_total": 102.74493288993835, "torch": "2.7.0+cu126"}
+[tissuemnist pixels n10000 s2] epoch 1: train 41.16% test 45.13%
+[tissuemnist pixels n10000 s2] epoch 11: train 43.79% test 45.27%
+[tissuemnist pixels n10000 s2] epoch 21: train 46.61% test 46.60%
+[tissuemnist pixels n10000 s2] epoch 31: train 47.91% test 47.43%
+[tissuemnist pixels n10000 s2] epoch 41: train 48.05% test 47.19%
+[tissuemnist pixels n10000 s2] epoch 50: train 47.96% test 47.20%
+{"dataset": "tissuemnist", "mode": "pixels", "seed": 2, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 47.199661590524535, "train_acc_last": 47.96, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.685029745101929, "torch": "2.7.0+cu126"}
+[bloodmnist trained n10000 s3] epoch 1: train 55.54% test 81.79%
+[bloodmnist trained n10000 s3] epoch 11: train 87.69% test 87.84%
+[bloodmnist trained n10000 s3] epoch 21: train 90.28% test 90.94%
+[bloodmnist trained n10000 s3] epoch 31: train 92.33% test 91.03%
+[bloodmnist trained n10000 s3] epoch 41: train 92.46% test 91.35%
+[bloodmnist trained n10000 s3] epoch 50: train 92.50% test 91.23%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 3, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 91.23063431745105, "train_acc_last": 92.5, "weight_change_max": [11.544286727905273, 2.974012613296509, 0.8969530463218689], "weight_norm_mean": [1.3195586204528809, 10.888723373413086, 25.194931030273438], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.105858325958252, "seconds_total": 91.21718907356262, "torch": "2.7.0+cu126"}
+[bloodmnist random n10000 s3] epoch 1: train 61.98% test 79.98%
+[bloodmnist random n10000 s3] epoch 11: train 89.42% test 90.85%
+[bloodmnist random n10000 s3] epoch 21: train 92.24% test 91.11%
+[bloodmnist random n10000 s3] epoch 31: train 93.75% test 92.78%
+[bloodmnist random n10000 s3] epoch 41: train 93.97% test 92.98%
+[bloodmnist random n10000 s3] epoch 50: train 94.16% test 93.04%
+{"dataset": "bloodmnist", "mode": "random", "seed": 3, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 93.04296989184448, "train_acc_last": 94.16, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.00014877319336, 24.947086334228516, 25.000667572021484], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 4.998369932174683, "seconds_total": 91.23319911956787, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n10000 s3] epoch 1: train 60.30% test 72.20%
+[bloodmnist pixels n10000 s3] epoch 11: train 74.40% test 78.08%
+[bloodmnist pixels n10000 s3] epoch 21: train 76.40% test 79.10%
+[bloodmnist pixels n10000 s3] epoch 31: train 77.02% test 79.80%
+[bloodmnist pixels n10000 s3] epoch 41: train 77.22% test 80.01%
+[bloodmnist pixels n10000 s3] epoch 50: train 77.97% test 79.80%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 3, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 79.80122771119555, "train_acc_last": 77.97, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.634521722793579, "torch": "2.7.0+cu126"}
+[organamnist trained n10000 s3] epoch 1: train 74.23% test 81.05%
+[organamnist trained n10000 s3] epoch 11: train 97.20% test 89.49%
+[organamnist trained n10000 s3] epoch 21: train 98.42% test 89.98%
+[organamnist trained n10000 s3] epoch 31: train 98.75% test 90.16%
+[organamnist trained n10000 s3] epoch 41: train 98.93% test 90.29%
+[organamnist trained n10000 s3] epoch 50: train 99.13% test 90.36%
+{"dataset": "organamnist", "mode": "trained", "seed": 3, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.35887051411858, "train_acc_last": 99.13, "weight_change_max": [11.044500350952148, 3.1409473419189453, 1.1553586721420288], "weight_norm_mean": [3.0165019035339355, 6.233489513397217, 21.33184051513672], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.1175665855407715, "seconds_total": 95.45338463783264, "torch": "2.7.0+cu126"}
+[organamnist random n10000 s3] epoch 1: train 71.65% test 77.19%
+[organamnist random n10000 s3] epoch 11: train 96.90% test 88.79%
+[organamnist random n10000 s3] epoch 21: train 98.09% test 88.55%
+[organamnist random n10000 s3] epoch 31: train 98.92% test 89.18%
+[organamnist random n10000 s3] epoch 41: train 99.09% test 89.29%
+[organamnist random n10000 s3] epoch 50: train 99.11% test 89.23%
+{"dataset": "organamnist", "mode": "random", "seed": 3, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.23388457644279, "train_acc_last": 99.11, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.00014877319336, 24.947086334228516, 25.000667572021484], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.023312091827393, "seconds_total": 95.0512797832489, "torch": "2.7.0+cu126"}
+[organamnist pixels n10000 s3] epoch 1: train 64.58% test 62.73%
+[organamnist pixels n10000 s3] epoch 11: train 75.46% test 61.05%
+[organamnist pixels n10000 s3] epoch 21: train 77.50% test 62.72%
+[organamnist pixels n10000 s3] epoch 31: train 78.11% test 62.89%
+[organamnist pixels n10000 s3] epoch 41: train 78.63% test 63.21%
+[organamnist pixels n10000 s3] epoch 50: train 78.78% test 63.04%
+{"dataset": "organamnist", "mode": "pixels", "seed": 3, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 63.04421194735066, "train_acc_last": 78.78, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.671491384506226, "torch": "2.7.0+cu126"}
+[pathmnist trained n10000 s3] epoch 1: train 48.99% test 71.50%
+[pathmnist trained n10000 s3] epoch 11: train 76.16% test 79.16%
+[pathmnist trained n10000 s3] epoch 21: train 80.26% test 77.55%
+[pathmnist trained n10000 s3] epoch 31: train 81.73% test 79.65%
+[pathmnist trained n10000 s3] epoch 41: train 82.56% test 78.97%
+[pathmnist trained n10000 s3] epoch 50: train 83.10% test 79.44%
+{"dataset": "pathmnist", "mode": "trained", "seed": 3, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 79.44289693593315, "train_acc_last": 83.1, "weight_change_max": [11.931445121765137, 2.727017402648926, 0.9046873450279236], "weight_norm_mean": [1.2345805168151855, 12.323005676269531, 24.48932647705078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.126096725463867, "seconds_total": 93.51641130447388, "torch": "2.7.0+cu126"}
+[pathmnist random n10000 s3] epoch 1: train 47.61% test 64.23%
+[pathmnist random n10000 s3] epoch 11: train 76.66% test 69.11%
+[pathmnist random n10000 s3] epoch 21: train 80.54% test 77.92%
+[pathmnist random n10000 s3] epoch 31: train 82.88% test 77.91%
+[pathmnist random n10000 s3] epoch 41: train 83.23% test 76.42%
+[pathmnist random n10000 s3] epoch 50: train 83.66% test 76.84%
+{"dataset": "pathmnist", "mode": "random", "seed": 3, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 76.83844011142061, "train_acc_last": 83.66, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.00014877319336, 24.947086334228516, 25.000667572021484], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.00046968460083, "seconds_total": 93.1201856136322, "torch": "2.7.0+cu126"}
+[pathmnist pixels n10000 s3] epoch 1: train 34.34% test 49.81%
+[pathmnist pixels n10000 s3] epoch 11: train 46.03% test 55.45%
+[pathmnist pixels n10000 s3] epoch 21: train 48.28% test 56.02%
+[pathmnist pixels n10000 s3] epoch 31: train 51.06% test 58.08%
+[pathmnist pixels n10000 s3] epoch 41: train 51.16% test 57.02%
+[pathmnist pixels n10000 s3] epoch 50: train 51.01% test 57.66%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 3, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 57.66016713091921, "train_acc_last": 51.01, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.512981176376343, "torch": "2.7.0+cu126"}
+[tissuemnist trained n10000 s3] epoch 1: train 35.88% test 48.49%
+[tissuemnist trained n10000 s3] epoch 11: train 56.99% test 52.94%
+[tissuemnist trained n10000 s3] epoch 21: train 61.73% test 52.84%
+[tissuemnist trained n10000 s3] epoch 31: train 65.41% test 53.49%
+[tissuemnist trained n10000 s3] epoch 41: train 66.56% test 53.90%
+[tissuemnist trained n10000 s3] epoch 50: train 66.46% test 53.88%
+{"dataset": "tissuemnist", "mode": "trained", "seed": 3, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 53.87901861252114, "train_acc_last": 66.46, "weight_change_max": [11.192697525024414, 3.0688517093658447, 1.5745984315872192], "weight_norm_mean": [3.722416877746582, 8.693794250488281, 22.39497947692871], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.218799352645874, "seconds_total": 105.264244556427, "torch": "2.7.0+cu126"}
+[tissuemnist random n10000 s3] epoch 1: train 37.06% test 44.63%
+[tissuemnist random n10000 s3] epoch 11: train 56.44% test 54.25%
+[tissuemnist random n10000 s3] epoch 21: train 60.46% test 54.95%
+[tissuemnist random n10000 s3] epoch 31: train 63.44% test 56.30%
+[tissuemnist random n10000 s3] epoch 41: train 64.06% test 56.48%
+[tissuemnist random n10000 s3] epoch 50: train 65.48% test 56.70%
+{"dataset": "tissuemnist", "mode": "random", "seed": 3, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 56.70262267343485, "train_acc_last": 65.48, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.00014877319336, 24.947086334228516, 25.000667572021484], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.138712406158447, "seconds_total": 102.91496586799622, "torch": "2.7.0+cu126"}
+[tissuemnist pixels n10000 s3] epoch 1: train 40.16% test 41.97%
+[tissuemnist pixels n10000 s3] epoch 11: train 42.88% test 46.27%
+[tissuemnist pixels n10000 s3] epoch 21: train 46.05% test 46.13%
+[tissuemnist pixels n10000 s3] epoch 31: train 47.42% test 46.84%
+[tissuemnist pixels n10000 s3] epoch 41: train 47.73% test 47.29%
+[tissuemnist pixels n10000 s3] epoch 50: train 47.80% test 47.22%
+{"dataset": "tissuemnist", "mode": "pixels", "seed": 3, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 47.21869712351946, "train_acc_last": 47.8, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.439808368682861, "torch": "2.7.0+cu126"}
+[bloodmnist trained n10000 s4] epoch 1: train 56.30% test 79.48%
+[bloodmnist trained n10000 s4] epoch 11: train 86.44% test 87.55%
+[bloodmnist trained n10000 s4] epoch 21: train 89.70% test 90.32%
+[bloodmnist trained n10000 s4] epoch 31: train 91.41% test 90.59%
+[bloodmnist trained n10000 s4] epoch 41: train 91.69% test 91.26%
+[bloodmnist trained n10000 s4] epoch 50: train 91.72% test 90.73%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 4, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 90.73370359543993, "train_acc_last": 91.72, "weight_change_max": [12.060663223266602, 3.0954666137695312, 1.0158402919769287], "weight_norm_mean": [1.1597532033920288, 11.42035961151123, 25.791921615600586], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.022010326385498, "seconds_total": 90.29586601257324, "torch": "2.7.0+cu126"}
+[bloodmnist random n10000 s4] epoch 1: train 62.25% test 83.98%
+[bloodmnist random n10000 s4] epoch 11: train 89.49% test 90.47%
+[bloodmnist random n10000 s4] epoch 21: train 92.27% test 92.17%
+[bloodmnist random n10000 s4] epoch 31: train 93.58% test 92.14%
+[bloodmnist random n10000 s4] epoch 41: train 94.27% test 92.31%
+[bloodmnist random n10000 s4] epoch 50: train 94.36% test 92.49%
+{"dataset": "bloodmnist", "mode": "random", "seed": 4, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.48757673194973, "train_acc_last": 94.36, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.98721694946289, 24.975509643554688, 24.98688507080078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 4.929620265960693, "seconds_total": 89.38879060745239, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n10000 s4] epoch 1: train 58.80% test 71.03%
+[bloodmnist pixels n10000 s4] epoch 11: train 73.66% test 77.93%
+[bloodmnist pixels n10000 s4] epoch 21: train 75.42% test 79.16%
+[bloodmnist pixels n10000 s4] epoch 31: train 77.45% test 80.65%
+[bloodmnist pixels n10000 s4] epoch 41: train 77.48% test 80.06%
+[bloodmnist pixels n10000 s4] epoch 50: train 77.79% test 80.30%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 4, "n_train": 10000, "n_test": 3421, "n_classes": 8, "test_acc_last": 80.29815843320667, "train_acc_last": 77.79, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.263549327850342, "torch": "2.7.0+cu126"}
+[organamnist trained n10000 s4] epoch 1: train 74.04% test 83.01%
+[organamnist trained n10000 s4] epoch 11: train 96.98% test 87.72%
+[organamnist trained n10000 s4] epoch 21: train 98.30% test 89.62%
+[organamnist trained n10000 s4] epoch 31: train 99.00% test 89.59%
+[organamnist trained n10000 s4] epoch 41: train 99.03% test 89.68%
+[organamnist trained n10000 s4] epoch 50: train 99.05% test 89.56%
+{"dataset": "organamnist", "mode": "trained", "seed": 4, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.56013049836878, "train_acc_last": 99.05, "weight_change_max": [11.051736831665039, 3.670753240585327, 1.3753364086151123], "weight_norm_mean": [2.896718978881836, 6.47736120223999, 21.313688278198242], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.036531686782837, "seconds_total": 93.00663137435913, "torch": "2.7.0+cu126"}
+[organamnist random n10000 s4] epoch 1: train 72.46% test 79.08%
+[organamnist random n10000 s4] epoch 11: train 96.70% test 87.21%
+[organamnist random n10000 s4] epoch 21: train 98.21% test 88.87%
+[organamnist random n10000 s4] epoch 31: train 98.81% test 89.25%
+[organamnist random n10000 s4] epoch 41: train 98.89% test 89.36%
+[organamnist random n10000 s4] epoch 50: train 99.04% test 89.66%
+{"dataset": "organamnist", "mode": "random", "seed": 4, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 89.6557543030712, "train_acc_last": 99.04, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.98721694946289, 24.975509643554688, 24.98688507080078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 4.977542161941528, "seconds_total": 92.12991642951965, "torch": "2.7.0+cu126"}
+[organamnist pixels n10000 s4] epoch 1: train 64.37% test 58.55%
+[organamnist pixels n10000 s4] epoch 11: train 75.79% test 63.18%
+[organamnist pixels n10000 s4] epoch 21: train 76.99% test 63.35%
+[organamnist pixels n10000 s4] epoch 31: train 78.81% test 63.21%
+[organamnist pixels n10000 s4] epoch 41: train 79.18% test 63.08%
+[organamnist pixels n10000 s4] epoch 50: train 78.64% test 63.25%
+{"dataset": "organamnist", "mode": "pixels", "seed": 4, "n_train": 10000, "n_test": 17778, "n_classes": 11, "test_acc_last": 63.2467094161323, "train_acc_last": 78.64, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.473812818527222, "torch": "2.7.0+cu126"}
+[pathmnist trained n10000 s4] epoch 1: train 48.97% test 64.09%
+[pathmnist trained n10000 s4] epoch 11: train 75.68% test 75.50%
+[pathmnist trained n10000 s4] epoch 21: train 79.40% test 73.94%
+[pathmnist trained n10000 s4] epoch 31: train 81.36% test 76.63%
+[pathmnist trained n10000 s4] epoch 41: train 82.73% test 78.50%
+[pathmnist trained n10000 s4] epoch 50: train 82.48% test 78.04%
+{"dataset": "pathmnist", "mode": "trained", "seed": 4, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 78.03621169916435, "train_acc_last": 82.48, "weight_change_max": [12.118501663208008, 2.7893013954162598, 0.9536136388778687], "weight_norm_mean": [1.1257370710372925, 13.15662956237793, 24.5521240234375], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.06930685043335, "seconds_total": 90.48099708557129, "torch": "2.7.0+cu126"}
+[pathmnist random n10000 s4] epoch 1: train 49.11% test 61.57%
+[pathmnist random n10000 s4] epoch 11: train 77.24% test 73.98%
+[pathmnist random n10000 s4] epoch 21: train 81.87% test 73.87%
+[pathmnist random n10000 s4] epoch 31: train 83.90% test 76.48%
+[pathmnist random n10000 s4] epoch 41: train 84.21% test 76.99%
+[pathmnist random n10000 s4] epoch 50: train 84.87% test 77.52%
+{"dataset": "pathmnist", "mode": "random", "seed": 4, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 77.52089136490251, "train_acc_last": 84.87, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.98721694946289, 24.975509643554688, 24.98688507080078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.049657583236694, "seconds_total": 90.69808959960938, "torch": "2.7.0+cu126"}
+[pathmnist pixels n10000 s4] epoch 1: train 33.34% test 56.30%
+[pathmnist pixels n10000 s4] epoch 11: train 45.78% test 59.97%
+[pathmnist pixels n10000 s4] epoch 21: train 49.36% test 54.01%
+[pathmnist pixels n10000 s4] epoch 31: train 50.46% test 56.94%
+[pathmnist pixels n10000 s4] epoch 41: train 51.61% test 57.76%
+[pathmnist pixels n10000 s4] epoch 50: train 50.94% test 56.14%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 4, "n_train": 10000, "n_test": 7180, "n_classes": 9, "test_acc_last": 56.14206128133705, "train_acc_last": 50.94, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.867761135101318, "torch": "2.7.0+cu126"}
+[tissuemnist trained n10000 s4] epoch 1: train 36.61% test 42.01%
+[tissuemnist trained n10000 s4] epoch 11: train 57.69% test 51.03%
+[tissuemnist trained n10000 s4] epoch 21: train 63.52% test 52.99%
+[tissuemnist trained n10000 s4] epoch 31: train 66.61% test 54.26%
+[tissuemnist trained n10000 s4] epoch 41: train 66.98% test 54.10%
+[tissuemnist trained n10000 s4] epoch 50: train 67.76% test 54.42%
+{"dataset": "tissuemnist", "mode": "trained", "seed": 4, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 54.41835871404399, "train_acc_last": 67.76, "weight_change_max": [10.310859680175781, 3.1527833938598633, 1.7320970296859741], "weight_norm_mean": [3.41688871383667, 8.806072235107422, 22.388286590576172], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.235328912734985, "seconds_total": 103.677898645401, "torch": "2.7.0+cu126"}
+[tissuemnist random n10000 s4] epoch 1: train 37.92% test 49.62%
+[tissuemnist random n10000 s4] epoch 11: train 56.44% test 54.32%
+[tissuemnist random n10000 s4] epoch 21: train 60.99% test 55.30%
+[tissuemnist random n10000 s4] epoch 31: train 64.51% test 56.02%
+[tissuemnist random n10000 s4] epoch 41: train 64.91% test 56.21%
+[tissuemnist random n10000 s4] epoch 50: train 65.10% test 56.29%
+{"dataset": "tissuemnist", "mode": "random", "seed": 4, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 56.290186125211505, "train_acc_last": 65.1, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.98721694946289, 24.975509643554688, 24.98688507080078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.2127416133880615, "seconds_total": 103.81427121162415, "torch": "2.7.0+cu126"}
+[tissuemnist pixels n10000 s4] epoch 1: train 41.21% test 44.96%
+[tissuemnist pixels n10000 s4] epoch 11: train 44.23% test 45.65%
+[tissuemnist pixels n10000 s4] epoch 21: train 47.13% test 46.95%
+[tissuemnist pixels n10000 s4] epoch 31: train 48.65% test 47.08%
+[tissuemnist pixels n10000 s4] epoch 41: train 48.96% test 47.36%
+[tissuemnist pixels n10000 s4] epoch 50: train 49.11% test 47.45%
+{"dataset": "tissuemnist", "mode": "pixels", "seed": 4, "n_train": 10000, "n_test": 47280, "n_classes": 8, "test_acc_last": 47.45135363790186, "train_acc_last": 49.11, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 5.766848087310791, "torch": "2.7.0+cu126"}
+[cifar10 pixels n0 s0] epoch 1: train 31.01% test 35.66%
+[cifar10 pixels n0 s0] epoch 11: train 33.96% test 38.78%
+[cifar10 pixels n0 s0] epoch 21: train 37.62% test 39.20%
+[cifar10 pixels n0 s0] epoch 31: train 39.57% test 40.67%
+[cifar10 pixels n0 s0] epoch 41: train 40.53% test 41.41%
+[cifar10 pixels n0 s0] epoch 50: train 40.72% test 41.01%
+{"dataset": "cifar10", "mode": "pixels", "seed": 0, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 41.010000000000005, "train_acc_last": 40.724, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 27.60854959487915, "torch": "2.7.0+cu126"}
+[cifar10 trained n0 s1] epoch 1: train 55.95% test 63.53%
+[cifar10 trained n0 s1] epoch 11: train 77.82% test 78.31%
+[cifar10 trained n0 s1] epoch 21: train 80.84% test 79.17%
+[cifar10 trained n0 s1] epoch 31: train 82.87% test 80.18%
+[cifar10 trained n0 s1] epoch 41: train 83.55% test 80.43%
+[cifar10 trained n0 s1] epoch 50: train 83.68% test 80.48%
+{"dataset": "cifar10", "mode": "trained", "seed": 1, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 80.47999999999999, "train_acc_last": 83.682, "weight_change_max": [10.23674201965332, 3.519200086593628, 1.9492708444595337], "weight_norm_mean": [4.682972431182861, 4.945106029510498, 17.79741668701172], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 24.095695972442627, "seconds_total": 456.18956685066223, "torch": "2.7.0+cu126"}
+[cifar10 random n0 s1] epoch 1: train 45.19% test 61.19%
+[cifar10 random n0 s1] epoch 11: train 66.39% test 70.06%
+[cifar10 random n0 s1] epoch 21: train 69.77% test 71.51%
+[cifar10 random n0 s1] epoch 31: train 72.06% test 72.74%
+[cifar10 random n0 s1] epoch 41: train 72.90% test 73.58%
+[cifar10 random n0 s1] epoch 50: train 72.88% test 73.72%
+{"dataset": "cifar10", "mode": "random", "seed": 1, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 73.72, "train_acc_last": 72.882, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.18976402282715, 25.03497314453125, 25.008800506591797], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 23.880810737609863, "seconds_total": 441.6763229370117, "torch": "2.7.0+cu126"}
+[cifar10 pixels n0 s1] epoch 1: train 30.73% test 36.46%
+[cifar10 pixels n0 s1] epoch 11: train 33.78% test 37.80%
+[cifar10 pixels n0 s1] epoch 21: train 37.26% test 40.07%
+[cifar10 pixels n0 s1] epoch 31: train 39.40% test 40.91%
+[cifar10 pixels n0 s1] epoch 41: train 40.41% test 41.18%
+[cifar10 pixels n0 s1] epoch 50: train 40.96% test 41.45%
+{"dataset": "cifar10", "mode": "pixels", "seed": 1, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 41.449999999999996, "train_acc_last": 40.964, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 25.64417600631714, "torch": "2.7.0+cu126"}
+[cifar10 trained n0 s2] epoch 1: train 56.07% test 67.31%
+[cifar10 trained n0 s2] epoch 11: train 77.45% test 77.27%
+[cifar10 trained n0 s2] epoch 21: train 80.92% test 78.50%
+[cifar10 trained n0 s2] epoch 31: train 82.53% test 80.48%
+[cifar10 trained n0 s2] epoch 41: train 83.25% test 80.49%
+[cifar10 trained n0 s2] epoch 50: train 83.24% test 80.46%
+{"dataset": "cifar10", "mode": "trained", "seed": 2, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 80.46, "train_acc_last": 83.24, "weight_change_max": [10.121143341064453, 3.3422961235046387, 1.6814043521881104], "weight_norm_mean": [4.592104911804199, 4.813549041748047, 17.76275634765625], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 23.824058055877686, "seconds_total": 441.72518825531006, "torch": "2.7.0+cu126"}
+[cifar10 random n0 s2] epoch 1: train 45.32% test 60.32%
+[cifar10 random n0 s2] epoch 11: train 66.35% test 69.10%
+[cifar10 random n0 s2] epoch 21: train 69.50% test 71.04%
+[cifar10 random n0 s2] epoch 31: train 71.80% test 73.50%
+[cifar10 random n0 s2] epoch 41: train 72.60% test 73.82%
+[cifar10 random n0 s2] epoch 50: train 72.78% test 73.70%
+{"dataset": "cifar10", "mode": "random", "seed": 2, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 73.7, "train_acc_last": 72.784, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.70379638671875, 24.968318939208984, 24.99811363220215], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 23.756089210510254, "seconds_total": 442.0442473888397, "torch": "2.7.0+cu126"}
+[cifar10 pixels n0 s2] epoch 1: train 30.78% test 32.74%
+[cifar10 pixels n0 s2] epoch 11: train 34.07% test 37.74%
+[cifar10 pixels n0 s2] epoch 21: train 37.25% test 39.30%
+[cifar10 pixels n0 s2] epoch 31: train 39.51% test 40.86%
+[cifar10 pixels n0 s2] epoch 41: train 40.59% test 41.57%
+[cifar10 pixels n0 s2] epoch 50: train 40.90% test 41.35%
+{"dataset": "cifar10", "mode": "pixels", "seed": 2, "n_train": 50000, "n_test": 10000, "n_classes": 10, "test_acc_last": 41.349999999999994, "train_acc_last": 40.9, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 26.150806427001953, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n0 s0] epoch 1: train 61.06% test 73.40%
+[bloodmnist pixels n0 s0] epoch 11: train 74.09% test 79.71%
+[bloodmnist pixels n0 s0] epoch 21: train 75.62% test 79.57%
+[bloodmnist pixels n0 s0] epoch 31: train 76.87% test 80.24%
+[bloodmnist pixels n0 s0] epoch 41: train 77.38% test 80.06%
+[bloodmnist pixels n0 s0] epoch 50: train 77.70% test 80.01%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 0, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 80.00584624378837, "train_acc_last": 77.69880424784681, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 6.2066826820373535, "torch": "2.7.0+cu126"}
+[organamnist pixels n0 s0] epoch 1: train 69.27% test 61.02%
+[organamnist pixels n0 s0] epoch 11: train 74.01% test 62.00%
+[organamnist pixels n0 s0] epoch 21: train 75.89% test 63.29%
+[organamnist pixels n0 s0] epoch 31: train 77.65% test 64.51%
+[organamnist pixels n0 s0] epoch 41: train 77.99% test 64.05%
+[organamnist pixels n0 s0] epoch 50: train 77.79% test 64.02%
+{"dataset": "organamnist", "mode": "pixels", "seed": 0, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 64.01732478344022, "train_acc_last": 77.79288793727034, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 17.93865656852722, "torch": "2.7.0+cu126"}
+[pathmnist pixels n0 s0] epoch 1: train 38.96% test 50.57%
+[pathmnist pixels n0 s0] epoch 11: train 42.96% test 58.70%
+[pathmnist pixels n0 s0] epoch 21: train 45.95% test 54.55%
+[pathmnist pixels n0 s0] epoch 31: train 48.35% test 56.21%
+[pathmnist pixels n0 s0] epoch 41: train 49.64% test 59.62%
+[pathmnist pixels n0 s0] epoch 50: train 49.86% test 58.52%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 0, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 58.523676880222844, "train_acc_last": 49.85666029601315, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 46.485541582107544, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n0 s1] epoch 1: train 60.35% test 67.00%
+[bloodmnist pixels n0 s1] epoch 11: train 74.50% test 78.31%
+[bloodmnist pixels n0 s1] epoch 21: train 76.02% test 78.54%
+[bloodmnist pixels n0 s1] epoch 31: train 77.05% test 79.89%
+[bloodmnist pixels n0 s1] epoch 41: train 77.79% test 80.30%
+[bloodmnist pixels n0 s1] epoch 50: train 77.41% test 80.24%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 1, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 80.239695995323, "train_acc_last": 77.41449954009532, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 6.361316680908203, "torch": "2.7.0+cu126"}
+[organamnist pixels n0 s1] epoch 1: train 69.23% test 60.62%
+[organamnist pixels n0 s1] epoch 11: train 73.95% test 61.51%
+[organamnist pixels n0 s1] epoch 21: train 76.42% test 64.24%
+[organamnist pixels n0 s1] epoch 31: train 77.34% test 63.71%
+[organamnist pixels n0 s1] epoch 41: train 77.82% test 63.84%
+[organamnist pixels n0 s1] epoch 50: train 78.07% test 64.23%
+{"dataset": "organamnist", "mode": "pixels", "seed": 1, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 64.22544718191023, "train_acc_last": 78.06776424293278, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 17.872390508651733, "torch": "2.7.0+cu126"}
+[pathmnist pixels n0 s1] epoch 1: train 38.92% test 50.88%
+[pathmnist pixels n0 s1] epoch 11: train 43.19% test 56.11%
+[pathmnist pixels n0 s1] epoch 21: train 46.27% test 61.06%
+[pathmnist pixels n0 s1] epoch 31: train 48.63% test 59.44%
+[pathmnist pixels n0 s1] epoch 41: train 49.64% test 58.29%
+[pathmnist pixels n0 s1] epoch 50: train 49.81% test 58.12%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 1, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 58.119777158774376, "train_acc_last": 49.80888039468421, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 45.992103099823, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n0 s2] epoch 1: train 61.73% test 69.51%
+[bloodmnist pixels n0 s2] epoch 11: train 74.52% test 79.48%
+[bloodmnist pixels n0 s2] epoch 21: train 76.10% test 79.71%
+[bloodmnist pixels n0 s2] epoch 31: train 77.57% test 79.80%
+[bloodmnist pixels n0 s2] epoch 41: train 77.25% test 80.30%
+[bloodmnist pixels n0 s2] epoch 50: train 77.02% test 80.18%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 2, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 80.18123355743934, "train_acc_last": 77.02149009114474, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 6.336979627609253, "torch": "2.7.0+cu126"}
+[organamnist pixels n0 s2] epoch 1: train 69.27% test 63.68%
+[organamnist pixels n0 s2] epoch 11: train 74.30% test 61.59%
+[organamnist pixels n0 s2] epoch 21: train 76.32% test 62.68%
+[organamnist pixels n0 s2] epoch 31: train 77.47% test 63.72%
+[organamnist pixels n0 s2] epoch 41: train 77.98% test 64.07%
+[organamnist pixels n0 s2] epoch 50: train 78.17% test 63.97%
+{"dataset": "organamnist", "mode": "pixels", "seed": 2, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 63.96670041624479, "train_acc_last": 78.16614102601199, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 18.158451080322266, "torch": "2.7.0+cu126"}
+[pathmnist pixels n0 s2] epoch 1: train 38.72% test 51.84%
+[pathmnist pixels n0 s2] epoch 11: train 43.21% test 59.30%
+[pathmnist pixels n0 s2] epoch 21: train 46.00% test 58.58%
+[pathmnist pixels n0 s2] epoch 31: train 48.51% test 59.74%
+[pathmnist pixels n0 s2] epoch 41: train 49.64% test 59.30%
+[pathmnist pixels n0 s2] epoch 50: train 49.90% test 58.64%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 2, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 58.63509749303621, "train_acc_last": 49.898884394861994, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 46.324180364608765, "torch": "2.7.0+cu126"}
+[bloodmnist trained n0 s3] epoch 1: train 58.51% test 76.15%
+[bloodmnist trained n0 s3] epoch 11: train 86.84% test 88.78%
+[bloodmnist trained n0 s3] epoch 21: train 89.55% test 91.38%
+[bloodmnist trained n0 s3] epoch 31: train 91.40% test 91.20%
+[bloodmnist trained n0 s3] epoch 41: train 91.91% test 91.76%
+[bloodmnist trained n0 s3] epoch 50: train 92.09% test 91.79%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 3, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 91.78602747734581, "train_acc_last": 92.0896396019734, "weight_change_max": [11.84024429321289, 3.6948161125183105, 0.8576904535293579], "weight_norm_mean": [1.1551140546798706, 10.25239086151123, 26.199323654174805], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.924103498458862, "seconds_total": 104.2558000087738, "torch": "2.7.0+cu126"}
+[bloodmnist random n0 s3] epoch 1: train 63.58% test 80.47%
+[bloodmnist random n0 s3] epoch 11: train 89.51% test 91.11%
+[bloodmnist random n0 s3] epoch 21: train 92.55% test 92.11%
+[bloodmnist random n0 s3] epoch 31: train 93.78% test 92.43%
+[bloodmnist random n0 s3] epoch 41: train 94.23% test 93.10%
+[bloodmnist random n0 s3] epoch 50: train 94.56% test 93.10%
+{"dataset": "bloodmnist", "mode": "random", "seed": 3, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 93.10143232972815, "train_acc_last": 94.56476294004516, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.00014877319336, 24.947086334228516, 25.000667572021484], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.849890470504761, "seconds_total": 104.71832084655762, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n0 s3] epoch 1: train 61.35% test 73.46%
+[bloodmnist pixels n0 s3] epoch 11: train 74.07% test 79.16%
+[bloodmnist pixels n0 s3] epoch 21: train 75.54% test 78.16%
+[bloodmnist pixels n0 s3] epoch 31: train 77.08% test 80.06%
+[bloodmnist pixels n0 s3] epoch 41: train 77.42% test 80.39%
+[bloodmnist pixels n0 s3] epoch 50: train 77.92% test 80.21%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 3, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 80.21046477638117, "train_acc_last": 77.92457563341416, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 6.346240043640137, "torch": "2.7.0+cu126"}
+[organamnist trained n0 s3] epoch 1: train 85.04% test 83.82%
+[organamnist trained n0 s3] epoch 11: train 98.52% test 90.13%
+[organamnist trained n0 s3] epoch 21: train 99.13% test 90.58%
+[organamnist trained n0 s3] epoch 31: train 99.50% test 90.77%
+[organamnist trained n0 s3] epoch 41: train 99.55% test 90.94%
+[organamnist trained n0 s3] epoch 50: train 99.58% test 90.96%
+{"dataset": "organamnist", "mode": "trained", "seed": 3, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.95511306108673, "train_acc_last": 99.57755851971876, "weight_change_max": [11.17273235321045, 3.645658254623413, 1.6308287382125854], "weight_norm_mean": [3.111633777618408, 3.2116756439208984, 17.78954315185547], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.66423487663269, "seconds_total": 304.0130183696747, "torch": "2.7.0+cu126"}
+[organamnist random n0 s3] epoch 1: train 83.06% test 83.19%
+[organamnist random n0 s3] epoch 11: train 98.04% test 89.82%
+[organamnist random n0 s3] epoch 21: train 98.73% test 89.62%
+[organamnist random n0 s3] epoch 31: train 99.19% test 90.42%
+[organamnist random n0 s3] epoch 41: train 99.33% test 90.29%
+[organamnist random n0 s3] epoch 50: train 99.34% test 90.30%
+{"dataset": "organamnist", "mode": "random", "seed": 3, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.2969962875464, "train_acc_last": 99.33740343161367, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.00014877319336, 24.947086334228516, 25.000667572021484], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.48882555961609, "seconds_total": 299.71046471595764, "torch": "2.7.0+cu126"}
+[organamnist pixels n0 s3] epoch 1: train 69.14% test 61.40%
+[organamnist pixels n0 s3] epoch 11: train 74.04% test 62.74%
+[organamnist pixels n0 s3] epoch 21: train 76.12% test 61.75%
+[organamnist pixels n0 s3] epoch 31: train 77.68% test 64.19%
+[organamnist pixels n0 s3] epoch 41: train 78.01% test 64.00%
+[organamnist pixels n0 s3] epoch 50: train 77.86% test 64.02%
+{"dataset": "organamnist", "mode": "pixels", "seed": 3, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 64.01732478344022, "train_acc_last": 77.86233037238506, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 17.887173652648926, "torch": "2.7.0+cu126"}
+[pathmnist trained n0 s3] epoch 1: train 59.34% test 65.08%
+[pathmnist trained n0 s3] epoch 11: train 72.75% test 72.24%
+[pathmnist trained n0 s3] epoch 21: train 74.83% test 77.08%
+[pathmnist trained n0 s3] epoch 31: train 76.71% test 77.31%
+[pathmnist trained n0 s3] epoch 41: train 77.20% test 76.14%
+[pathmnist trained n0 s3] epoch 50: train 77.29% test 77.13%
+{"dataset": "pathmnist", "mode": "trained", "seed": 3, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 77.1309192200557, "train_acc_last": 77.29121294279746, "weight_change_max": [12.094139099121094, 3.4571399688720703, 2.026371717453003], "weight_norm_mean": [1.0001270771026611, 14.661626815795898, 17.8863525390625], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 42.7741961479187, "seconds_total": 779.0776650905609, "torch": "2.7.0+cu126"}
+[pathmnist random n0 s3] epoch 1: train 62.64% test 72.05%
+[pathmnist random n0 s3] epoch 11: train 78.24% test 77.42%
+[pathmnist random n0 s3] epoch 21: train 80.53% test 77.53%
+[pathmnist random n0 s3] epoch 31: train 82.65% test 80.68%
+[pathmnist random n0 s3] epoch 41: train 83.48% test 80.78%
+[pathmnist random n0 s3] epoch 50: train 83.68% test 81.52%
+{"dataset": "pathmnist", "mode": "random", "seed": 3, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 81.51810584958217, "train_acc_last": 83.68260811591627, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [25.00014877319336, 24.947086334228516, 25.000667572021484], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 42.357726097106934, "seconds_total": 775.4134738445282, "torch": "2.7.0+cu126"}
+[pathmnist pixels n0 s3] epoch 1: train 39.00% test 42.99%
+[pathmnist pixels n0 s3] epoch 11: train 43.20% test 50.38%
+[pathmnist pixels n0 s3] epoch 21: train 46.13% test 53.70%
+[pathmnist pixels n0 s3] epoch 31: train 48.21% test 60.25%
+[pathmnist pixels n0 s3] epoch 41: train 49.71% test 58.73%
+[pathmnist pixels n0 s3] epoch 50: train 49.99% test 57.65%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 3, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 57.646239554317546, "train_acc_last": 49.99444419751989, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 46.28172254562378, "torch": "2.7.0+cu126"}
+[bloodmnist trained n0 s4] epoch 1: train 57.20% test 79.28%
+[bloodmnist trained n0 s4] epoch 11: train 86.50% test 88.45%
+[bloodmnist trained n0 s4] epoch 21: train 89.69% test 90.30%
+[bloodmnist trained n0 s4] epoch 31: train 91.72% test 91.32%
+[bloodmnist trained n0 s4] epoch 41: train 91.69% test 90.88%
+[bloodmnist trained n0 s4] epoch 50: train 92.17% test 91.38%
+{"dataset": "bloodmnist", "mode": "trained", "seed": 4, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 91.37679041216019, "train_acc_last": 92.17325863366503, "weight_change_max": [12.088621139526367, 3.221707344055176, 0.9863958358764648], "weight_norm_mean": [1.1179760694503784, 11.030256271362305, 25.98293113708496], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.9331371784210205, "seconds_total": 104.3566586971283, "torch": "2.7.0+cu126"}
+[bloodmnist random n0 s4] epoch 1: train 64.29% test 80.65%
+[bloodmnist random n0 s4] epoch 11: train 89.45% test 90.85%
+[bloodmnist random n0 s4] epoch 21: train 91.77% test 91.93%
+[bloodmnist random n0 s4] epoch 31: train 93.65% test 92.75%
+[bloodmnist random n0 s4] epoch 41: train 94.21% test 92.81%
+[bloodmnist random n0 s4] epoch 50: train 94.40% test 92.98%
+{"dataset": "bloodmnist", "mode": "random", "seed": 4, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 92.98450745396083, "train_acc_last": 94.39752487666193, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.98721694946289, 24.975509643554688, 24.98688507080078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 5.870047330856323, "seconds_total": 104.46781945228577, "torch": "2.7.0+cu126"}
+[bloodmnist pixels n0 s4] epoch 1: train 61.02% test 72.58%
+[bloodmnist pixels n0 s4] epoch 11: train 74.23% test 78.78%
+[bloodmnist pixels n0 s4] epoch 21: train 75.73% test 80.01%
+[bloodmnist pixels n0 s4] epoch 31: train 77.40% test 79.86%
+[bloodmnist pixels n0 s4] epoch 41: train 77.53% test 80.01%
+[bloodmnist pixels n0 s4] epoch 50: train 77.16% test 80.47%
+{"dataset": "bloodmnist", "mode": "pixels", "seed": 4, "n_train": 11959, "n_test": 3421, "n_classes": 8, "test_acc_last": 80.47354574685764, "train_acc_last": 77.15528054185133, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 6.458008289337158, "torch": "2.7.0+cu126"}
+[organamnist trained n0 s4] epoch 1: train 84.99% test 85.45%
+[organamnist trained n0 s4] epoch 11: train 98.51% test 90.49%
+[organamnist trained n0 s4] epoch 21: train 99.23% test 90.56%
+[organamnist trained n0 s4] epoch 31: train 99.50% test 91.30%
+[organamnist trained n0 s4] epoch 41: train 99.57% test 90.99%
+[organamnist trained n0 s4] epoch 50: train 99.62% test 91.10%
+{"dataset": "organamnist", "mode": "trained", "seed": 4, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 91.10136123298459, "train_acc_last": 99.61806660686901, "weight_change_max": [11.192465782165527, 3.88417649269104, 1.5759578943252563], "weight_norm_mean": [2.9015262126922607, 3.462055206298828, 17.618894577026367], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.62787413597107, "seconds_total": 302.9799528121948, "torch": "2.7.0+cu126"}
+[organamnist random n0 s4] epoch 1: train 82.78% test 83.92%
+[organamnist random n0 s4] epoch 11: train 98.06% test 89.27%
+[organamnist random n0 s4] epoch 21: train 98.83% test 89.92%
+[organamnist random n0 s4] epoch 31: train 99.24% test 90.65%
+[organamnist random n0 s4] epoch 41: train 99.29% test 90.72%
+[organamnist random n0 s4] epoch 50: train 99.34% test 90.71%
+{"dataset": "organamnist", "mode": "random", "seed": 4, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 90.71324108448644, "train_acc_last": 99.34029686641011, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.98721694946289, 24.975509643554688, 24.98688507080078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 16.505371570587158, "seconds_total": 299.15538573265076, "torch": "2.7.0+cu126"}
+[organamnist pixels n0 s4] epoch 1: train 69.36% test 60.79%
+[organamnist pixels n0 s4] epoch 11: train 73.95% test 62.04%
+[organamnist pixels n0 s4] epoch 21: train 76.14% test 63.36%
+[organamnist pixels n0 s4] epoch 31: train 77.37% test 63.74%
+[organamnist pixels n0 s4] epoch 41: train 78.01% test 63.98%
+[organamnist pixels n0 s4] epoch 50: train 77.92% test 64.20%
+{"dataset": "organamnist", "mode": "pixels", "seed": 4, "n_train": 34561, "n_test": 17778, "n_classes": 11, "test_acc_last": 64.20294746315672, "train_acc_last": 77.91730563351754, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 17.883063316345215, "torch": "2.7.0+cu126"}
+[pathmnist trained n0 s4] epoch 1: train 59.50% test 67.47%
+[pathmnist trained n0 s4] epoch 11: train 72.91% test 73.89%
+[pathmnist trained n0 s4] epoch 21: train 74.98% test 76.57%
+[pathmnist trained n0 s4] epoch 31: train 76.59% test 77.69%
+[pathmnist trained n0 s4] epoch 41: train 77.43% test 76.99%
+[pathmnist trained n0 s4] epoch 50: train 77.53% test 77.24%
+{"dataset": "pathmnist", "mode": "trained", "seed": 4, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 77.24233983286908, "train_acc_last": 77.52789012845015, "weight_change_max": [12.227543830871582, 3.9566450119018555, 2.050069570541382], "weight_norm_mean": [1.0001258850097656, 15.374320983886719, 17.36386489868164], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 42.84150791168213, "seconds_total": 778.628791809082, "torch": "2.7.0+cu126"}
+[pathmnist random n0 s4] epoch 1: train 62.59% test 76.28%
+[pathmnist random n0 s4] epoch 11: train 78.00% test 78.29%
+[pathmnist random n0 s4] epoch 21: train 80.80% test 78.44%
+[pathmnist random n0 s4] epoch 31: train 82.75% test 81.84%
+[pathmnist random n0 s4] epoch 41: train 83.64% test 81.49%
+[pathmnist random n0 s4] epoch 50: train 83.72% test 81.74%
+{"dataset": "pathmnist", "mode": "random", "seed": 4, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 81.74094707520891, "train_acc_last": 83.71594293079693, "weight_change_max": [0.0, 0.0, 0.0], "weight_norm_mean": [24.98721694946289, 24.975509643554688, 24.98688507080078], "sup_epochs": 50, "device": "cuda:0", "seconds_unsup": 42.502403259277344, "seconds_total": 775.7423648834229, "torch": "2.7.0+cu126"}
+[pathmnist pixels n0 s4] epoch 1: train 38.90% test 53.76%
+[pathmnist pixels n0 s4] epoch 11: train 43.15% test 58.51%
+[pathmnist pixels n0 s4] epoch 21: train 45.98% test 60.10%
+[pathmnist pixels n0 s4] epoch 31: train 48.44% test 59.40%
+[pathmnist pixels n0 s4] epoch 41: train 49.54% test 57.79%
+[pathmnist pixels n0 s4] epoch 50: train 49.88% test 58.04%
+{"dataset": "pathmnist", "mode": "pixels", "seed": 4, "n_train": 89996, "n_test": 7180, "n_classes": 9, "test_acc_last": 58.03621169916434, "train_acc_last": 49.878883505933594, "n_features": 3072, "sup_epochs": 50, "device": "cuda:0", "seconds_total": 47.04206204414368, "torch": "2.7.0+cu126"}
+# SoftHebb pilot: trained against untrained weights and against the pixels
+
+Test accuracy (%) at the last readout epoch, full official test split. Mean ± SD over seeds.
+
+## CIFAR-10 (whole training split): reproduction check
+
+- Stage-1 bar, seed 0 trained: 79.72% (bar 78.3%): met. Paper: 80.31 ± 0.14 (4 runs).
+
+| | Seeds 0-2 | Mean ± SD |
+|---|---|---|
+| trained | 79.72, 80.48, 80.46 | 80.22 ± 0.43 |
+| random | 73.86, 73.72, 73.70 | 73.76 ± 0.09 |
+| pixels | 41.01, 41.45, 41.35 | 41.27 ± 0.23 |
+
+Gain per seed (trained minus random): +5.86, +6.76, +6.76
+
+## Medical sets, 10,000 training images (the STDP paper's matrix size): readings
+
+| Dataset | Trained | Random | Pixels | Gain per seed (trained minus random) | Trained > random | Training, 5 seeds | Training, stage 1 (seeds 0-2) | Trained > pixels | Input, 5 seeds | Random > pixels |
+|---|---|---|---|---|---|---|---|---|---|---|
+| organamnist | 89.98 ± 0.31 | 89.49 ± 0.27 | 63.22 ± 0.43 | -0.08, +0.91, +0.56, +1.12, -0.10 | 3 of 5 | mixed | mixed | 5 of 5 | beats its input | 5 of 5 |
+| bloodmnist | 91.53 ± 0.60 | 92.62 ± 0.29 | 79.92 ± 0.26 | -0.91, -0.67, -0.26, -1.81, -1.75 | 0 of 5 | does not add | does not add | 5 of 5 | beats its input | 5 of 5 |
+| pathmnist | 78.94 ± 1.28 | 77.47 ± 0.80 | 56.35 ± 0.86 | +1.09, +2.48, +0.64, +2.60, +0.52 | 5 of 5 | adds | adds | 5 of 5 | beats its input | 5 of 5 |
+| tissuemnist | 54.20 ± 0.27 | 56.51 ± 0.21 | 47.26 ± 0.14 | -2.22, -2.27, -2.31, -2.82, -1.87 | 0 of 5 | does not add | n/a (not in stage 1) | 5 of 5 | beats its input | 5 of 5 |
+
+## Medical sets, whole training split (reported, no reading)
+
+| Dataset | Trained | Random | Pixels | Gain per seed (trained minus random) | Trained > random | Trained > pixels |
+|---|---|---|---|---|---|---|
+| organamnist | 91.09 ± 0.12 | 90.45 ± 0.17 | 64.09 ± 0.12 | +0.94, +0.60, +0.61, +0.66, +0.39 | 5 of 5 | 5 of 5 |
+| bloodmnist | 91.83 ± 0.59 | 92.90 ± 0.23 | 80.22 ± 0.17 | -1.55, -0.85, -0.06, -1.32, -1.61 | 0 of 5 | 5 of 5 |
+| pathmnist | 77.33 ± 0.23 | 81.67 ± 0.40 | 58.19 ± 0.40 | -5.10, -3.76, -3.94, -4.39, -4.50 | 0 of 5 | 5 of 5 |
+
+### SoftHebb pilot phase all done 2026-11-16_13:33:31

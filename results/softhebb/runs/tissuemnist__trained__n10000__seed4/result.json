@@ -1,0 +1,57 @@
+{
+ "dataset": "tissuemnist",
+ "mode": "trained",
+ "seed": 4,
+ "n_train": 10000,
+ "n_test": 47280,
+ "n_classes": 8,
+ "test_acc_last": 54.41835871404399,
+ "train_acc_last": 67.76,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 36.61,
+   "test_acc": 42.00507614213198
+  },
+  {
+   "epoch": 11,
+   "train_acc": 57.69,
+   "test_acc": 51.034263959390856
+  },
+  {
+   "epoch": 21,
+   "train_acc": 63.52,
+   "test_acc": 52.98646362098138
+  },
+  {
+   "epoch": 31,
+   "train_acc": 66.61,
+   "test_acc": 54.259729272419634
+  },
+  {
+   "epoch": 41,
+   "train_acc": 66.98,
+   "test_acc": 54.096869712351946
+  },
+  {
+   "epoch": 50,
+   "train_acc": 67.76,
+   "test_acc": 54.41835871404399
+  }
+ ],
+ "weight_change_max": [
+  10.310859680175781,
+  3.1527833938598633,
+  1.7320970296859741
+ ],
+ "weight_norm_mean": [
+  3.41688871383667,
+  8.806072235107422,
+  22.388286590576172
+ ],
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_unsup": 5.235328912734985,
+ "seconds_total": 103.677898645401,
+ "torch": "2.7.0+cu126"
+}

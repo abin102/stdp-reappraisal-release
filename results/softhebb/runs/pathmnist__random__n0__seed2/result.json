@@ -1,0 +1,57 @@
+{
+ "dataset": "pathmnist",
+ "mode": "random",
+ "seed": 2,
+ "n_train": 89996,
+ "n_test": 7180,
+ "n_classes": 9,
+ "test_acc_last": 81.62952646239555,
+ "train_acc_last": 83.92484110404907,
+ "curve": [
+  {
+   "epoch": 1,
+   "train_acc": 62.94279745766479,
+   "test_acc": 75.34818941504177
+  },
+  {
+   "epoch": 11,
+   "train_acc": 78.34348193253034,
+   "test_acc": 74.8050139275766
+  },
+  {
+   "epoch": 21,
+   "train_acc": 80.90581803635718,
+   "test_acc": 78.73259052924791
+  },
+  {
+   "epoch": 31,
+   "train_acc": 82.8825725587804,
+   "test_acc": 80.76601671309193
+  },
+  {
+   "epoch": 41,
+   "train_acc": 83.76594515311791,
+   "test_acc": 80.83565459610028
+  },
+  {
+   "epoch": 50,
+   "train_acc": 83.92484110404907,
+   "test_acc": 81.62952646239555
+  }
+ ],
+ "weight_change_max": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "weight_norm_mean": [
+  24.70379638671875,
+  24.968318939208984,
+  24.99811363220215
+ ],
+ "sup_epochs": 50,
+ "device": "cuda:0",
+ "seconds_unsup": 42.918577432632446,
+ "seconds_total": 813.2092747688293,
+ "torch": "2.7.0+cu126"
+}
