@@ -243,7 +243,7 @@ the networks each scorer reads.
 | Table 4, architecture row | `scripts/train/run_seeds.sh conv_svm` (runs `scripts/extract/conv_svm_readout.py`, `scripts/score/classify_feats_torch.py`), then `scripts/score/conv_arch_logreg_n5.py` | `results/conv_svm_{trained,random}_s{1-5}.json`, `results/conv_arch_logreg_n5.{md,json}` |
 | Table 4, Clopath's-neuron row | `scripts/score/clopath_port_probefix_score.py` | `results/clopath_port_probefix_scores.{md,json}` |
 | Table S1, hyperparameters | none (configurations) | `run_configs/*.yaml`, `experiments/configs/*.yaml`, `conv/configs/conv_voltage_config.yaml` |
-| Table S2, post-hoc vs linear on eight datasets | `scripts/score/probefix_aggregate.py` | `results/probefix_matrix_n5.md` (its Table 3) |
+| Table S2, neuron labelling vs linear probe on eight datasets | `scripts/score/probefix_aggregate.py` | `results/probefix_matrix_n5.md` (its Table 3) |
 | Table S3, scaffold matrix | `scripts/score/posthoc_both_conventions.py`, `scaffold_readout_table.py` | `results/posthoc_both_conventions.csv`, `results/scaffold_readout_table.csv`, `results/scaffold_readout_summary.md` |
 | Table S4, voltage-STDP tuning | `scripts/score/reextract_probefix_score.py` | `results/reextract_probefix_scores.md` (section "Appendix C") |
 | Table S5, weight management | `scripts/score/reextract_probefix_score.py` | `results/reextract_probefix_scores.md` (section "Table 3 weight-management row", named after an earlier draft) |
