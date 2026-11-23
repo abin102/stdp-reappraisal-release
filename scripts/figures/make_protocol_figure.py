@@ -1,28 +1,27 @@
-"""Figure 8 — conceptual summary of the evaluation protocol (Discussion §5.3).
-Left: the conventional single-number pipeline that conflates four factors.
-Right: this paper's linear-readout + Δ-over-random protocol that isolates the rule.
-Purely schematic (no data). Drawn at its printed width (the full text width) in the
-shared journal style of scripts/figures/paper_style.py, so the font sizes are the printed sizes;
-box widths follow their text. Box, line and arrow styling is shared with Figure 1, and
-the colours are neutral because blue, vermillion and green mean the three rules in the
-data figures. The caption, not the artwork, carries the cross-reference (Remark 2).
-Written as a vector PDF (included by the manuscript) and a 600 dpi PNG.
+"""Figure 1: the evaluation protocol (Section 2.1). Purely schematic (no data).
+Left: the conventional evaluation, one accuracy under neuron labelling.
+Right: the protocol: the encoded input, the untrained network (plasticity off) and the trained network,
+read by a linear probe (solid arrows) and, for both networks, by neuron labelling (dashed arrows);
+the three differences of Section 2.1.2. Drawn at the printed width in the shared style of paper_style.py.
+Writes $FIG_OUT_DIR/fig8_protocol.pdf and .png (default figures/).
 Run: python scripts/figures/make_protocol_figure.py
 """
 import os, sys
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
-from scripts.figures import paper_style as ps
+from matplotlib.lines import Line2D
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paper_style as ps
 ps.apply()
 
 OUT = os.environ.get("FIG_OUT_DIR", "figures"); os.makedirs(OUT, exist_ok=True)
 INK = ps.INK
-FILL = "#EEF2F5"; RAND_FILL = "#E2E2E2"; OUT_FILL = "#D4D4D4"
+FILL = "#EEF2F5"; RAND_FILL = "#E2E2E2"; OUT_FILL = "#D4D4D4"; LAB_FILL = "#D4D4D4"
 FS = ps.FS_LABEL
-LW, HEAD = 0.8, 7                             # the same line width and arrowhead as Figure 1
+LW, HEAD = 0.8, 7
 
-W, H = ps.FULL_W, 3.10                        # inches; axes coordinates are inches too
+W, H = ps.FULL_W, 3.45
 fig = plt.figure(figsize=(W, H)); ax = fig.add_axes([0, 0, 1, 1])
 ax.set_xlim(0, W); ax.set_ylim(0, H); ax.axis("off")
 rend = fig.canvas.get_renderer()
@@ -35,62 +34,75 @@ def tsize(txt, fs=FS):
 
 
 def box(cx, cy, text, fc=FILL, ec=INK, w=None, h=None, ls="-"):
-    """Rounded box centred on (cx, cy), sized to its text; returns (x0, x1, y0, y1)."""
     tw, th = tsize(text) if text else (0.0, 0.0)
-    w = w or tw + 0.20; h = h or th + 0.15
-    ax.add_patch(FancyBboxPatch((cx - w / 2, cy - h / 2), w, h,
-                 boxstyle="round,pad=0,rounding_size=0.05",
-                 fc=fc, ec=ec, lw=LW, ls=ls, zorder=2))
+    w = w or tw + 0.18; h = h or th + 0.14
+    ax.add_patch(FancyBboxPatch((cx - w / 2, cy - h / 2), w, h, boxstyle="round,pad=0,rounding_size=0.05",
+                                fc=fc, ec=ec, lw=LW, ls=ls, zorder=2))
     if text:
         ax.text(cx, cy, text, ha="center", va="center", fontsize=FS, color=INK, zorder=3)
     return cx - w / 2, cx + w / 2, cy - h / 2, cy + h / 2
 
 
-def arrow(x0, y0, x1, y1, style="-|>"):
-    # above the boxes, so the heads are not hidden under the box they point at
+def arrow(x0, y0, x1, y1, style="-|>", ls="-"):
     ax.add_patch(FancyArrowPatch((x0, y0), (x1, y1), arrowstyle=style, mutation_scale=HEAD,
-                 lw=LW, color=INK, zorder=4, shrinkA=0, shrinkB=0))
+                                 lw=LW, color=INK, zorder=4, shrinkA=0, shrinkB=0, linestyle=ls))
 
 
-def down(b_from, b_to):
-    x = (b_from[0] + b_from[1]) / 2
-    arrow(x, b_from[2], x, b_to[3])
+def mid(b): return (b[0] + b[1]) / 2
 
 
-# ---------------- left: the conventional evaluation (confounded) ----------------
-xl = W * 0.25
-L = [box(xl, 2.92, "Image"), box(xl, 2.34, "STDP layer"), box(xl, 1.76, "Post-hoc readout"),
-     box(xl, 1.18, "Single accuracy number", fc=OUT_FILL)]
+Y_IMG, Y_ENC, Y_NET, Y_ACC, Y_NOTE = 3.17, 2.70, 2.05, 1.30, 0.42
+
+# ---------------- left: the conventional evaluation ----------------
+xl = 0.95
+L = [box(xl, Y_IMG, "Image"), box(xl, Y_ENC, "STDP network"), box(xl, Y_NET, "Neuron labelling"),
+     box(xl, Y_ACC, "One accuracy", fc=OUT_FILL)]
 for a, b in zip(L, L[1:]):
-    down(a, b)
-box(xl, 0.35, "One number conflates\narchitecture · scaffold · readout · plasticity",
-    fc="white", ls="--", w=W / 2 - 0.30, h=0.66)
+    arrow(mid(a), a[2], mid(b), b[3])
+box(xl, Y_NOTE, "mixes the input,\nthe architecture,\nthe scaffold, the readout\nand the rule",
+    fc="white", ls="--", w=1.70, h=0.70)
+ax.plot([2.02, 2.02], [0.08, H - 0.08], color=ps.GREY, lw=0.6, ls=(0, (1, 2)))
 
-# ---------------- right: this paper (representation quality) ----------------
-xc = W * 0.75; xa, xb = xc - 0.68, xc + 0.68
-img = box(xc, 2.92, "Image")
-enc = box(xc, 2.46, "Encoder")
-down(img, enc)
-fr = box(xa, 1.90, "Random-init\nfeatures", fc=RAND_FILL, ec=ps.GREY)
-fs_ = box(xb, 1.90, "STDP\nfeatures")
-arrow(xc - 0.12, enc[2], xa + 0.12, fr[3]); arrow(xc + 0.12, enc[2], xb - 0.12, fs_[3])
-pa = box(xa, 1.37, "Linear readout"); pb = box(xb, 1.37, "Linear readout")
-down(fr, pa); down(fs_, pb)
-aa = box(xa, 0.93, r"$A_{\mathrm{random}}$", fc=RAND_FILL, ec=ps.GREY)
-ab = box(xb, 0.93, r"$A_{\mathrm{STDP}}$")
-down(pa, aa); down(pb, ab)
-arrow(aa[1] + 0.03, 0.93, ab[0] - 0.03, 0.93, style="<|-|>")
-ax.text(xc, 0.96, r"$\Delta$", ha="center", va="bottom", fontsize=FS, color=INK)
-# the note: the formula on its own line, the wording of the caption below it
-box(xc, 0.35, "", fc="white", w=W / 2 - 0.30, h=0.66)
-ax.text(xc, 0.535, r"$\Delta = A_{\mathrm{STDP}} - A_{\mathrm{random}}$", ha="center",
-        va="center", fontsize=FS, color=INK, zorder=3)
-ax.text(xc, 0.255, "isolates the rule’s marginal contribution\nto representation quality",
-        ha="center", va="center", fontsize=FS, color=INK, zorder=3, linespacing=1.2)
+# ---------------- right: the protocol ----------------
+xi, xu, xt = 2.55, 3.62, 4.75
+img = box(xu, Y_IMG, "Image")
+enc = box(xu, Y_ENC, "Encoder")
+arrow(mid(img), img[2], mid(enc), enc[3])
+ni = box(xi, Y_NET, "Input\nspikes")
+nu = box(xu, Y_NET, "Untrained network\n(plasticity off)", fc=RAND_FILL, ec=ps.GREY)
+nt = box(xt, Y_NET, "Trained\nnetwork")
+for n in (ni, nu, nt):
+    arrow(mid(enc) + (mid(n) - mid(enc)) * 0.12, enc[2], mid(n), n[3])
 
-# the manuscript folder gets a copy only where it exists (not in the release copies)
-for stem in (f"{OUT}/fig8_protocol",) + (("paper_nn/figures/fig8_protocol",) if os.path.isdir("paper_nn") else ()):
-    os.makedirs(os.path.dirname(stem), exist_ok=True); ps.save(fig, stem)
+dx = 0.30
+a_in = box(xi, Y_ACC, r"$A_{\mathrm{input}}$")
+a_rl = box(xu - dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{random}}$", fc=LAB_FILL)
+a_r = box(xu + dx, Y_ACC, r"$A_{\mathrm{random}}$", fc=RAND_FILL, ec=ps.GREY)
+a_s = box(xt - dx, Y_ACC, r"$A_{\mathrm{STDP}}$")
+a_sl = box(xt + dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{STDP}}$", fc=LAB_FILL)
+arrow(mid(ni), ni[2], mid(a_in), a_in[3])
+arrow(mid(nu) - 0.12, nu[2], mid(a_rl), a_rl[3], ls=(0, (3, 2)))
+arrow(mid(nu) + 0.12, nu[2], mid(a_r), a_r[3])
+arrow(mid(nt) - 0.12, nt[2], mid(a_s), a_s[3])
+arrow(mid(nt) + 0.12, nt[2], mid(a_sl), a_sl[3], ls=(0, (3, 2)))
+
+# readout legend
+yl = 0.95
+ax.add_line(Line2D([2.44, 2.72], [yl, yl], color=INK, lw=LW))
+ax.text(2.77, yl, "linear probe", ha="left", va="center", fontsize=FS, color=INK)
+ax.add_line(Line2D([3.70, 3.98], [yl, yl], color=INK, lw=LW, ls=(0, (3, 2))))
+ax.text(4.03, yl, "neuron labelling", ha="left", va="center", fontsize=FS, color=INK)
+
+# the three differences
+box(3.78, Y_NOTE, "", fc="white", w=2.95, h=0.70)
+x0 = 2.44
+for k, (f, what) in enumerate([(r"$\Delta = A_{\mathrm{STDP}} - A_{\mathrm{random}}$", "the rule"),
+                               (r"$A_{\mathrm{STDP}} - A^{\mathrm{lab}}_{\mathrm{STDP}}$", "the readout"),
+                               (r"$A_{\mathrm{STDP}} - A_{\mathrm{input}}$", "the input")]):
+    y = Y_NOTE + 0.22 - k * 0.22
+    ax.text(x0, y, f, ha="left", va="center", fontsize=FS, color=INK, zorder=3)
+    ax.text(x0 + 1.62, y, what, ha="left", va="center", fontsize=FS, color=INK, zorder=3)
+
+ps.save(fig, os.path.join(OUT, "fig8_protocol"))
 plt.close(fig)
-print(f"wrote {OUT}/fig8_protocol.pdf/.png"
-      + (" and paper_nn/figures/fig8_protocol.pdf/.png" if os.path.isdir("paper_nn") else ""))
+print("wrote", os.path.join(OUT, "fig8_protocol.pdf"))

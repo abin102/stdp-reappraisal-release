@@ -1,6 +1,7 @@
 # Run map
 
-This file says which networks stand behind each group of numbers in the paper.
+This file says which networks stand behind each group of numbers in the paper. Paper
+elements use the paper's numbering (README, "Labels").
 For each group it gives the run directories and seeds, the configuration in
 `run_configs/`, the commands that train and score them, and the results file.
 `run_configs/INDEX.md` lists every configuration file with its run directories;
@@ -22,10 +23,10 @@ Conventions:
   their `PYTHONPATH=. python` prefix. Scorers run with one BLAS thread (README,
   step 3). "Linear probe" always means the probe described in the README.
 
-## 1. Eight-dataset matrix: Table 2, Figure 7, Sections 3.2 and 3.7, Table S2, Section S9, Table S8
+## 1. Eight-dataset matrix: Table 3, Figure 3, Sections 3.2 to 3.4, Table S2, Section S9, Table S8
 
-Also the reference row of Table 3 (29.0 against 75.6) and the Fashion-MNIST
-comparison of Section 3.3 (64.2 against 64.5).
+Also the reference row of Table 4 (29.0 against 75.6) and the Fashion-MNIST
+comparison of Section 3.6 (64.2 against 64.5).
 
 | | |
 |---|---|
@@ -40,24 +41,24 @@ Built on the same networks:
 
 | paper element | command | inputs | results |
 |---|---|---|---|
-| Table 2, encoded-input column (the raw-pixel column of `results/input_baselines_probefix.md` is not printed) | `scripts/score/input_baselines_probefix.py`, then `input_baselines_probefix_table.py` | the datasets only (first 10,000 training images of each seed's order) | `results/input_baselines_probefix.{json,md}` |
-| Table 2 | `scripts/score/table2_probefix.py` | `results/input_baselines_probefix.json`, `results/probefix_matrix_n5.json` | `results/table2_probefix.{md,json}` |
-| Figure 7 | `scripts/figures/make_paper_figs.py` | `results/probefix_matrix_n5.json` | `figures/fig3_delta_over_random.pdf` |
+| Table 3, encoded-input column (the raw-pixel column of `results/input_baselines_probefix.md` is not printed) | `scripts/score/input_baselines_probefix.py`, then `input_baselines_probefix_table.py` | the datasets only (first 10,000 training images of each seed's order) | `results/input_baselines_probefix.{json,md}` |
+| Table 3 | `scripts/score/table2_probefix.py` | `results/input_baselines_probefix.json`, `results/probefix_matrix_n5.json` | `results/table2_probefix.{md,json}` |
+| Figure 3 | `scripts/measure/fig_measurement.py` | `results/probefix_matrix_n5.json`, `results/input_baselines_probefix.json` | `figures/fig_measurement.pdf` |
 | Section S9 (Fisher ratio, filter similarity) | `scripts/score/appendix_i_probefix.py` | the trained networks above on six datasets (test counts, `metrics.json`), `results/probefix_matrix_n5.json` | `results/appendix_i_probefix.{md,json}` |
 | Table S8, unsup-STDP column | `scripts/score/supervised_ceiling_5seed.py` (GPU) | pair-STDP rows of `results/probefix_matrix_n5.json`; the CNN is trained with torch seeds 0-4, the raw-pixel regression once | `results/supervised_ceiling_5seed.{md,json}` |
 
-## 2. Voltage-STDP thresholds and spike plateau: Table 3, Table S7(a), Figure 4(c), Section 3.4
+## 2. Voltage-STDP thresholds and spike plateau: Table 4, Table S7(a), Figure S4(c), Section 3.6
 
 | | |
 |---|---|
-| networks | `voltage_S_full_N400_seed{S}_probefix_{label}`; label = `thltd_m68`, `thltd_m65`, `thltd_m62`, `thltd_m60`, `thltd_m58`, `thltd_m55`, `thltd_m50` (θ₋ sweep), `thltp_m52` (θ₊ = -52 mV), `thltd_m65_thltp_m52` (Table 3 voltage-thresholds row), `plateau` (Table 3 spike-plateau row); reference = `voltage_S_full_N400_seed{S}_probefix_trained`, random = `voltage_S_full_N400_seed{S}_probefix_frozen` (section 1) |
+| networks | `voltage_S_full_N400_seed{S}_probefix_{label}`; label = `thltd_m68`, `thltd_m65`, `thltd_m62`, `thltd_m60`, `thltd_m58`, `thltd_m55`, `thltd_m50` (θ₋ sweep), `thltp_m52` (θ₊ = -52 mV), `thltd_m65_thltp_m52` (Table 4 voltage-thresholds row), `plateau` (Table 4 spike-plateau row); reference = `voltage_S_full_N400_seed{S}_probefix_trained`, random = `voltage_S_full_N400_seed{S}_probefix_frozen` (section 1) |
 | seeds | 0-4 |
 | configuration | `run_configs/voltage_S_full_N400_probefix_{label}.yaml` [P2] |
 | train | `bash scripts/train/probefix_voltage_thresholds_n5.sh "0" 4` |
 | score | `scripts/score/probefix_voltage_thresholds_aggregate.py` |
 | results | `results/probefix_voltage_thresholds_n5.{md,json}` |
 
-## 3. Table 3, training-length row (Figure S2, second row)
+## 3. Table 4, training-length row (Figure S2, second row)
 
 | | |
 |---|---|
@@ -68,23 +69,23 @@ Built on the same networks:
 | score | `scripts/score/reextract_probefix_score.py` (one value per network); the per-seed pairing is made by `scripts/figures/make_voltage_controls_figure.py` |
 | results | `results/reextract_probefix_scores.{md,json}` (column "new"); `figures/fig_voltage_controls_data.json` |
 
-## 4. Table 3, weight-management row; Table S5
+## 4. Table 4, weight-management row; Table S5
 
 | | |
 |---|---|
-| networks, Table 3 | trained `voltage_S_full_N400_seed{S}_fixref_B_clopath_ref2400_ap0.002_h0.9`, random `voltage_S_full_N400_seed{S}_fixref_frozen_h0.9`, S = 0-4 |
+| networks, Table 4 | trained `voltage_S_full_N400_seed{S}_fixref_B_clopath_ref2400_ap0.002_h0.9`, random `voltage_S_full_N400_seed{S}_fixref_frozen_h0.9`, S = 0-4 |
 | networks, Table S5 (seed 0) | 60 → `fixref_B_clopath_ap0.002_h0.9`; 600, 2,400, 6,000 → `fixref_B_clopath_ref{600,2400,6000}_ap0.002_h0.9`. Random: `fixref_frozen_h0.9`. Repeated on seeds 0-4: `fixref_B_clopath_ref2400_ap0.002_h0.9`. Not reported in the paper: an earlier variant with A_LTD : A_LTP = 8 : 14, a homeostatic average over 100 images and the scaling factor limited to [0.1, 10], `fixref_C_ref{15,240,600,2400,6000}_ap0.002_h0.9` and `fixref_A_ref60_ap0.002_h0.9` (seed 0; `fixref_C_ref240_ap0.002_h0.9` also on seeds 0-4). The screen at 60 mV² cited in Section S5 is `fixref_B_clopath_ap{0.002,0.005,0.02}_h{0.5,0.9}`, random `fixref_frozen_h0.5`. (All names follow `voltage_S_full_N400_seed{S}_`.) |
 | configuration | `run_configs/voltage_S_full_N400_fixref_*.yaml` [R4]; the other `fixref_*` files there are single-seed screens that the tables do not print |
 | train, extract | `run_seeds.sh`, then `reextract_all.sh` |
-| score | `scripts/score/reextract_probefix_score.py`; Table 3 pairing in `scripts/figures/make_voltage_controls_figure.py` |
-| results | `results/reextract_probefix_scores.md` (section "Table 3 weight-management row; Appendix E (Table A.5)"), `.json` |
+| score | `scripts/score/reextract_probefix_score.py`; Table 4 pairing in `scripts/figures/make_voltage_controls_figure.py` |
+| results | `results/reextract_probefix_scores.md` (section "Table 3 weight-management row; Appendix E (Table A.5)", named after an earlier draft), `.json` |
 
 ## 5. Spike plateau: Table S6 and its note (Section S5)
 
 | | |
 |---|---|
 | networks (seed 0) | T: `plateau_T_ap{0.0003,0.001,0.003}`; R: `plateau_R_ap{0.0003,0.001,0.003}`; W: `plateau_W_x{0.03,0.1,0.3,1,3}`; random for T and R: `plateau_frozen_tuned`; random for W: `fixref_frozen_h0.9` (all after `voltage_S_full_N400_seed{S}_`) |
-| repeated on seeds 0-4 | T, in the note of Table S6 and the Table 3 spike-plateau row: `probefix_plateau` (section 2) against `probefix_frozen` (section 1); `plateau_T_ap0.001` was also run on seeds 1-4 but is not reported. W: `plateau_W_x0.03` against `fixref_frozen_h0.9` |
+| repeated on seeds 0-4 | T, in the note of Table S6 and the Table 4 spike-plateau row: `probefix_plateau` (section 2) against `probefix_frozen` (section 1); `plateau_T_ap0.001` was also run on seeds 1-4 but is not reported. W: `plateau_W_x0.03` against `fixref_frozen_h0.9` |
 | configuration | `run_configs/voltage_S_full_N400_plateau_*.yaml` [R3] |
 | score | `scripts/score/reextract_probefix_score.py` → `results/reextract_probefix_scores.md` (section "Appendix E: spike plateau") |
 | potentiation : depression (note of Table S6) | `scripts/score/voltage_plateau_gate_probe.py --config-file run_configs/voltage_S_full_N400_plateau_T_ap0.001.yaml --plateau off --device cuda:0 --out results/voltage_plateau_gate_probe/tuned_off.json`; the same without `--plateau off` gives `tuned_on.json`; `..._plateau_R_ap0.001.yaml` gives `rest_on.json` and `..._plateau_W_x0.03.yaml` gives `W003_on.json`. Seed 0, first 1,000 training images, no trained run needed. |
@@ -107,7 +108,7 @@ Built on the same networks:
 | configuration | `run_configs/voltage_S_full_N400__*.yaml` [R5]; each file holds the values of that run |
 | score | `scripts/score/reextract_probefix_score.py` → `results/reextract_probefix_scores.md` (section "Appendix C"); the n = 5 means pool the per-network rows listed above |
 
-## 8. Scaffold matrix at 60,000 images: Section 3.1, Table S3, Figures 2 and 6, Section 3.6
+## 8. Scaffold matrix at 60,000 images: Section 3.3, Table S3, Figures 4 and 6, Section 3.5
 
 | | |
 |---|---|
@@ -117,9 +118,9 @@ Built on the same networks:
 | extract | training-image counts: `scripts/extract/extract_train_features.py <run dirs> --n_subset 10000` (pair, triplet) and `bash scripts/train/voltage_scaffold_tc1e4_trainfeats.sh` (voltage) |
 | score | `scripts/score/posthoc_both_conventions.py`, then `scaffold_readout_table.py`, then `identical_neuron_check.py` (the 20 pair and triplet networks without lateral inhibition; reads the datasets); `scripts/checks/verify_readout_bound.py` prints the Remark 1 check |
 | results | `results/posthoc_both_conventions.csv`, `results/scaffold_readout_table.csv`, `results/scaffold_readout_summary.md`, `results/identical_neuron_check.csv` |
-| figures | Figure 2 (`fig2_readout.pdf`) and Figure 6 (`fig5_scaffold_fragility.pdf`) from `scripts/figures/make_paper_figs.py` |
+| figures | Figure 4 (`fig2_readout.pdf`) and Figure 6 (`fig5_scaffold_fragility.pdf`) from `scripts/figures/make_paper_figs.py` |
 
-## 9. Matched random baseline at 60,000 images: Section 3.2, Figure 6 dashed line
+## 9. Matched random baseline at 60,000 images: Section 3.4, Figure 6 dashed line
 
 | | |
 |---|---|
@@ -130,19 +131,19 @@ Built on the same networks:
 | score | `scripts/score/matched_random_60k_table.py` |
 | results | `results/matched_random_60k.json` |
 
-## 10. Figure 3, receptive fields
+## 10. Figure 5, receptive fields
 
 `scripts/figures/make_paper_figs.py` reads `weights_final.npz` of
 `pair_exp_S_full_N400_seed0`, `triplet_S_full_N400_seed0` and
 `voltage_S_full_N400_seed0__b_fix_tc1e4_60k` (section 8). The random row is a
 fresh draw from the initial distribution. Output `figures/fig7_receptive_fields.pdf`.
 
-## 11. Training length: Section 3.5, Figure 5, Section S7
+## 11. Training length: Section 3.6, Figure S3, Section S7
 
 | paper element | networks (seeds 0-4) | configuration | score | results |
 |---|---|---|---|---|
-| Figure 5, default configurations | `{pair_exp,triplet,voltage}_S_full_N400_seed{S}_flen{5k,10k,20k}` [R9]; 60,000 images = the S_full networks of section 8 | `run_configs/{rule}_S_full_N400_flen*.yaml` | `scripts/score/section45_probefix_mnist.py` | `results/section45_probefix_mnist.{md,json}` |
-| Section 3.5, tuned voltage-STDP on MNIST | `voltage_S_full_N400_seed{S}_{vhz2000,vhz5000,mnist_vhz60000}` [R10] | `run_configs/voltage_S_full_N400_{vhz2000,vhz5000,mnist_vhz60000}.yaml` | same | same |
+| Figure S3, default configurations | `{pair_exp,triplet,voltage}_S_full_N400_seed{S}_flen{5k,10k,20k}` [R9]; 60,000 images = the S_full networks of section 8 | `run_configs/{rule}_S_full_N400_flen*.yaml` | `scripts/score/section45_probefix_mnist.py` | `results/section45_probefix_mnist.{md,json}` |
+| Section 3.6, tuned voltage-STDP on MNIST | `voltage_S_full_N400_seed{S}_{vhz2000,vhz5000,mnist_vhz60000}` [R10] | `run_configs/voltage_S_full_N400_{vhz2000,vhz5000,mnist_vhz60000}.yaml` | same | same |
 | check of the re-extraction (in the same table) | `voltage_S_full_N400_seed{S}_thltd_ref` and `_plateau_T_ap0.001`, seeds 0-2 [R1, R3], against `_probefix_trained` and `_probefix_plateau` | as listed | same | same |
 | receptive-field cosine and clustering NMI | `voltage_S_full_N400_seed{S}_flen{5k,10k,20k}` and the voltage S_full networks of section 8 | as above | `scripts/score/section45_cosine_nmi.py` (reads `metrics.json`) | `results/section45_cosine_nmi.{md,json}` |
 | Section S7, scaffolds | `voltage_S_{full,inh_only,none,thr_only}_N400_seed{S}_peak5k`, `voltage_S_{inh_only,none,thr_only}_N400_seed{S}_mid20k` [R7]; S_full at 20,000 = `flen20k`; 60,000 = section 8 | `run_configs/voltage_S_*_N400_{peak5k,mid20k}.yaml` | `scripts/score/appendix_g_probefix.py` | `results/appendix_g_probefix.{md,json}` |
@@ -153,11 +154,11 @@ All rows except the cosine and NMI use re-extracted counts (`*_pf.npz`):
 takes the values from `results/reextract_probefix_scores.json` (written by
 `scripts/score/reextract_probefix_score.py`) and its 10,000-image points from
 `results/probefix_matrix_n5.json`. The pair- and triplet-STDP 60,000-image networks
-of section 8 were also re-extracted; Figure 5 uses those counts, which is why its
-60,000-image values (86.7 and 88.1%) differ from Table S3 (85.9 and 87.7%). Figure 5 (`figures/fig4_forgetting.pdf`) is drawn by
+of section 8 were also re-extracted; Figure S3 uses those counts, which is why its
+60,000-image values (86.7 and 88.1%) differ from Table S3 (85.9 and 87.7%). Figure S3 (`figures/fig4_forgetting.pdf`) is drawn by
 `scripts/figures/make_paper_figs.py` from `results/section45_probefix_mnist.json`.
 
-## 12. Convolutional networks: Table 3 architecture row, Section 3.3, Section S9
+## 12. Convolutional networks: Table 4 architecture row, Section 3.6, Section S9
 
 Voltage-STDP convolutional network (seeds 1-5):
 
@@ -166,8 +167,8 @@ Voltage-STDP convolutional network (seeds 1-5):
 | trained filters + surrogate readout | `checkpoints/conv2l_voltage_clopath_faithful_mnist_paper_seed{S}`, S = 1-5: `SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_stdp` (= `conv/conv2layer_voltage_stdp.py --config conv/configs/conv_voltage_config.yaml --seed S --name-suffix _paper_seedS`) |
 | fresh surrogate readout on those filters | `checkpoints/..._TRAINEDREADOUT_seed{S}`, S = 1-4 (seed 5 uses the readout of `conv_stdp`): `run_seeds.sh conv_trainedreadout` |
 | surrogate readout on random filters | `checkpoints/..._RANDOMFILTERS_seed{S}`, S = 1-5: `run_seeds.sh conv_randomfilters` (configs `conv/configs/conv_seed5/randomfilters_seed{1-5}.yaml`, `run_configs/conv/randomfilters_seed5.yaml`) |
-| linear readout (Table 3 architecture row) | `run_seeds.sh conv_svm` (runs `scripts/extract/conv_svm_readout.py` and `scripts/score/classify_feats_torch.py`; 12,000 training and 10,000 test images) → `results/conv_svm_{trained,random}_s{1-5}.json`; then `scripts/score/conv_arch_logreg_n5.py` → `results/conv_arch_logreg_n5.{md,json}` |
-| surrogate readout, five seeds (96.9 against 97.3) | `scripts/score/conv_surrogate_readout_n5.py --log_dir DIR` → `results/conv_surrogate_readout_n5.{md,json}` |
+| linear readout (Table 4 architecture row) | `run_seeds.sh conv_svm` (runs `scripts/extract/conv_svm_readout.py` and `scripts/score/classify_feats_torch.py`; 12,000 training and 10,000 test images) → `results/conv_svm_{trained,random}_s{1-5}.json`; then `scripts/score/conv_arch_logreg_n5.py` → `results/conv_arch_logreg_n5.{md,json}` |
+| surrogate readout, five seeds (Section 3.7: last of 75 epochs, 96.4 against 97.1; Section S16: best epoch, 96.9 against 97.3) | `scripts/score/conv_surrogate_readout_n5.py --log_dir DIR` → `results/conv_surrogate_readout_n5.{md,json}` |
 
 `conv_surrogate_readout_n5.py` reads `trainedreadout_seed{1-4}.log`,
 `paper_seed5.log` and `randomfilters_seed{1-5}.log` from `DIR`. With
@@ -181,27 +182,19 @@ cp logs_run_seeds/conv_stdp_seed5.log results/logs_conv5/paper_seed5.log
 for s in 1 2 3 4 5; do cp logs_run_seeds/conv_randomfilters_seed$s.log results/logs_conv5/randomfilters_seed$s.log; done
 ```
 
-Pair-STDP convolutional control (Section 4.3, "0.4 ± 0.4 points", seeds 0-4):
-the weights `conv2l_stdp_ckpt_pairgrade_seed{0-4}.pt` at the repository root were
-trained with `conv/conv2layer_stdp_surrogate.py`; the command of that training was
-not recorded and no launcher for it is shipped. Given the weights,
-`bash scripts/train/conv_pair_trained_vs_random.sh cuda:0` writes
-`results/conv_feats_pairN5_{trained,random}_s{0-4}.npz`, and
-`scripts/score/conv_pair_n5_table.py` writes `results/conv_pair_n5.json`.
-
-## 13. Gate measurements: Table S7(b), Figure 4(b), Section 3.4
+## 13. Gate measurements: Table S7(b), Figure S4(b), Section 3.6
 
 These run the plasticity rule for the first 1,000 training images (seed 0 unless a
 row says otherwise) and need no trained run.
 
 | paper element | command | results |
 |---|---|---|
-| Table S7(b), Figure 4(b) | `scripts/score/voltage_gate_saturation_probe.py --config-file results/gate_probes_2026-10/<p>.yaml --seed 0 --n-train 1000 --device cuda:0 --out results/gate_probes_2026-10/<p>.json` for `<p>` = `p0_tuned_repro`, `p1_no_inhibition`, `p2_thltd_m65`, `p3_thltd_m60`, `p4_thltd_m58`, `p5_thltd_m50`, `p6_thltp_m52`; then `scripts/score/make_section44_table.py` | `results/gate_probes_2026-10/*.json`, `results/section44_table.md` |
+| Table S7(b), Figure S4(b) | `scripts/score/voltage_gate_saturation_probe.py --config-file results/gate_probes_2026-10/<p>.yaml --seed 0 --n-train 1000 --device cuda:0 --out results/gate_probes_2026-10/<p>.json` for `<p>` = `p0_tuned_repro`, `p1_no_inhibition`, `p2_thltd_m65`, `p3_thltd_m60`, `p4_thltd_m58`, `p5_thltd_m50`, `p6_thltp_m52`; then `scripts/score/make_section44_table.py` | `results/gate_probes_2026-10/*.json`, `results/section44_table.md` |
 | Section S15, "267 to 319 times" (default configuration with τθ = 10⁶ ms) | the same probe with `--config-file run_configs/voltage_S_full_N400.yaml --seed S --out results/gate_scaffold_seedS.json`, S = 0-4 [V0] | `results/gate_scaffold_seed{0-4}.json` |
 | Section S16, "94% of its spikes" (tuned configuration) | the same probe with `--config-file run_configs/voltage_S_full_N400__mnist_adex_baseline.yaml --seed S --n-train 1000 --out results/gate_tuned_seedS.json`, S = 0-2; the share reset before θ₊ is 1 − ltp_v_gate_active_frac × n_events / n_spikes | `results/gate_tuned_seed{0-2}.json` |
-| Figure 4 | `CLOPATH_MODELDB_DIR=... scripts/figures/make_section44_mechanism_figure.py`; reads `run_configs/voltage_S_full_N400_vb3_trained.yaml` [V1], the gate-probe JSONs, `results/section44_table.md` and `results/probefix_voltage_thresholds_n5.json` | `figures/fig_section44_mechanism.pdf` |
+| Figure S4 | `CLOPATH_MODELDB_DIR=... scripts/figures/make_section44_mechanism_figure.py`; reads `run_configs/voltage_S_full_N400_vb3_trained.yaml` [V1], the gate-probe JSONs, `results/section44_table.md` and `results/probefix_voltage_thresholds_n5.json` | `figures/fig_section44_mechanism.pdf` |
 
-## 14. Exact reimplementation of Clopath's neuron: Table 3, Tables S9 and S10, Section S10
+## 14. Exact reimplementation of Clopath's neuron: Table 4, Tables S9 and S10, Section S10
 
 Run directories are `experiments/runs/clopath_port/<family>/seed{S}`; each holds a
 `meta.json` with every setting. The seed-0 `meta.json` of each family is in
@@ -211,7 +204,7 @@ Run directories are `experiments/runs/clopath_port/<family>/seed{S}`; each holds
 |---|---|---|
 | calibration with STDP disabled (seed 0, 1,000 images, no labels) | `scripts/train/clopath_port_mnist.py calibrate --seed 0 --n_images 1000 --g 0.15,0.175,0.2,0.225,0.25,0.275,0.3,0.35,0.4,0.5,0.6,0.8 --k 0,0.03,0.1,0.3,1,3,10,30,100,300 --device cuda:0 --out results/clopath_port_calibration` | `results/clopath_port_calibration/calibration.json` |
 | pre-registered choice of the 3 x 3 grid | `scripts/train/clopath_port_select_grid.py results/clopath_port_calibration/calibration.json --out results/clopath_port_calibration/grid.json` | `results/clopath_port_calibration/grid.json` |
-| grid10k: 9 settings x 2 amplitude scales, trained, and the 9 STDP-disabled networks (Tables 3 and S9) | `SEEDS="0 1 2 3 4" bash scripts/train/run_seeds.sh port_grid10k` | `experiments/runs/clopath_port/grid10k/seed{0-4}` |
+| grid10k: 9 settings x 2 amplitude scales, trained, and the 9 STDP-disabled networks (Tables 4 and S9) | `SEEDS="0 1 2 3 4" bash scripts/train/run_seeds.sh port_grid10k` | `experiments/runs/clopath_port/grid10k/seed{0-4}` |
 | explore_k0: no lateral inhibition (Section S10) | `SEEDS="0 1 2 3 4" bash scripts/train/run_seeds.sh port_explore_k0` (grid `run_configs/clopath_port/grid_explore_k0.json`, 5,000 test images) | `experiments/runs/clopath_port/explore_k0/seed{0-4}` |
 | check that the sweep code reproduces grid10k (required by the next step) | `scripts/train/clopath_port_mnist.py train --seed 0 --grid results/clopath_port_calibration/grid.json --theta_tar 60 --no_random --prereg results/voltage_clopath_port_thetatar_PREREG.md --n_train 10000 --n_test 10000 --device cuda:0 --out experiments/runs/clopath_port/thetatar_repro/seed0` | `experiments/runs/clopath_port/thetatar_repro/seed0`; `results/clopath_port_thetatar/check_*.json` |
 | thetatar10k: u_ref² = 240, 960, 3,840, 15,360 mV², trained only (Table S10) | seeds 0-2: `bash scripts/train/clopath_port_thetatar_sweep.sh` (set `GPU0_UUID` for your machine, see its header); seeds 3 and 4: `scripts/train/clopath_port_mnist.py train --seed S --grid results/clopath_port_calibration/grid.json --theta_tar 240,960 --no_random --prereg results/voltage_clopath_port_thetatar_PREREG.md --n_train 10000 --n_test 10000 --device cuda:0 --out experiments/runs/clopath_port/thetatar10k/seedS_a`, and the same with `--theta_tar 3840,15360` and `seedS_b` | `experiments/runs/clopath_port/thetatar10k/seed{0_all,1_a,1_b,2_all,3_a,3_b,4_a,4_b}` |
@@ -242,13 +235,15 @@ No trained network is needed.
 - Table S1: the hyperparameters are in `run_configs/` (for example
   `run_configs/{pair_exp,triplet,voltage}_S_full_N400_probefix_trained.yaml`),
   `experiments/configs/` and `conv/configs/conv_voltage_config.yaml`.
-- Figures 1 and 8 are schematics (`scripts/figures/make_paper_figs.py`,
-  `scripts/figures/make_protocol_figure.py`).
+- Table 2: values reported in the cited studies; its rows for this study come from
+  sections 1 and 12.
+- Figures 1 and 2 are schematics (`scripts/figures/make_protocol_figure.py` and
+  `scripts/figures/make_paper_figs.py`).
 - Figure S2 is drawn by `scripts/figures/make_voltage_controls_figure.py` from
   `results/probefix_voltage_thresholds_n5.json` and
   `results/reextract_probefix_scores.json` (sections 2 to 4).
 
-## 17. SoftHebb with the matched random baseline: Table 5, Section 3.9, Section 2.13, Section S18
+## 17. SoftHebb with the matched random baseline: Table 5, Section 3.7, Section 2.11, Section S18
 
 | | |
 |---|---|
@@ -261,3 +256,19 @@ No trained network is needed.
 
 The readout of these runs is SoftHebb's own (a linear layer trained with dropout for 50
 epochs, scored at the last epoch), not the linear probe of the README.
+
+## 18. The protocol on one network and the readout analyses: Figure 3, Sections 3.2 and 3.3
+
+No new networks: these scripts re-analyse the runs of sections 1, 8, 9 and 11. Neuron
+labelling follows Diehl and Cook: each neuron gets the class with the highest mean count
+on the 10,000 training images, and a test image goes to the class whose labelled neurons
+have the highest mean count. The linear probe is that of the README.
+
+| paper element | command | inputs | results |
+|---|---|---|---|
+| Section 3.2 and Figure 3(a), one network, four numbers | `scripts/measure/fig_measurement.py` | `results/probefix_matrix_n5.json`, `results/input_baselines_probefix.json` (section 1) | `figures/fig_measurement.pdf` |
+| Figure 3(b, c) and Section 3.3, the rule's gain under each readout on eight datasets | `scripts/measure/gain_by_readout.py` (the figure reads the same values) | `results/probefix_matrix_n5.json` | `results/gain_by_readout.json` |
+| Section 3.3, the trained network under labelling scores below the untrained network under the probe | `scripts/measure/readout_vs_rule_paired.py` | `results/probefix_matrix_n5.json` | `results/readout_vs_rule_paired.json` |
+| Section 3.3, PathMNIST: every labelled neuron receives one class | `scripts/measure/posthoc_degeneracy_check.py` | `results/probefix_matrix_n5.json` and the spike counts of the section-1 runs | `results/posthoc_degeneracy.json` |
+| Section 3.3, gain under each readout after 60,000 training images (30.0 against 16.2 points) | `scripts/measure/gain_by_readout_60k.py` | original spike counts of `pair_exp_S_full_N400_seed{S}` (section 8) and `pair_exp_S_full_N400_seed{S}_frozen60k` (section 9) | `results/gain_by_readout_60k.json` |
+| Section 3.3, probe minus labelling after 5,000, 10,000, 20,000 and 60,000 training images | `scripts/measure/labelling_vs_training_length.py` | re-extracted counts (`*_pf.npz`) of `pair_exp_S_full_N400_seed{S}_flen{5k,10k,20k}` and of the section-8 networks (section 11) | `results/labelling_vs_training_length.json` |

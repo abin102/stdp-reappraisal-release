@@ -17,9 +17,6 @@ scripts/extract/, see RUN_MAP.md and run_configs/INDEX.md)
                              experiments/runs/clopath_port/{grid10k,explore_k0,thetatar10k,...}
   results/logs_conv5/        readout logs of the 5-seed conv surrogate runs
                              (conv_surrogate_readout_n5.py)
-  results/conv_feats_pairN5_{trained,random}_s{0-4}.npz
-                             pooled conv features of the pair-STDP conv control
-                             (scripts/extract/extract_pair_feats.py; conv_pair_n5_table.py)
   data/                      the eight datasets (downloaded by run_single.py / medmnist_loader.py);
                              only input_baselines_probefix.py and identical_neuron_check.py read them
   CLOPATH_MODELDB_DIR        (environment, optional) Clopath's ModelDB files; only the Section 4.4
@@ -127,9 +124,17 @@ TASKS = {
     "conv_surrogate_readout_n5": (["scripts/score/conv_surrogate_readout_n5.py"],
                                   ["results/conv_surrogate_readout_n5.json",
                                    "results/conv_surrogate_readout_n5.md"], []),
-    "conv_pair_n5": (["scripts/score/conv_pair_n5_table.py"], ["results/conv_pair_n5.json"],
-                     ["conv_arch_logreg_n5"]),
     "section44_table": (["scripts/score/make_section44_table.py"], ["results/section44_table.md"], []),
+    # the protocol's readout analyses (Sections 3.2 and 3.3): re-analyses of the runs above
+    "gain_by_readout": (["scripts/measure/gain_by_readout.py"], ["results/gain_by_readout.json"],
+                        ["probefix_aggregate"]),
+    "readout_vs_rule_paired": (["scripts/measure/readout_vs_rule_paired.py"],
+                               ["results/readout_vs_rule_paired.json"], ["probefix_aggregate"]),
+    "posthoc_degeneracy": (["scripts/measure/posthoc_degeneracy_check.py"],
+                           ["results/posthoc_degeneracy.json"], ["probefix_aggregate"]),
+    "gain_by_readout_60k": (["scripts/measure/gain_by_readout_60k.py"], ["results/gain_by_readout_60k.json"], []),
+    "labelling_vs_training_length": (["scripts/measure/labelling_vs_training_length.py"],
+                                     ["results/labelling_vs_training_length.json"], []),
     # SoftHebb (Table 5): from the shipped results/softhebb/runs/*/result.json
     "softhebb_table5": (["scripts/score/softhebb_table5.py"], ["results/softhebb/table5_values.json"], []),
     "softhebb_summary": (["scripts/score/softhebb_summary.py"],
@@ -152,10 +157,11 @@ STALE = {}
 # figure scripts -> the PDFs they write into FIG_OUT_DIR
 FIGURES = {
     "make_paper_figs": (["scripts/figures/make_paper_figs.py"],
-                        ["fig1_pipeline", "fig2_readout", "fig3_delta_over_random", "fig4_forgetting",
+                        ["fig1_pipeline", "fig2_readout", "fig4_forgetting",
                          "fig5_scaffold_fragility", "fig7_receptive_fields"]),
     "clopath_curve_reproduction": (["scripts/figures/clopath_curve_reproduction.py"], ["fig6_clopath_curves"]),
     "make_protocol_figure": (["scripts/figures/make_protocol_figure.py"], ["fig8_protocol"]),
+    "fig_measurement": (["scripts/measure/fig_measurement.py"], ["fig_measurement"]),
     "make_voltage_controls_figure": (["scripts/figures/make_voltage_controls_figure.py"],
                                      ["fig_voltage_controls"]),
     "make_section44_mechanism_figure": (["scripts/figures/make_section44_mechanism_figure.py"],

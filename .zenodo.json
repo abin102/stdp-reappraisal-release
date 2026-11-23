@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
-  "title": "Evaluating what unsupervised STDP learns: code, configurations and run maps",
-  "description": "<p>Code, configurations and run-selection maps for the paper <em>Evaluating what unsupervised STDP learns: matched random baselines, linear readouts, and a controlled reappraisal of three plasticity rules</em> (Abin S and Raji Susan Mathew).</p><p>The paper compares three STDP rules: pair-STDP (Diehl and Cook), triplet-STDP (Pfister and Gerstner) and voltage-STDP (Clopath et al.). Each rule trains a competitive, fully connected spiking layer of 400 neurons. Every trained network is compared with the same network with STDP disabled (the matched random baseline), and is read out with a linear probe as well as the usual post-hoc labelling. The comparison covers eight datasets: MNIST, N-MNIST, EMNIST-Letters, Fashion-MNIST and four MedMNIST sets. Controls include a two-layer convolutional network and an exact reimplementation of Clopath's neuron and update rule. The same matched random baseline is also applied to SoftHebb (Journé et al., 2023), a recent Hebbian method, on CIFAR-10 and four medical datasets.</p><p>Trained weights, run outputs and datasets are not included; README.md and RUN_MAP.md say how to regenerate each table and figure. SoftHebb's code and Clopath's MATLAB code are not redistributed; README.md says where to obtain them.</p>",
+  "title": "How to evaluate unsupervised STDP: code, configurations and run maps",
+  "description": "<p>Code, configurations and run-selection maps for the paper <em>How to evaluate unsupervised STDP: separating the rule from the readout, the scaffold and the input</em> (Abin S and Raji Susan Mathew).</p><p>The paper proposes an evaluation protocol for unsupervised plasticity rules: each trained network is compared with the same network with plasticity switched off, both are read by neuron labelling and by a linear probe, and both are compared with a linear probe on the input spikes. The protocol is applied to pair-STDP (Diehl and Cook), triplet-STDP (Pfister and Gerstner) and voltage-STDP (Clopath et al.) in competitive, fully connected spiking networks of 400 neurons on eight datasets (MNIST, N-MNIST, EMNIST-Letters, Fashion-MNIST and four MedMNIST sets), to an ablation of the competitive scaffold, to a two-layer convolutional network and to SoftHebb (Journé et al., 2023), a deep Hebbian method, on CIFAR-10 and four medical datasets. Controls for voltage-STDP include an exact reimplementation of Clopath's neuron and update rule.</p><p>Trained weights, run outputs and datasets are not included; README.md and RUN_MAP.md say how to regenerate each table and figure. SoftHebb's code and Clopath's MATLAB code are not redistributed; README.md says where to obtain them.</p>",
   "creators": [
     {
       "name": "S, Abin",
@@ -21,8 +21,10 @@
     "spike-timing-dependent plasticity",
     "STDP",
     "unsupervised learning",
+    "evaluation protocol",
     "random baseline",
     "linear probe",
+    "neuron labelling",
     "medical imaging",
     "SoftHebb"
   ]

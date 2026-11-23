@@ -305,7 +305,7 @@ axb.set_xticks([-70, -65, -60, -55, -50])
 # ---------------------------------- (c) accuracy -----------------------------------
 axc.axhspan(rnd[0] - rnd[1], rnd[0] + rnd[1], color=GREY, alpha=0.35, lw=0, zorder=1)
 axc.axhline(rnd[0], color=GREY, lw=0.8, zorder=1.2)
-axc.text(XL[0] + 0.4, rnd[0] + rnd[1] + 1.5, "STDP disabled", ha="left", va="bottom",
+axc.text(XL[0] + 0.4, rnd[0] + rnd[1] + 1.5, "plasticity off", ha="left", va="bottom",
          fontsize=FS, color=MUTED)
 xs = [a[0] for a in acc]; mu = [a[1] for a in acc]; sds = [a[2] for a in acc]
 axc.errorbar(xs, mu, yerr=sds, fmt="none", ecolor=VC, elinewidth=0.6, capthick=0.6,

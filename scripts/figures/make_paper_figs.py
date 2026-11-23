@@ -1,14 +1,13 @@
 """Generate the paper's data figures into $FIG_OUT_DIR (default figures/).
-  fig1 pipeline schematic     (Methods)                 printed as Figure 1
-  fig2 readout bias           (4.1)  post-hoc vs linear readout, 3 rules x 4 scaffolds   Figure 2
-  fig3 delta-over-random      (4.7)  8 datasets x 3 rules                                Figure 7
-  fig4 forgetting curves      (4.5)  accuracy vs training length                         Figure 5
-  fig5 scaffold + fragility   (4.6)  decomposition + FC/conv/random                      Figure 6
-  fig7 learned receptive fields (4.2)                                                    Figure 3
-fig6 (Clopath curves, Figure A.1) is drawn by scripts/figures/clopath_curve_reproduction.py,
-fig8 (protocol schematic, Figure 8) by scripts/figures/make_protocol_figure.py,
-fig_section44_mechanism (Figure 4) by scripts/figures/make_section44_mechanism_figure.py and
-fig_voltage_controls (Figure A.2) by scripts/figures/make_voltage_controls_figure.py.
+  fig1 pipeline schematic        (Section 2.4)   Figure 2
+  fig2 readout on four scaffolds (Section 3.3)   Figure 4
+  fig4 accuracy vs training length (Section S7)  Figure S3
+  fig5 scaffold ablation         (Section 3.5)   Figure 6
+  fig7 learned receptive fields  (Section 3.4)   Figure 5
+Figure 1 (protocol schematic) is drawn by scripts/figures/make_protocol_figure.py, Figure 3 by
+scripts/measure/fig_measurement.py, Figure S1 (Clopath curves) by
+scripts/figures/clopath_curve_reproduction.py, Figure S2 by scripts/figures/make_voltage_controls_figure.py
+and Figure S4 by scripts/figures/make_section44_mechanism_figure.py.
 Each figure is written as a vector PDF (what the manuscript includes) and a 600 dpi PNG.
 Style, sizes and colours come from scripts/figures/paper_style.py (journal artwork sizing).
 Run: PYTHONPATH=. python scripts/figures/make_paper_figs.py
@@ -57,44 +56,16 @@ x = np.arange(4); w = 0.38
 for k, rule in enumerate(RULES):
     ph = [agg(rule, s, "posthoc") for s in SCAF]; lr = [agg(rule, s, "linear") for s in SCAF]
     ax[k].bar(x-w/2, [m[0] for m in ph], w, yerr=[m[1] for m in ph], color=ps.GREY,
-              label="post-hoc readout", error_kw=ps.ERR)
+              label="neuron labelling", error_kw=ps.ERR)
     ax[k].bar(x+w/2, [m[0] for m in lr], w, yerr=[m[1] for m in lr], color=C[rule],
-              label="linear readout", error_kw=ps.ERR)
+              label="linear probe", error_kw=ps.ERR)
     ax[k].axhline(11.35, ls=(0, (1, 1.5)), color=ps.INK, lw=0.6)
     ax[k].set_xticks(x, [SCAF_T[s] for s in SCAF]); ax[k].tick_params(axis="x", length=0)
     # the panel's rule is the only label kept: the caption does not say which panel is which
     ax[k].set_title(ps.RULE_L[rule])
     ax[k].legend(loc="upper right")
-ax[0].set_ylabel("test accuracy (%)"); ax[0].set_ylim(0, 100)
+ax[0].set_ylabel("MNIST accuracy (%)"); ax[0].set_ylim(0, 100)
 ps.save(fig, f"{OUT}/fig2_readout"); plt.close(fig)
-
-# ---------- FIG 3 delta-over-random ----------
-# Five seeds, single linear probe (fit on 10,000 training images, full test set): the probe-fix
-# matrix, results/probefix_matrix_n5.json (scripts/score/probefix_aggregate.py). Replaced the ten-seed
-# 70/30 test-split values (core_matrix, medical_matrix, voltage_b3_n3, emnist_full26_n10) on 2026-10-20.
-_pf = json.load(open("results/probefix_matrix_n5.json"))["cells"]
-DS = [("mnist","MNIST"),("nmnist","N-MNIST"),("emnist_letters","EMNIST"),("fmnist","FMNIST"),
-      ("organamnist","OrganA"),("bloodmnist","Blood"),("tissuemnist","Tissue"),("pathmnist","Path")]
-def delta(rule, ds):
-    c = _pf[f"{rule}|{ds}"]; assert c["n"] == 5, (rule, ds)
-    return c["delta_linear"][0], c["delta_linear"][1]
-fig, ax = plt.subplots(figsize=(ps.FULL_W, 2.35), layout="constrained")
-xm = np.arange(len(DS)); w = 0.27
-for k, rule in enumerate(RULES):
-    mu=[]; sd=[]
-    for ds,_ in DS:
-        d,s = delta(rule, ds); mu.append(d); sd.append(s)
-    ax.bar(xm+(k-1)*w, mu, w, yerr=sd, color=C[rule], label=ps.RULE_L[rule], error_kw=ps.ERR)
-ps.zero_line(ax)
-ax.set_xticks(xm, [l for _,l in DS]); ax.tick_params(axis="x", length=0)
-# the caption's argument contrasts the four standard and four medical (MedMNIST) datasets
-ps.guide_line(ax, 3.5)
-for xg, lab in ((1.5, "standard"), (5.5, "medical (MedMNIST)")):
-    ax.text(xg, 1.0, lab, transform=ax.get_xaxis_transform(), ha="center", va="bottom",
-            color="#555555")
-ax.set_ylabel("Δ-over-random (points)")
-ax.legend(loc="lower right")
-ps.save(fig, f"{OUT}/fig3_delta_over_random"); plt.close(fig)
 
 # ---------- FIG 4 forgetting ----------
 # Values come from results/forgetting_curve.json (3 seeds per point, one config per
@@ -151,11 +122,11 @@ for k, rule in enumerate(RULES):
     mu=[agg(rule,s,"linear")[0] for s in SCAF]; sd=[agg(rule,s,"linear")[1] for s in SCAF]
     ax0.bar(xs+(k-1)*w, mu, w, yerr=sd, color=C[rule], label=ps.RULE_L[rule], error_kw=ps.ERR)
 ax0.axhline(RAND60, ls="--", color=ps.GREY, lw=0.8)
-ax0.text(0.99, RAND60-1.5, f"pair/triplet, STDP disabled ({RAND60:.1f}%)", color="#6E6E6E",
+ax0.text(0.99, RAND60-1.5, f"pair/triplet, plasticity off ({RAND60:.1f}%)", color="#6E6E6E",
          ha="right", va="top", transform=ax0.get_yaxis_transform())
 ax0.set_xticks(xs, [SCAF_T[s] for s in SCAF]); ax0.tick_params(axis="x", length=0)
 ax0.set_ylim(0, 100)
-ax0.set_ylabel("accuracy (%)")
+ax0.set_ylabel("MNIST accuracy (%)")
 ax0.legend(loc="upper right", ncol=3, bbox_to_anchor=(1.0, 1.02))
 ps.save(fig, FIG5_OUT); plt.close(fig)
 
@@ -191,7 +162,7 @@ def hgap(txt): return tsize(txt, FS1)[0] + 0.20
 MUTED = "#555555"
 Y1, Y2 = 1.52, 0.30
 l1 = "Poisson\nencode"; l2 = "$W$ (784×400)\nfully connected"
-b1 = box(0.08, Y1, "Image\n28×28\n(grayscale)")
+b1 = box(0.08, Y1, "Image\n28×28\n(greyscale)")
 x = b1[1] + hgap(l1); arrow(b1[1], Y1, x, Y1)
 ax.text((b1[1]+x)/2, Y1+0.07, l1, ha="center", va="bottom", fontsize=FS1, color=MUTED)
 b2 = box(x + PAD, Y1, "784 spike\ntrains\n350×1 ms", h=b1[3]-b1[2]-2*PAD)
@@ -201,15 +172,15 @@ b3 = box(x + PAD, Y1, "400 LIF / AdEx\nneurons\n+ STDP", h=(b1[3]-b1[2]-2*PAD)+0
 xc3 = (b3[0]+b3[1])/2
 # lateral inhibition: double-headed arrow ending on the neuron box's top border
 arrow(xc3, b3[3]+0.26, xc3, b3[3], color=INH_C, style="<|-|>")
-ax.text(b3[1], b3[3]+0.29, "lateral inhibition (WTA)\nbetween neurons", ha="right", va="bottom",
+ax.text(b3[1], b3[3]+0.29, "lateral inhibition\nbetween neurons", ha="right", va="bottom",
         fontsize=FS1, color=INH_C)
 # adaptive threshold: a self-loop that leaves and re-enters the box at its border
 arrow(b3[0]+0.18, b3[2], b3[0], b3[2]+0.18, color=THR_C, connectionstyle="arc3,rad=-1.9")
 ax.text(b3[0]-0.19, b3[2]-0.07, "adaptive threshold $\\theta_j$\nwithin each neuron", ha="right", va="top",
         fontsize=FS1, color=THR_C)
 # row 2: readout under the network, class to its left
-tw4, _ = tsize("Linear readout\n(vs post-hoc)", FS1)
-b4 = box(b3[1] - PAD - (tw4 + 0.20), Y2, "Linear readout\n(vs post-hoc)")
+tw4, _ = tsize("Linear probe or\nneuron labelling", FS1)
+b4 = box(b3[1] - PAD - (tw4 + 0.20), Y2, "Linear probe or\nneuron labelling")
 arrow(xc3, b3[2], xc3, b4[3])
 ax.text(xc3+0.07, (b3[2]+b4[3])/2, "spike\ncounts", ha="left", va="center", fontsize=FS1, color=MUTED)
 tw5, _ = tsize("Class", FS1)

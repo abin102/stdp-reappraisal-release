@@ -1,5 +1,8 @@
 # Run configurations
 
+The "paper" column of the tables below gives labels of earlier drafts; `RUN_MAP.md` gives each
+family's place in the current paper's numbering.
+
 Every FC network behind a number in the current paper was trained by `experiments/scripts/run_single.py`'s
 `train_and_eval`. Each family below is one configuration run over several seeds. Its file here is the
 `config.yaml` the run saved for the family's first seed, with only the machine-specific
@@ -364,12 +367,9 @@ has `use_wandb: true`, which is the only difference from `conv_seed5/paper_seed5
 | conv_trainedreadout: fresh surrogate readout on seed-S filters | `checkpoints/..._TRAINEDREADOUT_seed{S}` | 1-4 (seed 5 is conv_stdp's own readout) | Section 3.3 / Section S9 surrogate readout, final epoch 96.4 +- 0.4 (trained; the paper reports the best epoch, 96.9 +- 0.1) | `run_seeds.sh conv_trainedreadout` (copies `..._paper_seedS/ckpt_L2_ep1.pt` to the new directory as `conv_voltage_stdp_ckpt.pt`, then runs the readout) |
 | conv_randomfilters: surrogate readout on random filters (`epochs_stdp: [0, 0]`) | `checkpoints/..._RANDOMFILTERS_seed{S}` | 1-5 | Section 3.3 / Section S9, final epoch 97.1 +- 0.2 (random; the paper reports the best epoch, 97.3 +- 0.1) | `run_seeds.sh conv_randomfilters` |
 | conv_svm: linear readout, trained and random filters, 12k/10k images | `results/conv_svm_{trained,random}_s{S}.json` | 1-5 | Table 3 architecture row (94.3 +- 0.2 vs 95.2 +- 0.3) | `run_seeds.sh conv_svm` (needs conv_stdp seed S) |
-| pair conv trained vs random | `results/conv_feats_pair*_s{S}`, `results/conv_pair_n5.json` | 0-4 | Sec 4.3 '+0.4 +- 0.4' | `bash scripts/train/conv_pair_trained_vs_random.sh`; needs the pair-STDP weights `conv2l_stdp_ckpt_pairgrade_seed{0..4}.pt` at the repo root (see gaps) |
 
 ## Not covered (no launcher survives)
 
-- Pair-STDP conv weights `conv2l_stdp_ckpt_pairgrade_seed{0..4}.pt`: trained with `conv/conv2layer_stdp_surrogate.py`;
-  the seed/command used is not recorded.
 - Gate probes p0-p6 and the plateau gate probes: their configs ship beside the results
   (`results/gate_probes_2026-10/*.yaml`); run `scripts/score/voltage_gate_saturation_probe.py` /
   `voltage_plateau_gate_probe.py` with `--config-file` on them.

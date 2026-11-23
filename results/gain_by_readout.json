@@ -1,0 +1,224 @@
+{
+ "pair_exp": [
+  {
+   "dataset": "mnist",
+   "gain_linear": 12.970000000000004,
+   "gain_linear_sd": 1.0771722239270771,
+   "gain_labelling": 19.328000000000003,
+   "gain_labelling_sd": 2.9536790617804107,
+   "labelling_minus_linear": 6.357999999999999,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "emnist_letters",
+   "gain_linear": 17.296153846153842,
+   "gain_linear_sd": 0.5079867844982339,
+   "gain_labelling": 23.00384615384615,
+   "gain_labelling_sd": 1.2401675048511611,
+   "labelling_minus_linear": 5.707692307692311,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "nmnist",
+   "gain_linear": 16.898,
+   "gain_linear_sd": 0.8121391506386119,
+   "gain_labelling": 21.098,
+   "gain_labelling_sd": 1.3555515482636566,
+   "labelling_minus_linear": 4.1999999999999975,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "fmnist",
+   "gain_linear": 5.512000000000003,
+   "gain_linear_sd": 0.7965990208379592,
+   "gain_labelling": 9.811999999999996,
+   "gain_labelling_sd": 1.4850319861875056,
+   "labelling_minus_linear": 4.299999999999993,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "organamnist",
+   "gain_linear": 4.8655641804477465,
+   "gain_linear_sd": 1.4532961359839982,
+   "gain_labelling": 16.715041061986724,
+   "gain_labelling_sd": 1.8611914027539724,
+   "labelling_minus_linear": 11.849476881538978,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "bloodmnist",
+   "gain_linear": 7.220111078631978,
+   "gain_linear_sd": 0.8045225924889159,
+   "gain_labelling": 11.213095586085938,
+   "gain_labelling_sd": 2.081028761528856,
+   "labelling_minus_linear": 3.99298450745396,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "tissuemnist",
+   "gain_linear": 5.248730964467008,
+   "gain_linear_sd": 0.24855590689267543,
+   "gain_labelling": 7.943739424703893,
+   "gain_labelling_sd": 0.3991705718740111,
+   "labelling_minus_linear": 2.6950084602368856,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "pathmnist",
+   "gain_linear": 1.1281337047353746,
+   "gain_linear_sd": 0.906523696720391,
+   "gain_labelling": 2.5515320334261844,
+   "gain_labelling_sd": 0.47653890761158296,
+   "labelling_minus_linear": 1.4233983286908098,
+   "seeds_labelling_gt_linear": 4
+  }
+ ],
+ "triplet": [
+  {
+   "dataset": "mnist",
+   "gain_linear": 13.23,
+   "gain_linear_sd": 0.8338165265812425,
+   "gain_labelling": 17.218,
+   "gain_labelling_sd": 1.6593884415651496,
+   "labelling_minus_linear": 3.9879999999999995,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "emnist_letters",
+   "gain_linear": 17.17307692307692,
+   "gain_linear_sd": 0.9903554420647273,
+   "gain_labelling": 20.495192307692303,
+   "gain_labelling_sd": 0.3070531221506886,
+   "labelling_minus_linear": 3.3221153846153832,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "nmnist",
+   "gain_linear": 16.45,
+   "gain_linear_sd": 0.742798761442156,
+   "gain_labelling": 22.108,
+   "gain_labelling_sd": 1.4797533578269018,
+   "labelling_minus_linear": 5.658000000000003,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "fmnist",
+   "gain_linear": 6.537999999999999,
+   "gain_linear_sd": 0.40843604150466234,
+   "gain_labelling": 12.883999999999997,
+   "gain_labelling_sd": 0.7623844174692994,
+   "labelling_minus_linear": 6.345999999999998,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "organamnist",
+   "gain_linear": 6.691416357295536,
+   "gain_linear_sd": 0.7207223090172615,
+   "gain_labelling": 20.87411407357408,
+   "gain_labelling_sd": 0.7615602255386296,
+   "labelling_minus_linear": 14.182697716278545,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "bloodmnist",
+   "gain_linear": 5.296696872259574,
+   "gain_linear_sd": 1.6750534215068162,
+   "gain_labelling": 7.44811458637825,
+   "gain_labelling_sd": 2.5727956612728726,
+   "labelling_minus_linear": 2.1514177141186765,
+   "seeds_labelling_gt_linear": 3
+  },
+  {
+   "dataset": "tissuemnist",
+   "gain_linear": 4.900169204737734,
+   "gain_linear_sd": 0.14578880906448155,
+   "gain_labelling": 7.479695431472081,
+   "gain_labelling_sd": 0.3103217888463667,
+   "labelling_minus_linear": 2.5795262267343464,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "pathmnist",
+   "gain_linear": -4.4345403899721445,
+   "gain_linear_sd": 1.240242680762799,
+   "gain_labelling": 2.5515320334261844,
+   "gain_labelling_sd": 0.47653890761158296,
+   "labelling_minus_linear": 6.986072423398329,
+   "seeds_labelling_gt_linear": 5
+  }
+ ],
+ "voltage": [
+  {
+   "dataset": "mnist",
+   "gain_linear": -46.586,
+   "gain_linear_sd": 1.1978647669916669,
+   "gain_labelling": -39.034,
+   "gain_labelling_sd": 2.0861879109993904,
+   "labelling_minus_linear": 7.552,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "emnist_letters",
+   "gain_linear": -26.09326923076923,
+   "gain_linear_sd": 0.6621765007875696,
+   "gain_labelling": -15.434615384615384,
+   "gain_labelling_sd": 1.0559349474118547,
+   "labelling_minus_linear": 10.658653846153847,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "nmnist",
+   "gain_linear": -37.510000000000005,
+   "gain_linear_sd": 0.5430009208095299,
+   "gain_labelling": -12.236,
+   "gain_labelling_sd": 1.3721078674798137,
+   "labelling_minus_linear": 25.274000000000004,
+   "seeds_labelling_gt_linear": 5
+  },
+  {
+   "dataset": "fmnist",
+   "gain_linear": -0.30399999999999494,
+   "gain_linear_sd": 0.5969338321790733,
+   "gain_labelling": -17.186,
+   "gain_labelling_sd": 2.025099997530988,
+   "labelling_minus_linear": -16.882000000000005,
+   "seeds_labelling_gt_linear": 0
+  },
+  {
+   "dataset": "organamnist",
+   "gain_linear": 4.5820677241534495,
+   "gain_linear_sd": 0.31430726001115866,
+   "gain_labelling": -8.474519068511643,
+   "gain_labelling_sd": 0.8151937962445059,
+   "labelling_minus_linear": -13.056586792665094,
+   "seeds_labelling_gt_linear": 0
+  },
+  {
+   "dataset": "bloodmnist",
+   "gain_linear": 10.71616486407483,
+   "gain_linear_sd": 0.7462839540187529,
+   "gain_labelling": 5.939783688979832,
+   "gain_labelling_sd": 1.2612517307057556,
+   "labelling_minus_linear": -4.776381175095,
+   "seeds_labelling_gt_linear": 0
+  },
+  {
+   "dataset": "tissuemnist",
+   "gain_linear": 0.11252115059221524,
+   "gain_linear_sd": 0.16541737411431992,
+   "gain_labelling": -0.26776649746192904,
+   "gain_labelling_sd": 0.8898903999776535,
+   "labelling_minus_linear": -0.3802876480541443,
+   "seeds_labelling_gt_linear": 1
+  },
+  {
+   "dataset": "pathmnist",
+   "gain_linear": 8.3983286908078,
+   "gain_linear_sd": 0.489054313818368,
+   "gain_labelling": 1.2256267409470774,
+   "gain_labelling_sd": 0.6036443713863339,
+   "labelling_minus_linear": -7.172701949860722,
+   "seeds_labelling_gt_linear": 0
+  }
+ ]
+}

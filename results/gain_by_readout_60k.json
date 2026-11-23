@@ -1,0 +1,37 @@
+[
+ {
+  "seed": 0,
+  "trained_lab": 79.10000000000001,
+  "trained_lin": 85.87,
+  "random_lab": 49.87,
+  "random_lin": 69.37
+ },
+ {
+  "seed": 1,
+  "trained_lab": 79.51,
+  "trained_lin": 86.36,
+  "random_lab": 49.79,
+  "random_lin": 69.62
+ },
+ {
+  "seed": 2,
+  "trained_lab": 79.35,
+  "trained_lin": 85.96000000000001,
+  "random_lab": 51.15,
+  "random_lin": 71.09
+ },
+ {
+  "seed": 3,
+  "trained_lab": 79.75,
+  "trained_lin": 86.07000000000001,
+  "random_lab": 45.839999999999996,
+  "random_lin": 68.56
+ },
+ {
+  "seed": 4,
+  "trained_lab": 79.07,
+  "trained_lin": 85.35000000000001,
+  "random_lab": 50.06,
+  "random_lin": 69.82000000000001
+ }
+]

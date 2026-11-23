@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figure A.2 (Table 3 controls): voltage-STDP trained against random, one row per control.
+"""Figure S2 (the controls of Table 4): voltage-STDP trained against random, one row per control.
 
 A dot plot on one accuracy axis. Each row is one fully connected voltage-STDP setting of
 Table 3 (MNIST, seeds 0-4). It shows the trained networks (filled triangles), the networks
@@ -97,15 +97,15 @@ rd5 = pf("frozen")
 tr60 = [_RE[V.format(s) + ("mnist_vhz60000" if s in (1, 2) else "vb3_trained60k")] for s in range(5)]   # seeds 0-4 (author, 10-22)
 rd60 = [_RE[V.format(s) + "vb3_frozen60k"] for s in range(5)]
 rows = [
-    ("Table 3", "reference: tuned network, 10,000 images (5 seeds)", pf("trained"), rd5,
+    ("Table 3", "reference", pf("trained"), rd5,
      "probefix_voltage_thresholds_n5.json: trained vs frozen"),
-    ("Table 3", "tuned network, 60,000 images (5 seeds)", tr60, rd60,
+    ("Table 3", "training length", tr60, rd60,
      "reextract_probefix_scores.json: vb3_trained60k (seeds 1-2: mnist_vhz60000) vs vb3_frozen60k"),
-    ("Table 3", "thresholds of the convolutional network (5 seeds)", pf("thltd_m65_thltp_m52"), rd5,
+    ("Table 3", "voltage thresholds", pf("thltd_m65_thltp_m52"), rd5,
      "probefix_voltage_thresholds_n5.json: thltd_m65_thltp_m52 vs frozen"),
-    ("Table 3", "rule computed with Clopath's spike plateau (5 seeds)", pf("plateau"), rd5,
+    ("Table 3", "spike plateau", pf("plateau"), rd5,
      "probefix_voltage_thresholds_n5.json: plateau vs frozen"),
-    ("Table 3", "homeostatic scaling instead of $L_1$ renormalisation (5 seeds)",
+    ("Table 3", "weight management",
      [_RE[V.format(s) + "fixref_B_clopath_ref2400_ap0.002_h0.9"] for s in range(5)],
      [_RE[V.format(s) + "fixref_frozen_h0.9"] for s in range(5)],
      "reextract_probefix_scores.json: fixref_B_clopath_ref2400_ap0.002_h0.9 vs fixref_frozen_h0.9"),
@@ -191,7 +191,7 @@ handles = [Line2D([], [], ls="none", marker="^", ms=3.8, mfc=C_TR, mec="white", 
            Line2D([], [], ls="none", marker="|", ms=7, mew=1.3, color=ps.INK)]
 # a figure legend above the axes: constrained layout reserves its full width, which an
 # axes legend wider than its axes does not get (it was clipped at the right edge)
-fig.legend(handles, ["voltage-STDP, trained", "same network, STDP disabled", "mean over seeds"],
+fig.legend(handles, ["voltage-STDP, trained", "same network, plasticity off", "mean over seeds"],
            loc="outside upper center", ncol=3)
 
 os.makedirs(OUT_DIR, exist_ok=True)
