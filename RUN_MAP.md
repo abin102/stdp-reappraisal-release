@@ -266,7 +266,7 @@ have the highest mean count. The linear probe is that of the README.
 
 | paper element | command | inputs | results |
 |---|---|---|---|
-| Section 3.2 and Figure 3(a), one network, four numbers | `scripts/measure/fig_measurement.py` | `results/probefix_matrix_n5.json`, `results/input_baselines_probefix.json` (section 1) | `figures/fig_measurement.pdf` |
+| Section 3.2 and Figure 3(a), the protocol on one network | `scripts/measure/fig_measurement.py` | `results/probefix_matrix_n5.json`, `results/input_baselines_probefix.json` (section 1) | `figures/fig_measurement.pdf` |
 | Figure 3(b, c) and Section 3.3, the rule's gain under each readout on eight datasets | `scripts/measure/gain_by_readout.py` (the figure reads the same values) | `results/probefix_matrix_n5.json` | `results/gain_by_readout.json` |
 | Section 3.3, the trained network under labelling scores below the untrained network under the probe | `scripts/measure/readout_vs_rule_paired.py` | `results/probefix_matrix_n5.json` | `results/readout_vs_rule_paired.json` |
 | Section 3.3, PathMNIST: every labelled neuron receives one class | `scripts/measure/posthoc_degeneracy_check.py` | `results/probefix_matrix_n5.json` and the spike counts of the section-1 runs | `results/posthoc_degeneracy.json` |

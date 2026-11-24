@@ -259,7 +259,7 @@ the networks each scorer reads.
 | Figure S4, depression and potentiation thresholds | `scripts/figures/make_section44_mechanism_figure.py` (needs `CLOPATH_MODELDB_DIR`) | `figures/fig_section44_mechanism.pdf` |
 | Figure S3, accuracy against training length | `scripts/figures/make_paper_figs.py` | `figures/fig4_forgetting.pdf` |
 | Figure 6, scaffold ablation | `scripts/figures/make_paper_figs.py` | `figures/fig5_scaffold_fragility.pdf` |
-| Figure 3, one network, four numbers; gain under each readout | `scripts/measure/fig_measurement.py` | `figures/fig_measurement.pdf` |
+| Figure 3, the protocol on one network; gain under each readout | `scripts/measure/fig_measurement.py` | `figures/fig_measurement.pdf` |
 | Figure 1, evaluation protocol | `scripts/figures/make_protocol_figure.py` | `figures/fig8_protocol.pdf` |
 | Figure S1, positive control | `scripts/figures/clopath_curve_reproduction.py` | `results/clopath_curve_reproduction.json`, `figures/fig6_clopath_curves.pdf` |
 | Figure S2, voltage-STDP controls by seed | `scripts/figures/make_voltage_controls_figure.py` | `figures/fig_voltage_controls.pdf`, `figures/fig_voltage_controls_data.json` |

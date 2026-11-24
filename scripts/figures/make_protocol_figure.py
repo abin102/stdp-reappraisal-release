@@ -1,7 +1,8 @@
 """Figure 1: the evaluation protocol (Section 2.1). Purely schematic (no data).
 Left: the conventional evaluation, one accuracy under neuron labelling.
 Right: the protocol: the encoded input, the untrained network (plasticity off) and the trained network,
-read by a linear probe (solid arrows) and, for both networks, by neuron labelling (dashed arrows);
+read by a linear probe (solid arrows) and, when neuron labelling is reported, both networks also by
+neuron labelling (dashed grey arrows, dashed boxes);
 the three differences of Section 2.1.2. Drawn at the printed width in the shared style of paper_style.py.
 Writes $FIG_OUT_DIR/fig8_protocol.pdf and .png (default figures/).
 Run: python scripts/figures/make_protocol_figure.py
@@ -17,7 +18,7 @@ ps.apply()
 
 OUT = os.environ.get("FIG_OUT_DIR", "figures"); os.makedirs(OUT, exist_ok=True)
 INK = ps.INK
-FILL = "#EEF2F5"; RAND_FILL = "#E2E2E2"; OUT_FILL = "#D4D4D4"; LAB_FILL = "#D4D4D4"
+FILL = "#EEF2F5"; RAND_FILL = "#E2E2E2"; OUT_FILL = "#D4D4D4"; LAB_FILL = "#F7F7F7"
 FS = ps.FS_LABEL
 LW, HEAD = 0.8, 7
 
@@ -43,9 +44,9 @@ def box(cx, cy, text, fc=FILL, ec=INK, w=None, h=None, ls="-"):
     return cx - w / 2, cx + w / 2, cy - h / 2, cy + h / 2
 
 
-def arrow(x0, y0, x1, y1, style="-|>", ls="-"):
+def arrow(x0, y0, x1, y1, style="-|>", ls="-", color=INK):
     ax.add_patch(FancyArrowPatch((x0, y0), (x1, y1), arrowstyle=style, mutation_scale=HEAD,
-                                 lw=LW, color=INK, zorder=4, shrinkA=0, shrinkB=0, linestyle=ls))
+                                 lw=LW, color=color, zorder=4, shrinkA=0, shrinkB=0, linestyle=ls))
 
 
 def mid(b): return (b[0] + b[1]) / 2
@@ -76,22 +77,22 @@ for n in (ni, nu, nt):
 
 dx = 0.30
 a_in = box(xi, Y_ACC, r"$A_{\mathrm{input}}$")
-a_rl = box(xu - dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{random}}$", fc=LAB_FILL)
+a_rl = box(xu - dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{random}}$", fc=LAB_FILL, ec=ps.GREY, ls="--")
 a_r = box(xu + dx, Y_ACC, r"$A_{\mathrm{random}}$", fc=RAND_FILL, ec=ps.GREY)
 a_s = box(xt - dx, Y_ACC, r"$A_{\mathrm{STDP}}$")
-a_sl = box(xt + dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{STDP}}$", fc=LAB_FILL)
+a_sl = box(xt + dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{STDP}}$", fc=LAB_FILL, ec=ps.GREY, ls="--")
 arrow(mid(ni), ni[2], mid(a_in), a_in[3])
-arrow(mid(nu) - 0.12, nu[2], mid(a_rl), a_rl[3], ls=(0, (3, 2)))
+arrow(mid(nu) - 0.12, nu[2], mid(a_rl), a_rl[3], ls=(0, (3, 2)), color=ps.GREY)
 arrow(mid(nu) + 0.12, nu[2], mid(a_r), a_r[3])
 arrow(mid(nt) - 0.12, nt[2], mid(a_s), a_s[3])
-arrow(mid(nt) + 0.12, nt[2], mid(a_sl), a_sl[3], ls=(0, (3, 2)))
+arrow(mid(nt) + 0.12, nt[2], mid(a_sl), a_sl[3], ls=(0, (3, 2)), color=ps.GREY)
 
 # readout legend
 yl = 0.95
 ax.add_line(Line2D([2.44, 2.72], [yl, yl], color=INK, lw=LW))
 ax.text(2.77, yl, "linear probe", ha="left", va="center", fontsize=FS, color=INK)
-ax.add_line(Line2D([3.70, 3.98], [yl, yl], color=INK, lw=LW, ls=(0, (3, 2))))
-ax.text(4.03, yl, "neuron labelling", ha="left", va="center", fontsize=FS, color=INK)
+ax.add_line(Line2D([3.55, 3.83], [yl, yl], color=ps.GREY, lw=LW, ls=(0, (3, 2))))
+ax.text(3.88, yl, "neuron labelling (if reported)", ha="left", va="center", fontsize=FS, color=INK)
 
 # the three differences
 box(3.78, Y_NOTE, "", fc="white", w=2.95, h=0.70)

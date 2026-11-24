@@ -1,4 +1,4 @@
-"""Figure 3: one network, four numbers.
+"""Figure 3: the protocol on one network.
 (a) MNIST, pair-STDP, 10,000 training images, 5 seeds: the network with plasticity off and the
     trained network, each read by neuron labelling and by the linear probe; dashed line: the
     same probe on the encoded input.
