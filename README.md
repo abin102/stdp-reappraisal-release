@@ -195,7 +195,10 @@ of 10,000 training images and scored on the full test set. Every fit runs with o
 BLAS thread: fits on raw counts are badly conditioned, so where L-BFGS stops depends
 on the order of floating-point sums, which changes with the number of threads
 (`scripts/score/_blas.py`). All shipped tables were recomputed this way on
-2026-10-26. The SoftHebb comparison (Table 5) does not use this probe: as in
+2026-10-26. The probes on the encoded input (`results/input_baselines_probefix.json`,
+the encoded-input column of Table 3) are the most sensitive; they were recomputed one
+fit at a time, in a single process, on 2026-11-24, which changed Table 3 by at most
+0.4 points and no conclusion. The SoftHebb comparison (Table 5) does not use this probe: as in
 SoftHebb's own code, its readout and its pixel baseline are linear layers trained with
 dropout for 50 epochs (Section 3.7, Section S18).
 
@@ -298,7 +301,7 @@ numbers must agree to 1e-9. It needs the run outputs (`experiments/runs/`,
 
 ```bash
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=. \
-    python scripts/checks/check_results.py --jobs 8 --workspace /path/to/scratch --resume
+    python scripts/checks/check_results.py --jobs 2 --workspace /path/to/scratch --resume
 ```
 
 - `--list` prints every scorer, its command and its outputs.
@@ -310,8 +313,10 @@ OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=. \
   `REF_DIR`.
 
 The script prints PASS, FAIL or SKIP per file and exits with status 0 when nothing
-fails. With the library versions in `requirements.txt` the tables should match
-exactly. With another BLAS build a probe fit can move by about one test image.
+fails. With the library versions in `requirements.txt` most tables match exactly; a
+probe fit can move by about one test image with another BLAS build, and the fits on the
+encoded input by up to about one point per seed. Keep `--jobs` small: on the machine used
+here, many simultaneous jobs gave irregular fits and occasional crashes.
 The tables made by a GPU simulation (gate probes, convolutional readouts,
 supervised ceiling, the Clopath calibration and equivalence checks) are not rerun;
 the docstring of `check_results.py` lists them. The SoftHebb networks are not rerun
