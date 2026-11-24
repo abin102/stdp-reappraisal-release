@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Score every network re-extracted by scripts/extract/reextract_features.py (results/logs_reextract/
-jobs_runsingle.txt, 232 run_single networks; + jobs_homeo.txt, 18 homeostasis networks) with the paper's single linear probe, next to the
+jobs_runsingle.txt, 238 run_single networks; + jobs_homeo.txt, 18 homeostasis networks) with the paper's single linear probe, next to the
 retired probes on the original test pass.
 
 Single probe (Methods 3.9): multinomial logistic regression, L2, C = 1, raw counts,

@@ -6,7 +6,7 @@ test set, re-extracted counts). **old_v** = retired voltage-STDP probe (70/30 of
 original test images); **old_full** = 70/30 of all original test images. EMNIST-Letters and N-MNIST old
 values come from class-sorted test passes. Trained-vs-disabled pairing (Delta) is not computed here.
 
-336 networks; fits not converged at max_iter 100000: 0
+342 networks; fits not converged at max_iter 100000: 0
 
 ## Validation: re-extraction vs fresh probe-fix runs
 
@@ -173,8 +173,14 @@ values come from class-sorted test passes. Trained-vs-disabled pairing (Delta) i
 
 | setting | dataset | STDP images | STDP | n | new | old_v | old_full | spikes/test image |
 |---|---|--:|---|--:|--:|--:|--:|--:|
+| `pair_exp_S_full_N400_seed0` | mnist | 60,000 | on | 1 | 86.4 | 82.3 | 85.4 | 34.4 |
+| `pair_exp_S_full_N400_seed1` | mnist | 60,000 | on | 1 | 87.3 | 82.8 | 86.6 | 34.3 |
+| `pair_exp_S_full_N400_seed2` | mnist | 60,000 | on | 1 | 86.4 | 80.9 | 86.1 | 34.2 |
 | `pair_exp_S_full_N400_seed3` | mnist | 60,000 | on | 1 | 86.9 | 80.9 | 86.6 | 34.3 |
 | `pair_exp_S_full_N400_seed4` | mnist | 60,000 | on | 1 | 86.3 | 81.7 | 86.1 | 34.4 |
+| `triplet_S_full_N400_seed0` | mnist | 60,000 | on | 1 | 88.4 | 84.3 | 87.5 | 33.8 |
+| `triplet_S_full_N400_seed1` | mnist | 60,000 | on | 1 | 88.0 | 83.1 | 87.8 | 33.7 |
+| `triplet_S_full_N400_seed2` | mnist | 60,000 | on | 1 | 88.0 | 84.3 | 87.6 | 33.6 |
 | `triplet_S_full_N400_seed3` | mnist | 60,000 | on | 1 | 88.4 | 84.8 | 88.6 | 33.7 |
 | `triplet_S_full_N400_seed4` | mnist | 60,000 | on | 1 | 87.8 | 84.3 | 88.4 | 33.7 |
 
@@ -514,7 +520,13 @@ values come from class-sorted test passes. Trained-vs-disabled pairing (Delta) i
 | `voltage_S_full_N400_seed0_thltd_ref` | 28.58 | 25.80 | 25.80 | 17.5 / 13.9 | 10,000 |
 | `voltage_S_full_N400_seed1_thltd_ref` | 29.16 | 26.13 | 26.13 | 14.8 / 10.3 | 10,000 |
 | `voltage_S_full_N400_seed2_thltd_ref` | 29.60 | 25.27 | 25.27 | 16.6 / 14.3 | 10,000 |
+| `pair_exp_S_full_N400_seed0` | 86.37 | 82.27 | 85.40 | 34.4 / 35.4 | 10,000 |
+| `pair_exp_S_full_N400_seed1` | 87.29 | 82.80 | 86.63 | 34.3 / 35.3 | 10,000 |
+| `pair_exp_S_full_N400_seed2` | 86.43 | 80.93 | 86.13 | 34.2 / 35.2 | 10,000 |
 | `pair_exp_S_full_N400_seed3` | 86.91 | 80.87 | 86.57 | 34.3 / 35.4 | 10,000 |
 | `pair_exp_S_full_N400_seed4` | 86.29 | 81.73 | 86.13 | 34.4 / 35.4 | 10,000 |
+| `triplet_S_full_N400_seed0` | 88.40 | 84.27 | 87.50 | 33.8 / 34.7 | 10,000 |
+| `triplet_S_full_N400_seed1` | 88.03 | 83.13 | 87.80 | 33.7 / 34.6 | 10,000 |
+| `triplet_S_full_N400_seed2` | 87.98 | 84.33 | 87.57 | 33.6 / 34.6 | 10,000 |
 | `triplet_S_full_N400_seed3` | 88.38 | 84.80 | 88.60 | 33.7 / 34.6 | 10,000 |
 | `triplet_S_full_N400_seed4` | 87.80 | 84.33 | 88.40 | 33.7 / 34.6 | 10,000 |
