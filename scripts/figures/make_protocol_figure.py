@@ -1,8 +1,8 @@
 """Figure 1: the evaluation protocol (Section 2.1). Purely schematic (no data).
 Left: the conventional evaluation, one accuracy under neuron labelling.
-Right: the protocol: the encoded input, the untrained network (plasticity off) and the trained network,
-read by a linear probe (solid arrows) and, when neuron labelling is reported, both networks also by
-neuron labelling (dashed grey arrows, dashed boxes);
+Right: the protocol: the encoded input, the trained network (middle) and the untrained network
+(plasticity off), read by a linear probe (solid arrows) and, when neuron labelling (NL) is reported,
+both networks also by neuron labelling (dashed grey arrows, dashed boxes);
 the three differences of Section 2.1.2. Drawn at the printed width in the shared style of paper_style.py.
 Writes $FIG_OUT_DIR/fig8_protocol.pdf and .png (default figures/).
 Run: python scripts/figures/make_protocol_figure.py
@@ -52,57 +52,73 @@ def arrow(x0, y0, x1, y1, style="-|>", ls="-", color=INK):
 def mid(b): return (b[0] + b[1]) / 2
 
 
-Y_IMG, Y_ENC, Y_NET, Y_ACC, Y_NOTE = 3.17, 2.70, 2.05, 1.30, 0.42
+# Rows, with equal gaps between boxes (top margin 0.08 in).
+Y_IMG, Y_ENC, Y_NET, Y_ACC, Y_LEG, Y_NOTE = 3.24, 2.74, 2.05, 1.39, 1.05, 0.48
+NL_LS = (0, (3, 2))
+NOTE_H = 0.80
 
 # ---------------- left: the conventional evaluation ----------------
-xl = 0.95
+xl = 0.66
 L = [box(xl, Y_IMG, "Image"), box(xl, Y_ENC, "STDP network"), box(xl, Y_NET, "Neuron labelling"),
      box(xl, Y_ACC, "One accuracy", fc=OUT_FILL)]
 for a, b in zip(L, L[1:]):
     arrow(mid(a), a[2], mid(b), b[3])
-box(xl, Y_NOTE, "mixes the input,\nthe architecture,\nthe scaffold, the readout\nand the rule",
-    fc="white", ls="--", w=1.70, h=0.70)
-ax.plot([2.02, 2.02], [0.08, H - 0.08], color=ps.GREY, lw=0.6, ls=(0, (1, 2)))
+box(xl, Y_NOTE, "mixes the input,\nthe architecture,\nthe scaffold,\nthe readout\nand the rule",
+    fc="white", ls="--", w=1.14, h=NOTE_H)
+XDIV = 1.34
+ax.plot([XDIV, XDIV], [0.08, H - 0.08], color=ps.GREY, lw=0.6, ls=(0, (1, 2)))
 
 # ---------------- right: the protocol ----------------
-xi, xu, xt = 2.55, 3.62, 4.75
-img = box(xu, Y_IMG, "Image")
-enc = box(xu, Y_ENC, "Encoder")
-arrow(mid(img), img[2], mid(enc), enc[3])
-ni = box(xi, Y_NET, "Input\nspikes")
-nu = box(xu, Y_NET, "Untrained network\n(plasticity off)", fc=RAND_FILL, ec=ps.GREY)
-nt = box(xt, Y_NET, "Trained\nnetwork")
-for n in (ni, nu, nt):
-    arrow(mid(enc) + (mid(n) - mid(enc)) * 0.12, enc[2], mid(n), n[3])
+# Three equally spaced columns with the trained network in the middle, under the encoder (every
+# difference involves it). Each network's accuracies sit straight below it: linear probe on the
+# left (solid arrow), neuron labelling (NL) on the right (dashed, grey). All accuracy boxes share
+# one size.
+NW, AW, AH, CG = 1.04, 0.58, 0.32, 0.06         # network width; accuracy box width, height; gap
+s = (AW + CG) / 2                               # offset of each accuracy box from its network
+d = 2 * AW + CG + 0.16                          # column pitch: one box pair plus 0.16 in
+xc = (XDIV + 0.06 + W - 0.04 + (d + NW / 2) - (d + s + AW / 2)) / 2   # equal outer margins
+xi, xt, xu = xc - d, xc, xc + d                 # input spikes, trained, untrained
+img = box(xc, Y_IMG, "Image")
+enc = box(xc, Y_ENC, "Encoder")
+arrow(xc, img[2], xc, enc[3])
+ni = box(xi, Y_NET, "Input\nspikes", w=NW)
+nt = box(xt, Y_NET, "Trained\nnetwork", w=NW)
+nu = box(xu, Y_NET, "Untrained\nnetwork", w=NW, fc=RAND_FILL, ec=ps.GREY)
+for n in (ni, nt, nu):
+    arrow(xc + (mid(n) - xc) * 0.15, enc[2], mid(n), n[3])
 
-dx = 0.30
-a_in = box(xi, Y_ACC, r"$A_{\mathrm{input}}$")
-a_rl = box(xu - dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{random}}$", fc=LAB_FILL, ec=ps.GREY, ls="--")
-a_r = box(xu + dx, Y_ACC, r"$A_{\mathrm{random}}$", fc=RAND_FILL, ec=ps.GREY)
-a_s = box(xt - dx, Y_ACC, r"$A_{\mathrm{STDP}}$")
-a_sl = box(xt + dx, Y_ACC, r"$A^{\mathrm{lab}}_{\mathrm{STDP}}$", fc=LAB_FILL, ec=ps.GREY, ls="--")
-arrow(mid(ni), ni[2], mid(a_in), a_in[3])
-arrow(mid(nu) - 0.12, nu[2], mid(a_rl), a_rl[3], ls=(0, (3, 2)), color=ps.GREY)
-arrow(mid(nu) + 0.12, nu[2], mid(a_r), a_r[3])
-arrow(mid(nt) - 0.12, nt[2], mid(a_s), a_s[3])
-arrow(mid(nt) + 0.12, nt[2], mid(a_sl), a_sl[3], ls=(0, (3, 2)), color=ps.GREY)
+NLKW = dict(w=AW, h=AH, fc=LAB_FILL, ec=ps.GREY, ls="--")
+a_in = box(xi, Y_ACC, r"$A_{\mathrm{input}}$", w=AW, h=AH)
+a_t = box(xt - s, Y_ACC, r"$A_{\mathrm{trained}}$", w=AW, h=AH)
+a_tl = box(xt + s, Y_ACC, r"$A^{\mathrm{NL}}_{\mathrm{trained}}$", **NLKW)
+a_u = box(xu - s, Y_ACC, r"$A_{\mathrm{untrained}}$", w=AW, h=AH, fc=RAND_FILL, ec=ps.GREY)
+a_ul = box(xu + s, Y_ACC, r"$A^{\mathrm{NL}}_{\mathrm{untrained}}$", **NLKW)
+arrow(xi, ni[2], xi, a_in[3])
+for n, p, q in ((nt, a_t, a_tl), (nu, a_u, a_ul)):
+    arrow(mid(p), n[2], mid(p), p[3])
+    arrow(mid(q), n[2], mid(q), q[3], ls=NL_LS, color=ps.GREY)
 
-# readout legend
-yl = 0.95
-ax.add_line(Line2D([2.44, 2.72], [yl, yl], color=INK, lw=LW))
-ax.text(2.77, yl, "linear probe", ha="left", va="center", fontsize=FS, color=INK)
-ax.add_line(Line2D([3.55, 3.83], [yl, yl], color=ps.GREY, lw=LW, ls=(0, (3, 2))))
-ax.text(3.88, yl, "neuron labelling (if reported)", ha="left", va="center", fontsize=FS, color=INK)
+# readout legend, centred on the trained network
+lw1, lw2 = tsize("linear probe")[0], tsize("neuron labelling (NL)")[0]
+seg, pad, sep = 0.28, 0.05, 0.40
+x = xc - (2 * (seg + pad) + lw1 + lw2 + sep) / 2
+ax.add_line(Line2D([x, x + seg], [Y_LEG, Y_LEG], color=INK, lw=LW))
+ax.text(x + seg + pad, Y_LEG, "linear probe", ha="left", va="center", fontsize=FS, color=INK)
+x += seg + pad + lw1 + sep
+ax.add_line(Line2D([x, x + seg], [Y_LEG, Y_LEG], color=ps.GREY, lw=LW, ls=NL_LS))
+ax.text(x + seg + pad, Y_LEG, "neuron labelling (NL)", ha="left", va="center", fontsize=FS, color=INK)
 
-# the three differences
-box(3.78, Y_NOTE, "", fc="white", w=2.95, h=0.70)
-x0 = 2.44
-for k, (f, what) in enumerate([(r"$\Delta = A_{\mathrm{STDP}} - A_{\mathrm{random}}$", "the rule"),
-                               (r"$A_{\mathrm{STDP}} - A^{\mathrm{lab}}_{\mathrm{STDP}}$", "the readout"),
-                               (r"$A_{\mathrm{STDP}} - A_{\mathrm{input}}$", "the input")]):
+# the three differences, centred on the trained network
+rows = [(r"$\Delta = A_{\mathrm{trained}} - A_{\mathrm{untrained}}$", "the rule"),
+        (r"$A_{\mathrm{trained}} - A^{\mathrm{NL}}_{\mathrm{trained}}$", "the readout"),
+        (r"$A_{\mathrm{trained}} - A_{\mathrm{input}}$", "the input")]
+c1 = max(tsize(f)[0] for f, _ in rows); c2 = max(tsize(w_)[0] for _, w_ in rows); gap = 0.45
+box(xc, Y_NOTE, "", fc="white", w=c1 + gap + c2 + 0.50, h=NOTE_H)
+x0 = xc - (c1 + gap + c2) / 2
+for k, (f, what) in enumerate(rows):
     y = Y_NOTE + 0.22 - k * 0.22
     ax.text(x0, y, f, ha="left", va="center", fontsize=FS, color=INK, zorder=3)
-    ax.text(x0 + 1.62, y, what, ha="left", va="center", fontsize=FS, color=INK, zorder=3)
+    ax.text(x0 + c1 + gap, y, what, ha="left", va="center", fontsize=FS, color=INK, zorder=3)
 
 ps.save(fig, os.path.join(OUT, "fig8_protocol"))
 plt.close(fig)
