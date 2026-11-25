@@ -37,16 +37,16 @@ Notes:
 2. Four families have their seed 0 under a different name (column 'note'). The configurations are identical
    apart from seed, name and device (checked); the scorers read the names as listed. To recreate such a
    seed 0, run the aliased family's file with `--seed 0`.
-3. Fig 3 (`scripts/figures/make_paper_figs.py`) draws the voltage receptive fields from
-   `voltage_S_full_N400_seed0__b_fix_tc1e4_60k`, the tau_theta = 1e4 network that Table S3, Sec 3.6 and
-   Fig 6 also use (group R6). The tau_theta = 1e6 network (group V0) is used only by the gate probe of
+3. Figure S4 (`scripts/figures/make_paper_figs.py`) draws the voltage receptive fields from
+   `voltage_S_full_N400_seed0__b_fix_tc1e4_60k`, the tau_theta = 1e4 network that Table S3, Section 3.5 and
+   Figure 5 also use (group R6). The tau_theta = 1e6 network (group V0) is used only by the gate probe of
    Section S15.
 4. Single-seed families (Section S3 search cells, weight-management and plateau screens) are screens
    reported at one seed, as in the paper.
 
-## P1. Probe-fix matrix: 3 rules x 8 datasets, trained and STDP-disabled, 10k images
+## P1. Probe-fix matrix: 3 rules x 8 datasets, trained and untrained, 10k images
 
-Paper: Table 2, Fig 7, Sec 3.2, 3.3 (FMNIST 64.2 vs 64.5), 3.7, Table S2, Table S8 (STDP column), Section S9; abstract gains.
+Paper: Table 3, Figure 3, Sections 3.2 to 3.4, Section 3.6 and the reference row of Table 4 (voltage-STDP; Fashion-MNIST 64.2 vs 64.5), Table S2, Table S8 (STDP column), Section S9; abstract gains.
 
 How: launcher `scripts/train/probefix_matrix_n5.sh` (all 240 runs), or run_seeds.sh per family; scorer `scripts/score/probefix_aggregate.py`. The voltage MNIST pair is also the reference of P2..
 
@@ -103,7 +103,7 @@ How: launcher `scripts/train/probefix_matrix_n5.sh` (all 240 runs), or run_seeds
 
 ## P2. Voltage-STDP threshold and spike-plateau settings, 10k images
 
-Paper: Table 3 voltage-thresholds and spike-plateau rows, Sec 3.4, Fig 4c, Table S7(a), Fig S2 rows 3-4.
+Paper: Table 4 voltage-thresholds and spike-plateau rows, Section 3.6, Figure S5(c), Table S7(a), Figure S2 rows 3-4.
 
 How: launcher `scripts/train/probefix_voltage_thresholds_n5.sh`, or run_seeds.sh per family; scorer `scripts/score/probefix_voltage_thresholds_aggregate.py`.
 
@@ -122,7 +122,7 @@ How: launcher `scripts/train/probefix_voltage_thresholds_n5.sh`, or run_seeds.sh
 
 ## S. Scaffold matrix, pair and triplet, 60k images
 
-Paper: Table S3, Fig 2, Fig 6, Sec 3.1, 3.6, Discussion; the pair S_full family is also the trained side of Sec 3.2's matched-random comparison.
+Paper: Table S3, Figures 4 and 5, Sections 3.3 and 3.5, Discussion; the pair S_full family is also the trained side of the 60,000-image comparison with the untrained network (Sections 3.3 and 3.5).
 
 How: run_seeds.sh, then `scripts/extract/extract_train_features.py DIR... --n_subset 10000` (configs predate `evaluation.save_train_features`); scorers `scaffold_readout_table.py`, `posthoc_both_conventions.py`, `identical_neuron_check.py`, `matched_random_60k_table.py`.
 
@@ -137,9 +137,9 @@ How: run_seeds.sh, then `scripts/extract/extract_train_features.py DIR... --n_su
 | `triplet_S_none_N400` | `experiments/runs/triplet_S_none_N400_seed{S}` | 0-4 | mnist | 60000 |  |
 | `triplet_S_thr_only_N400` | `experiments/runs/triplet_S_thr_only_N400_seed{S}` | 0-4 | mnist | 60000 |  |
 
-## M. Matched random baseline at 60k (pair, STDP disabled)
+## M. Untrained network at 60k (pair-STDP)
 
-Paper: Sec 3.2 (69.7 +- 0.9, +16.2), Fig 6 dashed line, Sec 3.7, introduction.
+Paper: Section 3.3 (69.7 +- 0.9, +16.2), Section 3.5 and the dashed line of Figure 5.
 
 How: run_seeds.sh, then `scripts/extract/extract_train_features.py DIR... --n_subset 10000`; scorer `scripts/score/matched_random_60k_table.py`.
 
@@ -159,7 +159,7 @@ How: the gate probe needs only the config file (no trained run).
 
 ## V1. Tuned voltage-STDP configuration (config source only)
 
-Paper: Fig 4 (scripts/figures/make_section44_mechanism_figure.py reads this file directly).
+Paper: Figure S5 (scripts/figures/make_section44_mechanism_figure.py reads this file directly).
 
 How: needs no training: the figure reads `run_configs/voltage_S_full_N400_vb3_trained.yaml` itself.
 
@@ -207,7 +207,7 @@ How: run_seeds.sh, then `scripts/extract/reextract_all.sh` on the run directorie
 | `voltage_S_full_N400_plateau_W_x3` | `experiments/runs/voltage_S_full_N400_seed{S}_plateau_W_x3` | 0 | mnist | 10000 |  |
 | `voltage_S_full_N400_plateau_frozen_tuned` | `experiments/runs/voltage_S_full_N400_seed{S}_plateau_frozen_tuned` | 0 | mnist | 10000 |  |
 
-### R4. Table 3 weight-management row; Section S5 (Table S5); Sec 3.3 weight management
+### R4. Table 4 weight-management row; Section 3.6; Section S5 (Table S5)
 
 | file | run directories | seeds | dataset | training images | note |
 |---|---|---|---|--:|---|
@@ -259,7 +259,7 @@ How: run_seeds.sh, then `scripts/extract/reextract_all.sh` on the run directorie
 | `voltage_S_full_N400__mnist_adex_baseline` | `experiments/runs/voltage_S_full_N400_seed{S}__mnist_adex_baseline` | 0 | mnist | 60000 |  |
 | `voltage_S_full_N400__mnist_adex_dT05` | `experiments/runs/voltage_S_full_N400_seed{S}__mnist_adex_dT05` | 0 | mnist | 60000 |  |
 
-### R6. Section 3.6 / Figure 6 / Table S3: voltage-STDP scaffolds at 60k
+### R6. Section 3.5 / Figure 5 / Table S3: voltage-STDP scaffolds at 60k
 
 | file | run directories | seeds | dataset | training images | note |
 |---|---|---|---|--:|---|
@@ -269,7 +269,7 @@ How: run_seeds.sh, then `scripts/extract/reextract_all.sh` on the run directorie
 | `voltage_S_none_N400__b_fix_tc1e4` | `experiments/runs/voltage_S_none_N400_seed{S}__b_fix_tc1e4` | 0-4 | mnist | 60000 |  |
 | `voltage_S_thr_only_N400__b_fix_tc1e4` | `experiments/runs/voltage_S_thr_only_N400_seed{S}__b_fix_tc1e4` | 0-4 | mnist | 60000 |  |
 
-### R7. Section 3.6 / Section S7: voltage-STDP scaffolds at 5k and 20k
+### R7. Section S7: voltage-STDP scaffolds at 5k and 20k
 
 | file | run directories | seeds | dataset | training images | note |
 |---|---|---|---|--:|---|
@@ -281,7 +281,7 @@ How: run_seeds.sh, then `scripts/extract/reextract_all.sh` on the run directorie
 | `voltage_S_thr_only_N400_mid20k` | `experiments/runs/voltage_S_thr_only_N400_seed{S}_mid20k` | 0-4 | mnist | 20000 |  |
 | `voltage_S_thr_only_N400_peak5k` | `experiments/runs/voltage_S_thr_only_N400_seed{S}_peak5k` | 0-4 | mnist | 5000 |  |
 
-### R8. Table 3 training-length row (60k, trained vs STDP disabled); Fig S2 row 2
+### R8. Table 4 training-length row (60k, trained vs untrained); Figure S2 row 2
 
 | file | run directories | seeds | dataset | training images | note |
 |---|---|---|---|--:|---|
@@ -290,7 +290,7 @@ How: run_seeds.sh, then `scripts/extract/reextract_all.sh` on the run directorie
 | `voltage_S_full_N400_vb3_frozen60k` | `experiments/runs/voltage_S_full_N400_seed{S}_vb3_frozen60k` | 0-9 | mnist | 60000 | the paper uses seeds 0-4 |
 | `voltage_S_full_N400_vb3_trained60k` | `experiments/runs/voltage_S_full_N400_seed{S}_vb3_trained60k` | 0,3,4,5,6,7,8,9 | mnist | 60000 | seed 0 of `voltage_S_full_N400_seed{S}__f_phaseB3_winner`; seeds 1-2 = `__f_phaseB3_winner` |
 
-### R9. Section 3.5 / Figure 5: training length, default configurations
+### R9. Section 3.3 / Figure S3: training length, default configurations
 
 | file | run directories | seeds | dataset | training images | note |
 |---|---|---|---|--:|---|
@@ -304,7 +304,7 @@ How: run_seeds.sh, then `scripts/extract/reextract_all.sh` on the run directorie
 | `voltage_S_full_N400_flen20k` | `experiments/runs/voltage_S_full_N400_seed{S}_flen20k` | 0-4 | mnist | 20000 |  |
 | `voltage_S_full_N400_flen5k` | `experiments/runs/voltage_S_full_N400_seed{S}_flen5k` | 0-4 | mnist | 5000 |  |
 
-### R10. Section 3.5 / Section S7: tuned voltage-STDP, 2k / 5k / 60k
+### R10. Section 3.6 / Section S7: tuned voltage-STDP, 2k / 5k / 60k
 
 | file | run directories | seeds | dataset | training images | note |
 |---|---|---|---|--:|---|
@@ -335,7 +335,7 @@ How: run_seeds.sh, then `scripts/extract/reextract_all.sh` on the run directorie
 | `voltage_S_full_N400_organamnist__organa_smoke_tuned` | `experiments/runs/voltage_S_full_N400_seed{S}_organamnist__organa_smoke_tuned` | 0 | organamnist | 60000 | seed 0 of `voltage_S_full_N400_seed{S}_organamnist__n5_organa_tuned` |
 ## C. Clopath-neuron port (scripts/train/clopath_port_mnist.py)
 
-Paper: Table 3 row 7, Sec 3.3 Clopath paragraphs, Tables S9 and S10, Section S10. Scorers
+Paper: Table 4 Clopath's-neuron row, Section 3.6, Tables S9 and S10, Section S10. Scorers
 `scripts/score/clopath_port_probefix_score.py` (single probe on `*_pf.npz`) and
 `scripts/score/appendix_j_counts.py` (per-network counts, using the functions of
 `scripts/score/clopath_port_thetatar_score.py`). Each run directory holds `meta.json` (seed, image counts,
@@ -364,9 +364,9 @@ has `use_wandb: true`, which is the only difference from `conv_seed5/paper_seed5
 | family | output | seeds | paper | command |
 |---|---|---|---|---|
 | conv_stdp: STDP + surrogate readout | `checkpoints/conv2l_voltage_clopath_faithful_mnist_paper_seed{S}` | 1-5 | trained filters for the three rows below | `SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_stdp` (= `conv/conv2layer_voltage_stdp.py --config conv/configs/conv_voltage_config.yaml --seed S --name-suffix _paper_seedS`) |
-| conv_trainedreadout: fresh surrogate readout on seed-S filters | `checkpoints/..._TRAINEDREADOUT_seed{S}` | 1-4 (seed 5 is conv_stdp's own readout) | Section 3.3 / Section S9 surrogate readout, final epoch 96.4 +- 0.4 (trained; the paper reports the best epoch, 96.9 +- 0.1) | `run_seeds.sh conv_trainedreadout` (copies `..._paper_seedS/ckpt_L2_ep1.pt` to the new directory as `conv_voltage_stdp_ckpt.pt`, then runs the readout) |
-| conv_randomfilters: surrogate readout on random filters (`epochs_stdp: [0, 0]`) | `checkpoints/..._RANDOMFILTERS_seed{S}` | 1-5 | Section 3.3 / Section S9, final epoch 97.1 +- 0.2 (random; the paper reports the best epoch, 97.3 +- 0.1) | `run_seeds.sh conv_randomfilters` |
-| conv_svm: linear readout, trained and random filters, 12k/10k images | `results/conv_svm_{trained,random}_s{S}.json` | 1-5 | Table 3 architecture row (94.3 +- 0.2 vs 95.2 +- 0.3) | `run_seeds.sh conv_svm` (needs conv_stdp seed S) |
+| conv_trainedreadout: fresh surrogate readout on seed-S filters | `checkpoints/..._TRAINEDREADOUT_seed{S}` | 1-4 (seed 5 is conv_stdp's own readout) | surrogate readout, trained filters: Section 3.7 (final epoch, 96.4 +- 0.4) and Section S16 (best epoch, 96.9 +- 0.1) | `run_seeds.sh conv_trainedreadout` (copies `..._paper_seedS/ckpt_L2_ep1.pt` to the new directory as `conv_voltage_stdp_ckpt.pt`, then runs the readout) |
+| conv_randomfilters: surrogate readout on random filters (`epochs_stdp: [0, 0]`) | `checkpoints/..._RANDOMFILTERS_seed{S}` | 1-5 | random filters: Section 3.7 (final epoch, 97.1 +- 0.2) and Section S16 (best epoch, 97.3 +- 0.1) | `run_seeds.sh conv_randomfilters` |
+| conv_svm: linear readout, trained and random filters, 12k/10k images | `results/conv_svm_{trained,random}_s{S}.json` | 1-5 | Table 4 architecture row (94.3 +- 0.2 vs 95.2 +- 0.3) | `run_seeds.sh conv_svm` (needs conv_stdp seed S) |
 
 ## Not covered (no launcher survives)
 

@@ -16,11 +16,11 @@ scaffold, to a two-layer convolutional network and to SoftHebb (Journé et al., 
 deep Hebbian method, on CIFAR-10 and four medical datasets (Table 5). Controls for
 voltage-STDP include an exact reimplementation of Clopath's neuron and update rule.
 
-**Labels.** This README and `RUN_MAP.md` use the paper's numbering: Sections 2.x
-(Methods), 3.x (Results) and 4.x (Discussion), Tables 1 to 5 and Figures 1 to 6. Labels
-with an S (for example Section S5 or Table S5) are in the paper's Supplementary material.
-Script names and comments, the results sheets in `results/`, the section names quoted from
-them and `run_configs/INDEX.md` keep the labels of earlier drafts: there, Appendices A to J
+**Labels.** This README, `RUN_MAP.md` and `run_configs/INDEX.md` use the paper's numbering:
+Sections 2.x (Methods), 3.x (Results) and 4.x (Discussion), Tables 1 to 5 and Figures 1 to 5.
+Labels with an S (for example Section S5 or Table S5) are in the paper's Supplementary material.
+Script names and comments, the results sheets in `results/` and the section names quoted from
+them keep the labels of earlier drafts: there, Appendices A to J
 are Sections S1 to S10, Tables A.1 to A.10 are Tables S1 to S10, Figures A.1 and A.2 are
 Figures S1 and S2, and main-text section, table and figure numbers refer to earlier drafts.
 In the code, neuron labelling is called the post-hoc readout, and the untrained network the
@@ -60,7 +60,7 @@ random, frozen or STDP-disabled network.
   (https://modeldb.science/144566). It is not redistributed. Download it and set
   `CLOPATH_MODELDB_DIR` to the folder that holds `aEIF.m`, `RFdevelop.m` and
   `VoTri.m`. Only two scripts need it:
-  `scripts/figures/make_section44_mechanism_figure.py` (Figure S4) and the Octave
+  `scripts/figures/make_section44_mechanism_figure.py` (Figure S5) and the Octave
   comparisons of `scripts/checks/clopath_port_equivalence.py`. Both stop with
   these instructions when the variable is not set.
 - **SoftHebb's code.** The SoftHebb runs (Table 5) import the demo released by
@@ -103,13 +103,13 @@ PYTHONPATH=. python scripts/train/run_config.py run_configs/pair_exp_S_full_N400
 # several families and seeds, one worker per GPU
 SEEDS="0 1 2 3 4" GPUS="0" bash scripts/train/run_seeds.sh pair_exp_S_full_N400 pair_exp_S_full_N400_frozen60k
 
-# the 240 networks of Table 3 and Figure 3 (3 rules x 8 datasets x 5 seeds x trained / plasticity off)
+# the 240 networks of Table 3 and Figure 3 (3 rules x 8 datasets x 5 seeds x trained / untrained)
 bash scripts/train/probefix_matrix_n5.sh "0" 4
 
 # the 50 voltage-STDP threshold and spike-plateau networks (Table 4, Table S7)
 bash scripts/train/probefix_voltage_thresholds_n5.sh "0" 4
 
-# the convolutional voltage-STDP network, seeds 1-5 (Table 4, Section 3.6)
+# the convolutional voltage-STDP network, seeds 1-5 (Table 4, Section 3.7)
 SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_stdp
 SEEDS="1 2 3 4" bash scripts/train/run_seeds.sh conv_trainedreadout
 SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_randomfilters conv_svm
@@ -118,7 +118,7 @@ SEEDS="1 2 3 4 5" bash scripts/train/run_seeds.sh conv_randomfilters conv_svm
 SEEDS="0 1 2 3 4" bash scripts/train/run_seeds.sh port_grid10k port_explore_k0
 bash scripts/train/clopath_port_thetatar_sweep.sh   # seeds 0-2; needs the check run of RUN_MAP.md, section 14
 
-# SoftHebb with the matched random baseline, 114 runs (Table 5); needs SoftHebb's code, see results/softhebb/README.md
+# SoftHebb and its untrained network, 114 runs (Table 5); needs SoftHebb's code, see results/softhebb/README.md
 DEVICE=cuda:0 bash scripts/train/softhebb_runs.sh
 ```
 
@@ -211,10 +211,10 @@ python scripts/measure/fig_measurement.py          # Figure 3
 python scripts/figures/clopath_curve_reproduction.py --plot-only   # Figure S1 (without --plot-only it reruns the simulation)
 python scripts/figures/make_protocol_figure.py      # Figure 1
 python scripts/figures/make_voltage_controls_figure.py             # Figure S2
-CLOPATH_MODELDB_DIR=/path/to/modeldb python scripts/figures/make_section44_mechanism_figure.py  # Figure S4
+CLOPATH_MODELDB_DIR=/path/to/modeldb python scripts/figures/make_section44_mechanism_figure.py  # Figure S5
 ```
 
-The figures are drawn from the tables in `results/`, except Figure 5 (receptive
+The figures are drawn from the tables in `results/`, except Figure S4 (receptive
 fields), which needs the final weights of three trained networks
 (`RUN_MAP.md`), and the two schematics (Figures 1 and 2), which need no data.
 
@@ -258,27 +258,27 @@ the networks each scorer reads.
 | Table S10, larger homeostatic reference | `scripts/score/clopath_port_probefix_score.py`, `appendix_j_counts.py` | `results/clopath_port_probefix_scores.md` (thetatar10k rows), `results/appendix_j_counts.md` |
 | Figure 2, pipeline | `scripts/figures/make_paper_figs.py` | `figures/fig1_pipeline.pdf` |
 | Figure 4, neuron labelling vs linear probe on four scaffolds | `scripts/figures/make_paper_figs.py` | `figures/fig2_readout.pdf` |
-| Figure 5, receptive fields | `scripts/figures/make_paper_figs.py` (needs `weights_final.npz` of three runs) | `figures/fig7_receptive_fields.pdf` |
-| Figure S4, depression and potentiation thresholds | `scripts/figures/make_section44_mechanism_figure.py` (needs `CLOPATH_MODELDB_DIR`) | `figures/fig_section44_mechanism.pdf` |
+| Figure S4, receptive fields | `scripts/figures/make_paper_figs.py` (needs `weights_final.npz` of three runs) | `figures/fig7_receptive_fields.pdf` |
+| Figure S5, depression and potentiation thresholds | `scripts/figures/make_section44_mechanism_figure.py` (needs `CLOPATH_MODELDB_DIR`) | `figures/fig_section44_mechanism.pdf` |
 | Figure S3, accuracy against training length | `scripts/figures/make_paper_figs.py` | `figures/fig4_forgetting.pdf` |
-| Figure 6, scaffold ablation | `scripts/figures/make_paper_figs.py` | `figures/fig5_scaffold_fragility.pdf` |
+| Figure 5, scaffold ablation | `scripts/figures/make_paper_figs.py` | `figures/fig5_scaffold_fragility.pdf` |
 | Figure 3, the protocol on one network; gain under each readout | `scripts/measure/fig_measurement.py` | `figures/fig_measurement.pdf` |
 | Figure 1, evaluation protocol | `scripts/figures/make_protocol_figure.py` | `figures/fig8_protocol.pdf` |
 | Figure S1, positive control | `scripts/figures/clopath_curve_reproduction.py` | `results/clopath_curve_reproduction.json`, `figures/fig6_clopath_curves.pdf` |
 | Figure S2, voltage-STDP controls by seed | `scripts/figures/make_voltage_controls_figure.py` | `figures/fig_voltage_controls.pdf`, `figures/fig_voltage_controls_data.json` |
 | Section 3.3, collapse counts and Remark 1 | `scripts/score/posthoc_both_conventions.py`, `scaffold_readout_table.py`, `identical_neuron_check.py`; `scripts/checks/verify_readout_bound.py` (prints the check) | `results/posthoc_both_conventions.csv`, `results/scaffold_readout_table.csv`, `results/scaffold_readout_summary.md`, `results/identical_neuron_check.csv` |
-| Section 3.4, matched random baseline at 60,000 images | `scripts/score/matched_random_60k_table.py` | `results/matched_random_60k.json` |
+| Sections 3.3 and 3.5, untrained network at 60,000 images | `scripts/score/matched_random_60k_table.py` | `results/matched_random_60k.json` |
 | Section 3.7, convolutional network, surrogate-gradient readout (last epoch; best epoch in Section S16) | `scripts/score/conv_surrogate_readout_n5.py` | `results/conv_surrogate_readout_n5.{md,json}` |
 | Section S16, share of spikes reset before θ₊ (tuned configuration) | `scripts/score/voltage_gate_saturation_probe.py --config-file run_configs/voltage_S_full_N400__mnist_adex_baseline.yaml` | `results/gate_tuned_seed{0-2}.json` |
 | Section S15, potentiation : depression in the default configuration with τθ = 10⁶ ms | `scripts/score/voltage_gate_saturation_probe.py --config-file run_configs/voltage_S_full_N400.yaml` | `results/gate_scaffold_seed{0-4}.json` |
 | Section 3.6 and Section S7, training length | `scripts/score/section45_probefix_mnist.py`, `section45_cosine_nmi.py`, `appendix_g_probefix.py` | `results/section45_probefix_mnist.{md,json}`, `results/section45_cosine_nmi.{md,json}`, `results/appendix_g_probefix.{md,json}` |
-| Sections 3.4 and 3.5 | as Table 3, Table S3 and Figure 6 | as above |
+| Sections 3.4 and 3.5 | as Table 3, Table S3 and Figure 5 | as above |
 | Section 3.3, the rule's gain under each readout on eight datasets | `scripts/measure/gain_by_readout.py` | `results/gain_by_readout.json` |
 | Section 3.3, gain under each readout after 60,000 training images (30.0 against 16.2 points) | `scripts/measure/gain_by_readout_60k.py` | `results/gain_by_readout_60k.json` |
 | Section 3.3, probe minus labelling at 5,000 to 60,000 training images | `scripts/measure/labelling_vs_training_length.py` | `results/labelling_vs_training_length.json` |
 | Section 3.3, PathMNIST: one class for every labelled neuron | `scripts/measure/posthoc_degeneracy_check.py` | `results/posthoc_degeneracy.json` |
-| Section 3.3, trained network under labelling below the untrained network under the probe | `scripts/measure/readout_vs_rule_paired.py` | `results/readout_vs_rule_paired.json` |
-| Table 5, Section 3.7, Section 2.11 and Section S18, SoftHebb with the matched random baseline | `scripts/score/softhebb_table5.py`, `softhebb_summary.py` (from the shipped runs); the runs: `scripts/train/softhebb_runs.sh` (needs SoftHebb's code) | `results/softhebb/table5_values.json`, `results/softhebb/pilot_summary.{md,json}`, `results/softhebb/runs/*/result.json` |
+| Section 3.2, trained network under labelling against the untrained network under the probe | `scripts/measure/readout_vs_rule_paired.py` | `results/readout_vs_rule_paired.json` |
+| Table 5, Section 3.7, Section 2.11 and Section S18, SoftHebb and its untrained network | `scripts/score/softhebb_table5.py`, `softhebb_summary.py` (from the shipped runs); the runs: `scripts/train/softhebb_runs.sh` (needs SoftHebb's code) | `results/softhebb/table5_values.json`, `results/softhebb/pilot_summary.{md,json}`, `results/softhebb/runs/*/result.json` |
 | Section S4, positive control | `scripts/checks/clopath_positive_control.py`, `scripts/figures/clopath_curve_reproduction.py` | `results/clopath_positive_control.{json,md}`, `results/clopath_curve_reproduction.json` |
 | Section S5, homeostasis | `scripts/score/reextract_probefix_score.py` | `results/reextract_probefix_scores.md` (section "Appendix E: homeostasis") |
 | Section S9, Fisher ratio | `scripts/score/appendix_i_probefix.py` | `results/appendix_i_probefix.{md,json}` |
@@ -315,7 +315,11 @@ OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=. \
 The script prints PASS, FAIL or SKIP per file and exits with status 0 when nothing
 fails. With the library versions in `requirements.txt` most tables match exactly; a
 probe fit can move by about one test image with another BLAS build, and the fits on the
-encoded input by up to about one point per seed. Keep `--jobs` small: on the machine used
+encoded input by up to about one point per seed. For the exact reimplementation of
+Clopath's neuron (`clopath_port_probefix_score.py`), a check on 2026-11-25 gave identical
+spike counts and identical fits for 510 of the 540 networks; the other 30 fits differed
+by up to 0.28 points, which moves three rounded values in Table S10 by 0.1 and no
+conclusion. Keep `--jobs` small: on the machine used
 here, many simultaneous jobs gave irregular fits and occasional crashes.
 The tables made by a GPU simulation (gate probes, convolutional readouts,
 supervised ceiling, the Clopath calibration and equivalence checks) are not rerun;

@@ -2,7 +2,7 @@
 rule's gain (trained - matched random, linear probe)?  Identity per seed:
     gap - gain = random_linear - trained_posthoc
 so 'gap > gain' means the plasticity-off network read by a linear probe beats the trained
-network read by neuron labelling (Section 3.3).  Source: results/probefix_matrix_n5.json (240 runs)."""
+network read by neuron labelling (Section 3.2).  Source: results/probefix_matrix_n5.json (240 runs)."""
 import json, statistics as st
 from scipy.stats import ttest_rel
 d = json.load(open("results/probefix_matrix_n5.json"))

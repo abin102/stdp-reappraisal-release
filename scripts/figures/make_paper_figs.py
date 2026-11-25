@@ -2,12 +2,12 @@
   fig1 pipeline schematic        (Section 2.4)   Figure 2
   fig2 readout on four scaffolds (Section 3.3)   Figure 4
   fig4 accuracy vs training length (Section S7)  Figure S3
-  fig5 scaffold ablation         (Section 3.5)   Figure 6
-  fig7 learned receptive fields  (Section 3.4)   Figure 5
+  fig5 scaffold ablation         (Section 3.5)   Figure 5
+  fig7 learned receptive fields  (Section S7)    Figure S4
 Figure 1 (protocol schematic) is drawn by scripts/figures/make_protocol_figure.py, Figure 3 by
 scripts/measure/fig_measurement.py, Figure S1 (Clopath curves) by
 scripts/figures/clopath_curve_reproduction.py, Figure S2 by scripts/figures/make_voltage_controls_figure.py
-and Figure S4 by scripts/figures/make_section44_mechanism_figure.py.
+and Figure S5 by scripts/figures/make_section44_mechanism_figure.py.
 Each figure is written as a vector PDF (what the manuscript includes) and a 600 dpi PNG.
 Style, sizes and colours come from scripts/figures/paper_style.py (journal artwork sizing).
 Run: PYTHONPATH=. python scripts/figures/make_paper_figs.py
